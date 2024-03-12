@@ -1,3 +1,11 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+#carousel-ow {
+  height: 25%;
+}
+
+#carousel-mw, #carousel-iw, #carousel {
+  height: 100%;
+}
