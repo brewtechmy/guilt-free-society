@@ -95,7 +95,7 @@
                             </p>
                         </a>
                         <ul class="nav nav-treeview">
-                            @can('product_category_access')
+                            {{-- @can('product_category_access')
                                 <li class="nav-item">
                                     <a href="{{ route("admin.product-categories.index") }}" class="nav-link {{ request()->is("admin/product-categories") || request()->is("admin/product-categories/*") ? "active" : "" }}">
                                         <i class="fa-fw nav-icon fas fa-folder">
@@ -118,7 +118,7 @@
                                         </p>
                                     </a>
                                 </li>
-                            @endcan
+                            @endcan --}}
                             @can('product_access')
                                 <li class="nav-item">
                                     <a href="{{ route("admin.products.index") }}" class="nav-link {{ request()->is("admin/products") || request()->is("admin/products/*") ? "active" : "" }}">

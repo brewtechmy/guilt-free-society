@@ -183,6 +183,8 @@ return [
             'name_helper'        => ' ',
             'description'        => 'Description',
             'description_helper' => ' ',
+            'calories'              => 'Calories',
+            'calories_helper'       => ' ',
             'price'              => 'Price',
             'price_helper'       => ' ',
             'category'           => 'Categories',

@@ -12,6 +12,7 @@ class CreateProductsTable extends Migration
             $table->bigIncrements('id');
             $table->string('name')->nullable();
             $table->longText('description')->nullable();
+            $table->integer('calories')->nullable();
             $table->decimal('price', 15, 2)->nullable();
             $table->timestamps();
             $table->softDeletes();

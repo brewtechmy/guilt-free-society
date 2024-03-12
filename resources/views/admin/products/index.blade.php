@@ -29,16 +29,13 @@
                             {{ trans('cruds.product.fields.name') }}
                         </th>
                         <th>
-                            {{ trans('cruds.product.fields.description') }}
+                            {{ trans('cruds.product.fields.calories') }}
                         </th>
                         <th>
                             {{ trans('cruds.product.fields.price') }}
                         </th>
                         <th>
                             {{ trans('cruds.product.fields.category') }}
-                        </th>
-                        <th>
-                            {{ trans('cruds.product.fields.tag') }}
                         </th>
                         <th>
                             {{ trans('cruds.product.fields.photo') }}
@@ -61,7 +58,7 @@
                                 {{ $product->name ?? '' }}
                             </td>
                             <td>
-                                {{ $product->description ?? '' }}
+                                {{ $product->calories ?? '' }}
                             </td>
                             <td>
                                 {{ $product->price ?? '' }}
@@ -72,14 +69,9 @@
                                 @endforeach
                             </td>
                             <td>
-                                @foreach($product->tags as $key => $item)
-                                    <span class="badge badge-info">{{ $item->name }}</span>
-                                @endforeach
-                            </td>
-                            <td>
                                 @if($product->photo)
                                     <a href="{{ $product->photo->getUrl() }}" target="_blank" style="display: inline-block">
-                                        <img src="{{ $product->photo->getUrl('thumb') }}">
+                                        <img src="{{ $product->photo->getUrl('preview') }}">
                                     </a>
                                 @endif
                             </td>
