@@ -21,8 +21,8 @@
                     </a>
                 </li> --}}
                 @can('content_management_access')
-                    <li class="nav-item has-treeview {{ request()->is("admin/content-categories*") ? "menu-open" : "" }} {{ request()->is("admin/content-tags*") ? "menu-open" : "" }} {{ request()->is("admin/content-pages*") ? "menu-open" : "" }}">
-                        <a class="nav-link nav-dropdown-toggle {{ request()->is("admin/content-categories*") ? "active" : "" }} {{ request()->is("admin/content-tags*") ? "active" : "" }} {{ request()->is("admin/content-pages*") ? "active" : "" }}" href="#">
+                    <li class="nav-item has-treeview {{ request()->is("admin/content-categories*") ? "menu-open" : "" }} {{ request()->is("admin/content-tags*") ? "menu-open" : "" }} {{ request()->is("admin/content-pages*") ? "menu-open" : "" }} {{ request()->is("admin/advertisements*") ? "menu-open" : "" }}">
+                        <a class="nav-link nav-dropdown-toggle {{ request()->is("admin/content-categories*") ? "active" : "" }} {{ request()->is("admin/content-tags*") ? "active" : "" }} {{ request()->is("admin/content-pages*") ? "active" : "" }} {{ request()->is("admin/advertisements*") ? "active" : "" }}" href="#">
                             <i class="fa-fw nav-icon fas fa-book">
 
                             </i>
@@ -64,6 +64,18 @@
                                         </i>
                                         <p>
                                             {{ trans('cruds.contentPage.title') }}
+                                        </p>
+                                    </a>
+                                </li>
+                            @endcan
+                            @can('advertisement_access')
+                                <li class="nav-item">
+                                    <a href="{{ route("admin.advertisements.index") }}" class="nav-link {{ request()->is("admin/advertisements") || request()->is("admin/advertisements/*") ? "active" : "" }}">
+                                        <i class="fa-fw nav-icon fas fa-bullhorn">
+
+                                        </i>
+                                        <p>
+                                            {{ trans('cruds.advertisement.title') }}
                                         </p>
                                     </a>
                                 </li>
