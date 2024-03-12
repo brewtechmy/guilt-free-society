@@ -37,6 +37,7 @@
             const first = document.querySelector('#promoSection img');
 
             if (!isElementInViewport(first)) {
+                await delay(2000);
                 promoSection.appendChild(first);
                 promoSection.scrollTo(promoSection.scrollLeft - first.offsetWidth, 0);
             }
@@ -44,6 +45,12 @@
             if (promoSection.scrollLeft !== promoSectionWidth) {
                 promoSection.scrollTo(promoSection.scrollLeft + 1, 0);
             }
+        }
+
+        function delay(milliseconds) {
+            return new Promise(resolve => {
+                setTimeout(resolve, milliseconds);
+            });
         }
     </script>
 </body>
