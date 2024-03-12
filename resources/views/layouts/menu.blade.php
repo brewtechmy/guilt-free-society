@@ -25,7 +25,7 @@
                     Contact Us
                 </div>
                 <div class="pl-4 grow">
-                    <img class="max-h-48 ml-auto w-2/3" src="https://cdn.klfoodie.com/2020/06/GF-In-app-Banner-01.jpg" />
+                    <img class="max-h-48 min-h-48 ml-auto w-2/3" src="https://cdn.klfoodie.com/2020/06/GF-In-app-Banner-01.jpg" />
                 </div>
             </div>
 
