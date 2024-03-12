@@ -32,7 +32,7 @@
         </nav>
     </header>
 
-    <main class="bg-[#e2fbe2] h-full">
+    <main class="bg-[#e2fbe2] h-screen">
         @yield('content')
     </main>
 

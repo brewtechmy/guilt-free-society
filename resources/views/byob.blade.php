@@ -86,8 +86,8 @@
                     <span class="text-6xl font-semibold">{{$v['title']}}</span>
                     <div class="flex mt-4 px-8 overflow-x-auto overflow-y-hidden w-full">
                         @foreach ($v['list'] as $li)
-                            <div class="flex flex-col items-center min-w-56  mx-8">
-                                <img class="rounded-full border-8 border-black w-full aspect-square" src="{{ asset($li['img']) }}" />
+                            <div class="flex flex-col items-center min-w-72 max-w-72 mx-20">
+                                <img class="rounded-full border-8 border-black aspect-square" src="{{ asset($li['img']) }}" />
                                 <span class="text-3xl">{{$li['name']}}</span>
                                 <span class="text-3xl">({{$li['kcal']}} kcal)</span>
                             </div>
