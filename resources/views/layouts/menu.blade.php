@@ -21,7 +21,7 @@
                 <div onclick="location.href='{{ route('story') }}';" class="flex items-center p-8 hover:cursor-pointer">
                     Our Story
                 </div>
-                <div class="flex items-center p-8 hover:cursor-pointer">
+                <div onclick="location.href='{{ route('contact-us') }}';" class="flex items-center p-8 hover:cursor-pointer">
                     Contact Us
                 </div>
                 <div class="pl-4 grow">
