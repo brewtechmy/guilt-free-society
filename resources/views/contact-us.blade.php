@@ -93,38 +93,10 @@
                     <div class="py-4">
                         <div class="mx-70 border-8 border-black">
                             <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
-                                <div class="grid gap-4">
-                                    @foreach (array_slice($arr, 0, 3) as $v)
-                                        <div>
-                                            <img class="h-auto max-w-full rounded-lg" src="{{ asset($v) }}"
-                                                alt="">
-                                        </div>
-                                    @endforeach
-                                </div>
-                                <div class="grid gap-4">
-                                    @foreach (array_slice($arr, 3, 3) as $v)
-                                        <div>
-                                            <img class="h-auto max-w-full rounded-lg" src="{{ asset($v) }}"
-                                                alt="">
-                                        </div>
-                                    @endforeach
-                                </div>
-                                <div class="grid gap-4">
-                                    @foreach (array_slice($arr, 6, 3) as $v)
-                                        <div>
-                                            <img class="h-auto max-w-full rounded-lg" src="{{ asset($v) }}"
-                                                alt="">
-                                        </div>
-                                    @endforeach
-                                </div>
-                                <div class="grid gap-4">
-                                    @foreach (array_slice($arr, 9, 3) as $v)
-                                        <div>
-                                            <img class="h-auto max-w-full rounded-lg" src="{{ asset($v) }}"
-                                                alt="">
-                                        </div>
-                                    @endforeach
-                                </div>
+                                <iframe
+                                    src="https://docs.google.com/forms/d/e/1FAIpQLSfHeyJLnf6n79RNWtKp4qZq5KvkagWezE_xSW7jnnPxua7ZPQ/viewform?embedded=true"
+                                    width="640" height="606" frameborder="0" marginheight="0"
+                                    marginwidth="0">Loading…</iframe>
                             </div>
                         </div>
                     </div>
