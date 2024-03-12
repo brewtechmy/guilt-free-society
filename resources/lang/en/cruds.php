@@ -199,5 +199,24 @@ return [
             'deleted_at_helper'  => ' ',
         ],
     ],
-
+    'advertisement' => [
+        'title'          => 'Advertisements',
+        'title_singular' => 'Advertisement',
+        'fields'         => [
+            'id'                 => 'ID',
+            'id_helper'          => ' ',
+            'name'               => 'Title',
+            'name_helper'        => ' ',
+            'position'        => 'Ads Position',
+            'position_helper' => 'Take Note: Advertisement will arrange and display in the order of low-numbered position to high-numbered position',
+            'photo'              => 'Photo',
+            'photo_helper'       => ' ',
+            'created_at'         => 'Created at',
+            'created_at_helper'  => ' ',
+            'updated_at'         => 'Updated At',
+            'updated_at_helper'  => ' ',
+            'deleted_at'         => 'Deleted At',
+            'deleted_at_helper'  => ' ',
+        ],
+    ],
 ];

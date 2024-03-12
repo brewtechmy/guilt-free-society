@@ -199,5 +199,24 @@ return [
             'deleted_at_helper'  => ' ',
         ],
     ],
-
+    'advertisement' => [
+        'title'          => '广告',
+        'title_singular' => '广告',
+        'fields'         => [
+            'id'                 => 'ID',
+            'id_helper'          => ' ',
+            'name'               => '标题',
+            'name_helper'        => ' ',
+            'position'        => '顺序',
+            'position_helper' => '注意：广告会以低号码到高号码的顺序来排列于展示',
+            'photo'              => '照片',
+            'photo_helper'       => ' ',
+            'created_at'         => '创建时间',
+            'created_at_helper'  => ' ',
+            'updated_at'         => '更新时间',
+            'updated_at_helper'  => ' ',
+            'deleted_at'         => '删除时间',
+            'deleted_at_helper'  => ' ',
+        ],
+    ],
 ];
