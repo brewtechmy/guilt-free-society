@@ -15,8 +15,9 @@
             <img class="my-auto h-1/2 max-h-[400px]" src="{{ url('/images/gfs_main_logo.jpg') }}" alt="gfs_main_logo">
         </div>
         <div class="h-1/4 flex overflow-x-auto" id="carousel">
-                <img src="{{ url('/images/monsta_promo.png') }}" alt="monsta_promo">
-                <img src="{{ url('/images/atome_banner.png') }}" alt="atome_banner">
+            @foreach ($advertisements as $key => $ads)
+                <img src="{{ $ads->photo->getUrl() }}" alt="{{ $ads->photo->name }}">
+            @endforeach
         </div>
     </div>
 

@@ -2,12 +2,14 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Advertisement;
 use Illuminate\Http\Request;
 
 class LandingPageController extends Controller
 {
     public function __invoke()
     {
-        return view('landing-page');
+        $advertisements = Advertisement::with(['media'])->orderBy('position')->get();
+        return view('landing-page', compact('advertisements'));
     }
 }

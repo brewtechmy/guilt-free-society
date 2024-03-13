@@ -21,7 +21,7 @@
                     <div class="form-group">
                         <label class="required" for="name">{{ trans('cruds.advertisement.fields.position') }}</label>
                         <input class="form-control {{ $errors->has('position') ? 'is-invalid' : '' }}" type="number"
-                            name="position" id="position" value="{{ old('position', '') }}" min="1" step="1"
+                            name="position" id="position" value="{{ old('position', ($maxPositionValue ?? 0) + 1 ) }}" min="1" step="1"
                             required />
                         @if ($errors->has('position'))
                             <span class="text-danger">{{ $errors->first('position') }}</span>

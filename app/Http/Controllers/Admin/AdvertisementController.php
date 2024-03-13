@@ -31,7 +31,9 @@ class AdvertisementController extends Controller
     {
         abort_if(Gate::denies('advertisement_create'), Response::HTTP_FORBIDDEN, '403 Forbidden');
 
-        return view('admin.advertisements.create');
+        $maxPositionValue = Advertisement::max('position');
+
+        return view('admin.advertisements.create', compact('maxPositionValue'));
     }
 
     public function store(StoreAdvertisementRequest $request)
