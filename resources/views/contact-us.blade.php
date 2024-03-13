@@ -18,29 +18,33 @@
         ];
     @endphp
     <div>
+        <div class="px-14 flex flex-row pt-5">
+            <span class="text-6xl font-semibold">Our Outlets</span>
+        </div>
         <div class="px-14 flex flex-row">
             <div class="basis-1/2">
                 <div class="py-4 mx-1 flex flex-col space-y-3">
                     <div class="basis-1/2">
-                        <span class="text-6xl font-semibold">Our Outlets</span>
                         <div class="flex flex-row items-center space-x-6 py-4">
                             <img class="rounded-full border-8 border-black aspect-square min-w-72 max-w-72"
-                                src="https://thedaily9.in/wp-content/uploads/2023/01/Protein-shakes.jpg" />
+                                src="/images/outlet_imgs/outlet1.png" />
                             <div class="flex flex-col">
-                                <div class="text-2xl items-center">Guilt Free Society
+                                <div class="text-2xl items-center font-bold">Guilt Free Society
                                 </div>
                                 <br>
-                                <div>
-                                    Lot 5, 1st floor
-                                    block A, Lorong Lintas Square
-                                    88300 Kota Kinabalu
-                                </div>
-                                <div>
-                                    11am-8.30pm daily
-                                </div>
-                                <div>
-                                    011-2057 3293
-                                </div>
+                                <span class="text-2xl items-center">
+                                    <div>
+                                        Lot 5, 1st floor
+                                        block A, Lorong Lintas Square
+                                        88300 Kota Kinabalu
+                                    </div>
+                                    <div>
+                                        11am-8.30pm daily
+                                    </div>
+                                    <div>
+                                        011-2057 3293
+                                    </div>
+                                </span>
                                 <br>
                                 <div>
                                     <iframe
@@ -58,21 +62,23 @@
                 <div class="py-4">
                     <div class="flex flex-row items-center space-x-6 py-4">
                         <img class="rounded-full border-8 border-black aspect-square min-w-72 max-w-72"
-                            src="https://thedaily9.in/wp-content/uploads/2023/01/Protein-shakes.jpg" />
+                            src="/images/outlet_imgs/outlet2.png" />
                         <div class="flex flex-col">
-                            <div class="text-2xl items-center">Guilt Free Society +
+                            <div class="text-2xl items-center font-bold">Guilt Free Society +
                             </div>
                             <br>
-                            <div>
-                                The Walk, Riverson
-                                Jln Riverson 1, 88000 Kota Kinabalu
-                            </div>
-                            <div>
-                                11am-8pm Mon-Sat
-                            </div>
-                            <div>
-                                012-863 9907
-                            </div>
+                            <span class="text-2xl items-center">
+                                <div>
+                                    The Walk, Riverson
+                                    Jln Riverson 1, 88000 Kota Kinabalu
+                                </div>
+                                <div>
+                                    11am-8pm Mon-Sat
+                                </div>
+                                <div>
+                                    012-863 9907
+                                </div>
+                            </span>
                             <br>
                             <div>
                                 <iframe
@@ -92,16 +98,16 @@
                     <span class="text-6xl font-semibold">Help Us Improve</span>
                     <div class="py-4">
                         <div class="mx-70 border-8 border-black">
-                            <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                            <div>
                                 <iframe
                                     src="https://docs.google.com/forms/d/e/1FAIpQLSfHeyJLnf6n79RNWtKp4qZq5KvkagWezE_xSW7jnnPxua7ZPQ/viewform?embedded=true"
                                     width="640" height="606" frameborder="0" marginheight="0"
                                     marginwidth="0">Loading…</iframe>
                             </div>
+                            < </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-@endsection
+    @endsection
