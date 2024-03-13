@@ -7,12 +7,20 @@
     @vite('resources/css/app.css')
     <title>Guilt Free Society</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.4/tiny-slider.css">
+    <link href="https://unpkg.com/@pqina/flip/dist/flip.min.css" rel="stylesheet">
 </head>
 
 <body>
     <div class="h-dvh">
-        <div class="h-3/4 bg-black flex justify-center">
-            <img class="my-auto h-1/2 max-h-[400px]" src="{{ url('/images/gfs_main_logo.jpg') }}" alt="gfs_main_logo">
+        <div class="h-3/4 bg-black text-center flex flex-col justify-center">
+            <img class="max-h-[60%] max-w-[75%] mx-auto" src="{{ url('/images/gfs_main_logo.jpg') }}" alt="gfs_main_logo">
+            <div class="tick w-fit mx-auto text-2xl sm:text-3xl" data-value="1234" data-did-init="setupFlip">
+                <div data-repeat="true" aria-hidden="true">
+                    <span data-view="flip"></span>
+                </div>
+            </div>
+            <div class="text-white text-lg sm:text-xl">Healthy bowls sold</div>
+            <div class="text-white mt-1 md:mt-3 text-lg sm:text-2xl">Begin your health journey here</div>
         </div>
         <div class="h-1/4 flex overflow-x-auto" id="carousel">
             @foreach ($advertisements as $key => $ads)
@@ -22,6 +30,7 @@
     </div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.2/min/tiny-slider.js"></script>
+    <script src="https://unpkg.com/@pqina/flip/dist/flip.min.js"></script>
     <script>
         var slider = tns({
             container: '#carousel',
@@ -32,11 +41,19 @@
             autoplayTimeout: 3500,
             autoplayButtonOutput: false,
             responsive: {
-                768: {
+                640: {
                     items: 2
                 },
             }
         });
+
+
+        function setupFlip(tick) {
+            Tick.helper.interval(function() {
+                tick.value++;
+                tick.root.setAttribute('aria-label', tick.value);
+            }, 1000);
+        }
     </script>
 </body>
 
