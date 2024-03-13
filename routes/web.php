@@ -78,3 +78,4 @@ Route::get('/byob', 'MenuController@index')->name('byob')->middleware([]);
 Route::get('/story', 'StoryController')->name('story')->middleware([]);
 Route::get('/welcome', 'LandingPageController')->name('landing-page');
 Route::get('/contact-us', 'ContactController')->name('contact-us')->middleware([]);;
+Route::get('/join-us', 'JoinUsController')->name('join-us');
