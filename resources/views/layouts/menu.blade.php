@@ -8,9 +8,9 @@
 </head>
 <body>
 
-    <header class="bg-black h-48 w-full text-2xl">
+    <header>
         <nav>
-            <div class="text-white flex justify-left">
+            <div class="hidden lg:flex bg-black h-48 w-full text-2xl justify-left text-white">
                 <img class="max-h-48" src="https://scontent.fpen1-1.fna.fbcdn.net/v/t39.30808-6/358469989_755855429872996_368311450259519210_n.jpg?_nc_cat=109&ccb=1-7&_nc_sid=5f2048&_nc_ohc=js2GABIOE9oAX-BZSul&_nc_ht=scontent.fpen1-1.fna&oh=00_AfArZwwIftoR5TJUUo6evdFgGTJOYcnMDdvwlGLYA0Lxxw&oe=65F54508" />
                 <div onclick="location.href='{{ route('byob') }}';" class="flex items-center p-8 hover:cursor-pointer {{ request()->is("byob") ? "bg-[#e2fbe2] text-black" : "" }}">
 
@@ -30,6 +30,23 @@
                 </div>
             </div>
 
+            <div class="flex lg:hidden bg-black h-24 w-full leading-5 text-md justify-left text-white">
+                <img class="max-h-24" src="https://scontent.fpen1-1.fna.fbcdn.net/v/t39.30808-6/358469989_755855429872996_368311450259519210_n.jpg?_nc_cat=109&ccb=1-7&_nc_sid=5f2048&_nc_ohc=js2GABIOE9oAX-BZSul&_nc_ht=scontent.fpen1-1.fna&oh=00_AfArZwwIftoR5TJUUo6evdFgGTJOYcnMDdvwlGLYA0Lxxw&oe=65F54508" />
+                <div class="w-full grid grid-cols-4 text-center align-middle">
+                    <div onclick="location.href='{{ route('byob') }}';" class="flex items-center justify-center hover:cursor-pointer {{ request()->is("byob") ? "bg-[#e2fbe2] text-black" : "" }}">
+                        Build Your Own Bowl
+                    </div>
+                    <div class="flex items-center justify-center hover:cursor-pointer">
+                        Menu
+                    </div>
+                    <div onclick="location.href='{{ route('story') }}';" class="flex items-center justify-center hover:cursor-pointer {{ request()->is("story") ? "bg-[#e2fbe2] text-black" : "" }}">
+                        Our Story
+                    </div>
+                    <div onclick="location.href='{{ route('contact-us') }}';" class="flex items-center justify-center hover:cursor-pointer {{ request()->is("contact-us") ? "bg-[#e2fbe2] text-black" : "" }}">
+                        Contact Us
+                    </div>
+                </div>
+            </div>
         </nav>
     </header>
 
