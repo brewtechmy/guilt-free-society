@@ -51,8 +51,12 @@
         </nav>
     </header>
 
-    <main class="bg-[#e2fbe2]">
-        @yield('content')
+    <main class="bg-[#e2fbe2] max-w-[100vw]">
+        <div class="mx-auto max-w-[1260px]">
+            <div class="mx-12">
+                @yield('content')
+            </div>
+        </div>
     </main>
 
     <footer>
