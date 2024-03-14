@@ -68,7 +68,7 @@
                     <span class="text-6xl font-semibold">Our Journey</span>
                     <div class="py-4">
                         <div class="mx-70 border-8 border-black rounded-lg">
-                            <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 items-center">
                                 <div class="grid gap-4">
                                     @foreach (array_slice($arr, 0, 3) as $v)
                                         <div>
