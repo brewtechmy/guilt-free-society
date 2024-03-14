@@ -58,7 +58,6 @@
                     </div>
                 </div>
             </div>
-
         </div>
     </div>
     <div class="px-14 flex flex-col">
