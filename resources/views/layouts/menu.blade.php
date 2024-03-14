@@ -37,6 +37,9 @@
                         <div onclick="location.href='{{ route('story') }}';" class="flex-1 p-5 flex items-center justify-center hover:cursor-pointer {{ request()->is("story") ? "bg-[#e2fbe2] text-black" : "" }}">
                             Our Story
                         </div>
+		                <div onclick="location.href='{{ route('join-us') }}';" class="flex-1 p-5 flex items-center justify-center hover:cursor-pointer {{ request()->is("join-us") ? "bg-[#e2fbe2] text-black" : "" }}">
+		                    Join Us
+		                </div>
                         <div onclick="location.href='{{ route('contact-us') }}';" class="flex-1 p-5 flex items-center justify-center hover:cursor-pointer {{ request()->is("contact-us") ? "bg-[#e2fbe2] text-black" : "" }}">
                             Contact Us
                         </div>

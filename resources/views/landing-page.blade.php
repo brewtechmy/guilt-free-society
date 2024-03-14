@@ -10,7 +10,7 @@
     <link href="https://unpkg.com/@pqina/flip/dist/flip.min.css" rel="stylesheet">
 </head>
 
-<body>
+<body onclick="location.href='{{ route('byob') }}';">
     <div class="h-dvh">
         <div class="h-3/4 bg-black text-center flex flex-col justify-center">
             <img class="max-h-[60%] max-w-[75%] mx-auto" src="{{ url('/images/gfs_main_logo.jpg') }}" alt="gfs_main_logo">
