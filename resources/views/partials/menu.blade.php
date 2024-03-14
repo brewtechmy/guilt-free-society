@@ -32,7 +32,7 @@
                             </p>
                         </a>
                         <ul class="nav nav-treeview">
-                            @can('content_category_access')
+                            {{-- @can('content_category_access')
                                 <li class="nav-item">
                                     <a href="{{ route("admin.content-categories.index") }}" class="nav-link {{ request()->is("admin/content-categories") || request()->is("admin/content-categories/*") ? "active" : "" }}">
                                         <i class="fa-fw nav-icon fas fa-folder">
@@ -55,7 +55,7 @@
                                         </p>
                                     </a>
                                 </li>
-                            @endcan
+                            @endcan --}}
                             @can('content_page_access')
                                 <li class="nav-item">
                                     <a href="{{ route("admin.content-pages.index") }}" class="nav-link {{ request()->is("admin/content-pages") || request()->is("admin/content-pages/*") ? "active" : "" }}">
@@ -76,6 +76,45 @@
                                         </i>
                                         <p>
                                             {{ trans('cruds.advertisement.title') }}
+                                        </p>
+                                    </a>
+                                </li>
+                            @endcan
+                        </ul>
+                    </li>
+                @endcan
+                @can('menu_management_access')
+                    <li class="nav-item has-treeview {{ request()->is("admin/product-categories*") ? "menu-open" : "" }} {{ request()->is("admin/product-tags*") ? "menu-open" : "" }} {{ request()->is("admin/products*") ? "menu-open" : "" }}">
+                        <a class="nav-link nav-dropdown-toggle {{ request()->is("admin/product-categories*") ? "active" : "" }} {{ request()->is("admin/product-tags*") ? "active" : "" }} {{ request()->is("admin/products*") ? "active" : "" }}" href="#">
+                            <i class="fa-fw nav-icon fas fa-shopping-cart">
+
+                            </i>
+                            <p>
+                                {{ trans('cruds.productManagement.title') }}
+                                <i class="right fa fa-fw fa-angle-left nav-icon"></i>
+                            </p>
+                        </a>
+                        <ul class="nav nav-treeview">
+                            @can('product_category_access')
+                                <li class="nav-item">
+                                    <a href="{{ route("admin.product-categories.index") }}" class="nav-link {{ request()->is("admin/product-categories") || request()->is("admin/product-categories/*") ? "active" : "" }}">
+                                        <i class="fa-fw nav-icon fas fa-folder">
+
+                                        </i>
+                                        <p>
+                                            {{ trans('cruds.productCategory.title') }}
+                                        </p>
+                                    </a>
+                                </li>
+                            @endcan
+                            @can('product_access')
+                                <li class="nav-item">
+                                    <a href="{{ route("admin.products.index") }}" class="nav-link {{ request()->is("admin/products") || request()->is("admin/products/*") ? "active" : "" }}">
+                                        <i class="fa-fw nav-icon fas fa-shopping-cart">
+
+                                        </i>
+                                        <p>
+                                            {{ trans('cruds.product.title') }}
                                         </p>
                                     </a>
                                 </li>
@@ -146,7 +185,7 @@
                             </p>
                         </a>
                         <ul class="nav nav-treeview">
-                            @can('permission_access')
+                            {{-- @can('permission_access')
                                 <li class="nav-item">
                                     <a href="{{ route("admin.permissions.index") }}" class="nav-link {{ request()->is("admin/permissions") || request()->is("admin/permissions/*") ? "active" : "" }}">
                                         <i class="fa-fw nav-icon fas fa-unlock-alt">
@@ -169,7 +208,7 @@
                                         </p>
                                     </a>
                                 </li>
-                            @endcan
+                            @endcan --}}
                             @can('user_access')
                                 <li class="nav-item">
                                     <a href="{{ route("admin.users.index") }}" class="nav-link {{ request()->is("admin/users") || request()->is("admin/users/*") ? "active" : "" }}">
