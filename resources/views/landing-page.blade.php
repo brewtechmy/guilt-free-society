@@ -7,21 +7,27 @@
     @vite('resources/css/app.css')
     <title>Guilt Free Society</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.4/tiny-slider.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link href="https://unpkg.com/@pqina/flip/dist/flip.min.css" rel="stylesheet">
 </head>
 
-<body onclick="location.href='{{ route('byob') }}';">
+<body class="hover:cursor-pointer" onclick="location.href='{{ route('byob') }}';">
     <div class="h-dvh">
         <div class="h-3/4 bg-black text-center flex flex-col justify-center">
-            <img class="max-h-[60%] max-w-[75%] mx-auto" src="{{ url('/images/gfs_main_logo.jpg') }}" alt="gfs_main_logo">
-            <div class="tick w-fit mx-auto text-2xl sm:text-3xl" data-value="{{$soldCount - 10}}" data-did-init="setupFlip">
+            <img class="max-h-[60%] max-w-[75%] mx-auto" src="{{ url('/images/gfs_main_logo.jpg') }}"
+                alt="gfs_main_logo">
+            <div class="tick w-fit mx-auto text-2xl sm:text-3xl" data-value="{{ $soldCount - 10 }}"
+                data-did-init="setupFlip">
                 <div data-repeat="true" aria-hidden="true">
                     <span data-view="flip"></span>
                 </div>
             </div>
             <div class="text-white text-lg sm:text-xl">Healthy bowls sold</div>
-            <div class="text-white mt-1 md:mt-3 text-lg sm:text-2xl">Begin your health journey here</div>
+            <div class="text-white mt-1 md:mt-3 text-lg sm:text-2xl">Begin your health journey here
+                <i class="fa-regular fa-hand-pointer animate-bounce"></i>
+            </div>
         </div>
+
         <div class="h-1/4 flex overflow-x-auto" id="carousel">
             @foreach ($advertisements as $key => $ads)
                 <img src="{{ $ads->photo->getUrl() }}" alt="{{ $ads->photo->name }}">
@@ -50,7 +56,7 @@
 
         function setupFlip(tick) {
             Tick.helper.interval(function() {
-                if(tick.value < {{$soldCount}})tick.value++;
+                if (tick.value < {{ $soldCount }}) tick.value++;
                 tick.root.setAttribute('aria-label', tick.value);
             }, 180);
         }

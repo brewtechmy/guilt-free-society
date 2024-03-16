@@ -23,7 +23,7 @@
                 <span class="text-6xl font-semibold">Our Values</span>
                 <div class="flex flex-col py-4 space-y-2">
                     <img class="rounded-full border-8 border-black aspect-square min-w-72 max-w-72 mx-20"
-                        src="https://scontent.fkul3-3.fna.fbcdn.net/v/t39.30808-6/358469989_755855429872996_368311450259519210_n.jpg?_nc_cat=109&ccb=1-7&_nc_sid=5f2048&_nc_ohc=js2GABIOE9oAX-wRNa5&_nc_ht=scontent.fkul3-3.fna&oh=00_AfAgc0h7ol1DviODQ12H_7BTYL-Au_b4p5iQi4AOirElfw&oe=65F54508" />
+                    src="{{ url('/images/gfs_main_logo.jpg') }}" alt="gfs_main_logo"/>
                     <span class="text-2xl">We believe in one thing - <b>Eat Well, Live Better</b>
                     </span>
                     <span class="text-2xl">So, we promise to bring you only <b> Food Made Real</b>.</span>

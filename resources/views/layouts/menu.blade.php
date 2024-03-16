@@ -14,7 +14,7 @@
         <nav class="bg-black border-gray-200">
             <div class="max-w-screen-xl flex items-center mx-auto">
                 <a href="{{ route('landing-page') }}" class="shrink-0 flex items-center space-x-3 rtl:space-x-reverse">
-                    <img class="h-8 md:h-[120px] md:w-[120px]" src="https://scontent.fpen1-1.fna.fbcdn.net/v/t39.30808-6/358469989_755855429872996_368311450259519210_n.jpg?_nc_cat=109&ccb=1-7&_nc_sid=5f2048&_nc_ohc=js2GABIOE9oAX-BZSul&_nc_ht=scontent.fpen1-1.fna&oh=00_AfArZwwIftoR5TJUUo6evdFgGTJOYcnMDdvwlGLYA0Lxxw&oe=65F54508" alt="GFS Logo" />
+                    <img class="h-8 md:h-[120px] md:w-[120px]" src="{{ url('/images/gfs_main_logo.jpg') }}" alt="gfs_main_logo" />
                 </a>
                 <button data-collapse-toggle="navbar-default" type="button"
                     class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200"
