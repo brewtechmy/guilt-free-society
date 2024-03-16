@@ -10,6 +10,7 @@ class LandingPageController extends Controller
     public function __invoke()
     {
         $advertisements = Advertisement::with(['media'])->orderBy('position')->get();
-        return view('landing-page', compact('advertisements'));
+        $soldCount = 3000;
+        return view('landing-page', compact('advertisements', 'soldCount'));
     }
 }
