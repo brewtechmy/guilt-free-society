@@ -226,6 +226,26 @@ class PermissionsTableSeeder extends Seeder
                 'id'    => 54,
                 'title' => 'advertisement_access',
             ],
+            [
+                'id'    => 55,
+                'title' => 'outlet_create',
+            ],
+            [
+                'id'    => 56,
+                'title' => 'outlet_edit',
+            ],
+            [
+                'id'    => 57,
+                'title' => 'outlet_show',
+            ],
+            [
+                'id'    => 58,
+                'title' => 'outlet_delete',
+            ],
+            [
+                'id'    => 59,
+                'title' => 'outlet_access',
+            ],
         ];
 
         Permission::insert($permissions);

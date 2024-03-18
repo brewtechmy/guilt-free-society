@@ -80,6 +80,18 @@
                                     </a>
                                 </li>
                             @endcan
+                            {{-- @can('outlet_access') --}}
+                                <li class="nav-item">
+                                    <a href="{{ route("admin.outlets.index") }}" class="nav-link {{ request()->is("admin/advertisements") || request()->is("admin/advertisements/*") ? "active" : "" }}">
+                                        <i class="fa-fw nav-icon fas fa-bullhorn">
+
+                                        </i>
+                                        <p>
+                                            {{ trans('cruds.outlet.title') }}
+                                        </p>
+                                    </a>
+                                </li>
+                            {{-- @endcan --}}
                         </ul>
                     </li>
                 @endcan
