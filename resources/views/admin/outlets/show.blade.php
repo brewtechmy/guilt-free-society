@@ -67,6 +67,14 @@
                             @endif
                         </td>
                     </tr>
+                    <tr>
+                        <th>
+                            {{ trans('cruds.outlet.fields.contact_no') }}
+                        </th>
+                        <td>
+                            {{ $outlet->contact_no }}
+                        </td>
+                    </tr>
                 </tbody>
             </table>
             <div class="form-group">

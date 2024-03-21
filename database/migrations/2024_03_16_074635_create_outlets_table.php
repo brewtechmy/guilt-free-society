@@ -16,6 +16,7 @@ return new class extends Migration
             $table->string('name')->nullable();
             $table->longText('address')->nullable();
             $table->string('business_hour')->nullable();
+            $table->string('contact_no')->nullable();
             $table->longText('embed_map_url')->nullable();
             $table->timestamps();
             $table->softDeletes();

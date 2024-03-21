@@ -41,6 +41,9 @@
                             {{ trans('cruds.outlet.fields.photo') }}
                         </th>
                         <th>
+                            {{ trans('cruds.outlet.fields.contact_no') }}
+                        </th>
+                        <th>
                             &nbsp;
                         </th>
                     </tr>
@@ -63,6 +66,9 @@
                             <input class="search" type="text" placeholder="{{ trans('global.search') }}">
                         </td>
                         <td>
+                        </td>
+                        <td>
+                            <input class="search" type="text" placeholder="{{ trans('global.search') }}">
                         </td>
                         <td>
                         </td>
@@ -95,6 +101,9 @@
                                         <img src="{{ $outlet->photo->getUrl('thumb') }}">
                                     </a>
                                 @endif
+                            </td>
+                            <td>
+                                {{ $outlet->contact_no ?? '' }}
                             </td>
                             <td>
                                 @can('outlet_show')
@@ -175,7 +184,7 @@
       $($.fn.dataTable.tables(true)).DataTable()
           .columns.adjust();
   });
-  
+
 let visibleColumnsIndexes = null;
 $('.datatable thead').on('input', '.search', function () {
       let strict = $(this).attr('strict') || false

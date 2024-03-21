@@ -243,6 +243,8 @@ return [
             'deleted_at_helper'    => ' ',
             'photo'                => 'Photo',
             'photo_helper'         => ' ',
+            'contact_no'           => 'Contact Number',
+            'contact_no_helper'    => ' ',
         ],
     ],
 ];
