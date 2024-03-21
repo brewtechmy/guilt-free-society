@@ -41,6 +41,16 @@
                 <span class="help-block">{{ trans('cruds.outlet.fields.business_hour_helper') }}</span>
             </div>
             <div class="form-group">
+                <label for="contact_no">{{ trans('cruds.outlet.fields.contact_no') }}</label>
+                <input class="form-control {{ $errors->has('contact_no') ? 'is-invalid' : '' }}" type="text" name="contact_no" id="contact_no" value="{{ old('contact_no', $outlet->contact_no) }}">
+                @if($errors->has('contact_no'))
+                    <div class="invalid-feedback">
+                        {{ $errors->first('contact_no') }}
+                    </div>
+                @endif
+                <span class="help-block">{{ trans('cruds.outlet.fields.contact_no_helper') }}</span>
+            </div>
+            <div class="form-group">
                 <label for="embed_map_url">{{ trans('cruds.outlet.fields.embed_map_url') }}</label>
                 <textarea class="form-control {{ $errors->has('embed_map_url') ? 'is-invalid' : '' }}" name="embed_map_url" id="embed_map_url">{{ old('embed_map_url', $outlet->embed_map_url) }}</textarea>
                 @if($errors->has('embed_map_url'))
@@ -60,16 +70,6 @@
                     </div>
                 @endif
                 <span class="help-block">{{ trans('cruds.outlet.fields.photo_helper') }}</span>
-            </div>
-            <div class="form-group">
-                <label for="contact_no">{{ trans('cruds.outlet.fields.contact_no') }}</label>
-                <input class="form-control {{ $errors->has('contact_no') ? 'is-invalid' : '' }}" type="text" name="contact_no" id="contact_no" value="{{ old('contact_no', $outlet->contact_no) }}">
-                @if($errors->has('contact_no'))
-                    <div class="invalid-feedback">
-                        {{ $errors->first('contact_no') }}
-                    </div>
-                @endif
-                <span class="help-block">{{ trans('cruds.outlet.fields.contact_no_helper') }}</span>
             </div>
             <div class="form-group">
                 <button class="btn btn-danger" type="submit">

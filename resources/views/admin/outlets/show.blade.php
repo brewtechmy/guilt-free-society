@@ -49,6 +49,14 @@
                     </tr>
                     <tr>
                         <th>
+                            {{ trans('cruds.outlet.fields.contact_no') }}
+                        </th>
+                        <td>
+                            {{ $outlet->contact_no }}
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>
                             {{ trans('cruds.outlet.fields.embed_map_url') }}
                         </th>
                         <td>
@@ -65,14 +73,6 @@
                                     <img src="{{ $outlet->photo->getUrl('thumb') }}">
                                 </a>
                             @endif
-                        </td>
-                    </tr>
-                    <tr>
-                        <th>
-                            {{ trans('cruds.outlet.fields.contact_no') }}
-                        </th>
-                        <td>
-                            {{ $outlet->contact_no }}
                         </td>
                     </tr>
                 </tbody>

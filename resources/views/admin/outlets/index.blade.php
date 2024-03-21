@@ -35,13 +35,13 @@
                             {{ trans('cruds.outlet.fields.business_hour') }}
                         </th>
                         <th>
+                            {{ trans('cruds.outlet.fields.contact_no') }}
+                        </th>
+                        <th>
                             {{ trans('cruds.outlet.fields.embed_map_url') }}
                         </th>
                         <th>
                             {{ trans('cruds.outlet.fields.photo') }}
-                        </th>
-                        <th>
-                            {{ trans('cruds.outlet.fields.contact_no') }}
                         </th>
                         <th>
                             &nbsp;
@@ -68,9 +68,6 @@
                         <td>
                         </td>
                         <td>
-                            <input class="search" type="text" placeholder="{{ trans('global.search') }}">
-                        </td>
-                        <td>
                         </td>
                     </tr>
                 </thead>
@@ -93,6 +90,9 @@
                                 {{ $outlet->business_hour ?? '' }}
                             </td>
                             <td>
+                                {{ $outlet->contact_no ?? '' }}
+                            </td>
+                            <td>
                                 {{ $outlet->embed_map_url ?? '' }}
                             </td>
                             <td>
@@ -101,9 +101,6 @@
                                         <img src="{{ $outlet->photo->getUrl('thumb') }}">
                                     </a>
                                 @endif
-                            </td>
-                            <td>
-                                {{ $outlet->contact_no ?? '' }}
                             </td>
                             <td>
                                 @can('outlet_show')
