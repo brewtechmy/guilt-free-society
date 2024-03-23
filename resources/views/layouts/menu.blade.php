@@ -8,7 +8,7 @@
     <title>@yield('title', 'Your Laravel App')</title>
 </head>
 
-<body>
+<body class="bg-[#e2fbe2]">
 
     <header>
         <nav class="bg-black border-gray-200">
@@ -51,7 +51,7 @@
         </nav>
     </header>
 
-    <main class="bg-[#e2fbe2] max-w-[100vw]">
+    <main class="max-w-[100vw]">
         <div class="mx-auto max-w-[1260px]">
             <div class="mx-12 bg-slate-50/45">
                 @yield('content')
