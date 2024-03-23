@@ -76,7 +76,7 @@
                 </div>
             </div>
         </div>
-        <div class="px-14 flex flex-col">
+        <div class="flex flex-col">
             <div class="basis-1/2 mx-1">
                 <div class="py-4">
                     <span class="text-6xl font-semibold">Help Us Improve</span>
