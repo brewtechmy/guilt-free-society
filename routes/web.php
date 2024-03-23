@@ -63,6 +63,12 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.', 'namespace' => 'Admin', 'mi
     Route::post('advertisements/media', 'AdvertisementController@storeMedia')->name('advertisements.storeMedia');
     Route::post('advertisements/ckmedia', 'AdvertisementController@storeCKEditorImages')->name('advertisements.storeCKEditorImages');
     Route::resource('advertisements', 'AdvertisementController');
+
+    // Outlet
+    Route::delete('outlets/destroy', 'OutletController@massDestroy')->name('outlets.massDestroy');
+    Route::post('outlets/media', 'OutletController@storeMedia')->name('outlets.storeMedia');
+    Route::post('outlets/ckmedia', 'OutletController@storeCKEditorImages')->name('outlets.storeCKEditorImages');
+    Route::resource('outlets', 'OutletController');
 });
 Route::group(['prefix' => 'profile', 'as' => 'profile.', 'namespace' => 'Auth', 'middleware' => ['auth']], function () {
     // Change password
