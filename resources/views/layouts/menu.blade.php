@@ -28,21 +28,21 @@
                 </button>
                 <div class="h-[120px] hidden w-full grow text-white md:block md:w-auto" id="navbar-default">
                     <div class="h-full w-full flex text-center align-middle">
-                        <div onclick="location.href='{{ route('byob') }}';" class="flex-1 p-5 flex items-center justify-center hover:cursor-pointer {{ request()->is("byob") ? "bg-[#e2fbe2] text-black" : "" }}">
+                        <a href="{{ route('byob') }}" class="flex-1 p-5 flex items-center justify-center hover:cursor-pointer {{ request()->is("byob") ? "bg-[#e2fbe2] text-black" : "" }}">
                             Build Your Own Bowl
-                        </div>
-                        <div class="flex-1 p-5 flex items-center justify-center hover:cursor-pointer">
+                        </a>
+                        <a class="flex-1 p-5 flex items-center justify-center hover:cursor-pointer">
                             Menu
-                        </div>
-                        <div onclick="location.href='{{ route('story') }}';" class="flex-1 p-5 flex items-center justify-center hover:cursor-pointer {{ request()->is("story") ? "bg-[#e2fbe2] text-black" : "" }}">
+                        </a>
+                        <a href="{{ route('story') }}" class="flex-1 p-5 flex items-center justify-center hover:cursor-pointer {{ request()->is("story") ? "bg-[#e2fbe2] text-black" : "" }}">
                             Our Story
-                        </div>
-		                <div onclick="location.href='{{ route('join-us') }}';" class="flex-1 p-5 flex items-center justify-center hover:cursor-pointer {{ request()->is("join-us") ? "bg-[#e2fbe2] text-black" : "" }}">
+                        </a>
+		                <a href="{{ route('join-us') }}" class="flex-1 p-5 flex items-center justify-center hover:cursor-pointer {{ request()->is("join-us") ? "bg-[#e2fbe2] text-black" : "" }}">
 		                    Join Us
-		                </div>
-                        <div onclick="location.href='{{ route('contact-us') }}';" class="flex-1 p-5 flex items-center justify-center hover:cursor-pointer {{ request()->is("contact-us") ? "bg-[#e2fbe2] text-black" : "" }}">
+                        </a>
+                        <a href="{{ route('contact-us') }}" class="flex-1 p-5 flex items-center justify-center hover:cursor-pointer {{ request()->is("contact-us") ? "bg-[#e2fbe2] text-black" : "" }}">
                             Contact Us
-                        </div>
+                        </a>
                         <img class="shrink-0 h-[120px] min-w-[250px]" src="https://cdn.klfoodie.com/2020/06/GF-In-app-Banner-01.jpg" />
                     </div>
                 </div>
