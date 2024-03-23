@@ -17,45 +17,39 @@
             'https://scontent.fkul3-2.fna.fbcdn.net/v/t39.30808-6/399814955_17999391806246821_3223734641245006144_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=5f2048&_nc_ohc=pKnrLJ2hX6QAX-0FdoY&_nc_ht=scontent.fkul3-2.fna&oh=00_AfBR9rJ3hKyyjy7tAFg2fAdOFiFwktqGgpzYlY3C1gpMqA&oe=65F59346',
         ];
     @endphp
-    <div class="px-14 flex flex-row">
-        <div class="basis-1/2 mx-1">
-            <div class="py-4">
-                <span class="text-6xl font-semibold">Our Values</span>
-                <div class="flex flex-col py-4 space-y-2">
-                    <img class="rounded-full border-8 border-black aspect-square min-w-72 max-w-72 mx-20"
-                    src="{{ url('/images/gfs_main_logo.jpg') }}" alt="gfs_main_logo"/>
-                    <span class="text-2xl">We believe in one thing - <b>Eat Well, Live Better</b>
-                    </span>
-                    <span class="text-2xl">So, we promise to bring you only <b> Food Made Real</b>.</span>
-                    <span class="text-2xl">Every day, we strive to curate healthy bowls which are delicious and
-                        nutritious to
-                        help improve your overall health and well-being.</span>
-                </div>
+    <div class="px-14 pt-4 grid grid-cols-1 lg:grid-cols-2 gap-5">
+        <div class="">
+            <span class="text-6xl font-semibold">Our Values</span>
+            <div class="flex flex-col py-4 gap-3">
+                <img class="rounded-full border-8 border-black aspect-square max-w-72 mx-auto"
+                    src="{{ url('/images/gfs_main_logo.jpg') }}" alt="gfs_main_logo" />
+                <span class="text-2xl">We believe in one thing - <b>Eat Well, Live Better</b>
+                </span>
+                <span class="text-2xl">So, we promise to bring you only <b> Food Made Real</b>.</span>
+                <span class="text-2xl">Every day, we strive to curate healthy bowls which are delicious and
+                    nutritious to
+                    help improve your overall health and well-being.</span>
             </div>
         </div>
-        <div class="basis-1/2">
-            <div class="py-4 mx-1 flex flex-col space-y-3">
-                <div class="basis-1/2">
-                    <span class="text-6xl font-semibold">Our Vision</span>
-                    <div class="flex flex-row items-center space-x-6 py-4">
-                        <img class="aspect-square min-w-72 max-w-72"
-                        src="{{ url('/images/vision.png') }}" />
-                        <span class="text-2xl items-center">Our local community sees
-                            a significant improvement in their
-                            physical, mental health & well-being.
-                        </span>
-                    </div>
+        <div class="flex flex-col gap-5">
+            <div class="basis-1/2">
+                <span class="text-6xl font-semibold">Our Vision</span>
+                <div class="flex flex-row items-center gap-6 py-4">
+                    <img class="aspect-square max-w-72" src="{{ url('/images/vision.png') }}" />
+                    <span class="text-2xl items-center">Our local community sees
+                        a significant improvement in their
+                        physical, mental health & well-being.
+                    </span>
                 </div>
-                <div class="basis-1/2">
-                    <span class="text-6xl font-semibold">Our Mission</span>
-                    <div class="flex flex-row items-center space-x-6 py-4">
-                        <span class="text-2xl items-center">To establish a one-stop centre
-                            in your neighbourhood
-                            that provides healthy fast food, fitness training and mental health services.
-                        </span>
-                        <img class="aspect-square min-w-72 max-w-72"
-                        src="{{ url('/images/mission.png') }}" />
-                    </div>
+            </div>
+            <div class="basis-1/2">
+                <span class="text-6xl font-semibold">Our Mission</span>
+                <div class="flex flex-row items-center gap-6 py-4">
+                    <span class="text-2xl items-center">To establish a one-stop centre
+                        in your neighbourhood
+                        that provides healthy fast food, fitness training and mental health services.
+                    </span>
+                    <img class="aspect-square max-w-72" src="{{ url('/images/mission.png') }}" />
                 </div>
             </div>
         </div>
@@ -63,7 +57,7 @@
     <div class="px-14 flex flex-col">
         <div class="basis-1/2 mx-1">
             <div class="py-4">
-                <span class="text-6xl font-semibold">Our Journey</span>
+                <span class="text-5xl font-semibold">Our Journey</span>
                 <div class="py-4">
                     <div class="mx-70 border-8 border-black rounded-lg">
                         <div class="grid grid-cols-2 md:grid-cols-4 gap-4 items-center">
