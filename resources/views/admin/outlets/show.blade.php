@@ -60,7 +60,7 @@
                             {{ trans('cruds.outlet.fields.embed_map_url') }}
                         </th>
                         <td>
-                            {{ $outlet->embed_map_url }}
+                            {!! $outlet->embed_map_url !!}
                         </td>
                     </tr>
                     <tr>
@@ -70,7 +70,7 @@
                         <td>
                             @if($outlet->photo)
                                 <a href="{{ $outlet->photo->getUrl() }}" target="_blank" style="display: inline-block">
-                                    <img src="{{ $outlet->photo->getUrl('thumb') }}">
+                                    <img src="{{ $outlet->photo->getUrl() }}">
                                 </a>
                             @endif
                         </td>

@@ -22,34 +22,33 @@
             <span class="text-6xl font-semibold">Our Outlets</span>
         </div>
         <div class="py-4 grid gap-10 lg:grid-cols-2 lg:gap-5">
-            <div class="grid gap-5 lg:grid-cols-2">
-                <div class="min-w-44 max-w-64 basis-2/5 self-center">
-                    <img class="rounded-full border-8 border-black aspect-square" src="/images/outlet_imgs/outlet1.png" />
+            @foreach($outlets as $key => $outlet)
+                <div class="grid gap-5 lg:grid-cols-2">
+                    <div class="min-w-44 max-w-64 basis-2/5 self-center">
+                        @if($outlet->photo)
+                            <img class="rounded-full border-8 border-black aspect-square" src="{{ $outlet->photo->getUrl() }}" />
+                        @else
+                            <img class="rounded-full border-8 border-black aspect-square" src=""/>
+                        @endif
+                    </div>
+                    <div class="flex flex-col basis-3/5">
+                        <div class="text-2xl items-center font-bold">{{ $outlet->name }}</div>
+                        <span class="text-md items-center mt-2">
+                            <div>
+                                {{ $outlet->address }}
+                            </div>
+                            <div>
+                                {{ $outlet->business_hour }}
+                            </div>
+                            <div>
+                                {{ $outlet->contact_no }}
+                            </div>
+                        </span>
+                        {!! $outlet->embed_map_url !!}
+                    </div>
                 </div>
-                <div class="flex flex-col basis-3/5">
-                    <div class="text-2xl items-center font-bold">Guilt Free Society</div>
-                    <span class="text-md items-center mt-2">
-                        <div>
-                            Lot 5, 1st floor
-                            block A, Lorong Lintas Square
-                            88300 Kota Kinabalu
-                        </div>
-                        <div>
-                            11am-8.30pm daily
-                        </div>
-                        <div>
-                            011-2057 3293
-                        </div>
-                    </span>
-                    <iframe
-                        class="w-full mt-2"
-                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3968.3418119373905!2d116.09006500000001!3d5.947547399999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x323b6952594e0793%3A0x9c25d7ee285985bc!2sGuilt%20Free%20Society%20KK!5e0!3m2!1sen!2smy!4v1710253879874!5m2!1sen!2smy"
-                        width="360" height="240" style="border:0;" allowfullscreen="" loading="lazy"
-                        referrerpolicy="no-referrer-when-downgrade">
-                    </iframe>
-                </div>
-            </div>
-            <div class="grid gap-5 lg:grid-cols-2">
+            @endforeach
+            {{-- <div class="grid gap-5 lg:grid-cols-2">
                 <div class="min-w-44 max-w-64 basis-2/5 self-center">
                     <img class="rounded-full border-8 border-black aspect-square" src="/images/outlet_imgs/outlet2.png" />
                 </div>
@@ -74,7 +73,7 @@
                         referrerpolicy="no-referrer-when-downgrade">
                     </iframe>
                 </div>
-            </div>
+            </div> --}}
         </div>
         <div class="flex flex-col">
             <div class="basis-1/2 mx-1">

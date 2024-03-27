@@ -60,6 +60,9 @@
                 @endif
                 <span class="help-block">{{ trans('cruds.outlet.fields.embed_map_url_helper') }}</span>
             </div>
+            <div class="form-group" id="previewMap">
+                {!! $outlet->embed_map_url !!}
+            </div>
             <div class="form-group">
                 <label for="photo">{{ trans('cruds.outlet.fields.photo') }}</label>
                 <div class="needsclick dropzone {{ $errors->has('photo') ? 'is-invalid' : '' }}" id="photo-dropzone">

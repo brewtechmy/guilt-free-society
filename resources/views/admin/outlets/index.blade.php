@@ -37,9 +37,9 @@
                         <th>
                             {{ trans('cruds.outlet.fields.contact_no') }}
                         </th>
-                        <th>
+                        {{-- <th>
                             {{ trans('cruds.outlet.fields.embed_map_url') }}
-                        </th>
+                        </th> --}}
                         <th>
                             {{ trans('cruds.outlet.fields.photo') }}
                         </th>
@@ -47,7 +47,7 @@
                             &nbsp;
                         </th>
                     </tr>
-                    <tr>
+                    {{-- <tr>
                         <td>
                         </td>
                         <td>
@@ -69,7 +69,7 @@
                         </td>
                         <td>
                         </td>
-                    </tr>
+                    </tr> --}}
                 </thead>
                 <tbody>
                     @foreach($outlets as $key => $outlet)
@@ -92,9 +92,9 @@
                             <td>
                                 {{ $outlet->contact_no ?? '' }}
                             </td>
-                            <td>
+                            {{-- <td>
                                 {{ $outlet->embed_map_url ?? '' }}
-                            </td>
+                            </td> --}}
                             <td>
                                 @if($outlet->photo)
                                     <a href="{{ $outlet->photo->getUrl() }}" target="_blank" style="display: inline-block">
