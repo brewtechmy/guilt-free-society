@@ -247,4 +247,18 @@ return [
             'contact_no_helper'    => ' ',
         ],
     ],
+    'section' => [
+        'title'          => 'Sections',
+        'title_singular' => 'section',
+        'fields'         => [
+            'number_bowl_sold' => 'Number of Bowl(s) Sold',
+            'number_bowl_sold_helper' => ' ',
+            'created_at'         => 'Created at',
+            'created_at_helper'  => ' ',
+            'updated_at'         => 'Updated At',
+            'updated_at_helper'  => ' ',
+            'deleted_at'         => 'Deleted At',
+            'deleted_at_helper'  => ' ',
+        ],
+    ],
 ];

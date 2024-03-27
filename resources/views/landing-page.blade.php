@@ -12,8 +12,8 @@
 </head>
 
 <body class="hover:cursor-pointer" onclick="location.href='{{ route('byob') }}';">
-    <div class="h-dvh">
-        <div class="h-3/4 bg-black text-center flex flex-col justify-center">
+    <div class="h-dvh {{ count($advertisements) == 0 ? 'bg-black' : '' }}">
+        <div class="{{ count($advertisements) > 0 ? 'h-3/4 bg-black' : '' }} text-center flex flex-col justify-center">
             <img class="max-h-[60%] max-w-[75%] mx-auto" src="{{ url('/images/gfs_main_logo.jpg') }}"
                 alt="gfs_main_logo">
             <div class="tick w-fit mx-auto text-2xl sm:text-3xl" data-value="{{ $soldCount - 10 }}"
@@ -28,30 +28,33 @@
             </div>
         </div>
 
-        <div class="h-1/4 flex overflow-x-auto" id="carousel">
-            @foreach ($advertisements as $key => $ads)
-                <img src="{{ $ads->photo->getUrl() }}" alt="{{ $ads->photo->name }}">
-            @endforeach
-        </div>
+        @if (count($advertisements) > 0)
+            <div class="h-1/4 flex overflow-x-auto" id="carousel">
+                @foreach ($advertisements as $key => $ads)
+                    <img src="{{ $ads->photo->getUrl() }}" alt="{{ $ads->photo->name }}">
+                @endforeach
+            </div>
+        @endif
     </div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.2/min/tiny-slider.js"></script>
     <script src="https://unpkg.com/@pqina/flip/dist/flip.min.js"></script>
     <script>
-        var slider = tns({
-            container: '#carousel',
-            items: 1,
-            controls: false,
-            nav: false,
-            autoplay: true,
-            autoplayTimeout: 3500,
-            autoplayButtonOutput: false,
-            responsive: {
-                640: {
-                    items: 2
-                },
-            }
-        });
+        if (<?php echo $advertisements; ?>.length > 0)
+            var slider = tns({
+                container: '#carousel',
+                items: 1,
+                controls: false,
+                nav: false,
+                autoplay: true,
+                autoplayTimeout: 3500,
+                autoplayButtonOutput: false,
+                responsive: {
+                    640: {
+                        items: 2
+                    },
+                }
+            });
 
 
         function setupFlip(tick) {

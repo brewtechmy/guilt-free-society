@@ -69,6 +69,11 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.', 'namespace' => 'Admin', 'mi
     Route::post('outlets/media', 'OutletController@storeMedia')->name('outlets.storeMedia');
     Route::post('outlets/ckmedia', 'OutletController@storeCKEditorImages')->name('outlets.storeCKEditorImages');
     Route::resource('outlets', 'OutletController');
+
+    Route::resource('sections', 'SectionController')->only([
+        'index'
+    ]);;
+    Route::put('sections', 'SectionController@update')->name('sections.update');
 });
 Route::group(['prefix' => 'profile', 'as' => 'profile.', 'namespace' => 'Auth', 'middleware' => ['auth']], function () {
     // Change password
