@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Advertisement;
 use Illuminate\Http\Request;
 
 class MenuController extends Controller
@@ -23,6 +24,7 @@ class MenuController extends Controller
      */
     public function index()
     {
-        return view('byob');
+        $advertisements = Advertisement::with(['media'])->orderBy('position')->get();
+        return view('byob', compact('advertisements'));
     }
 }
