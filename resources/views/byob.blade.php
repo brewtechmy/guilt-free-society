@@ -76,7 +76,7 @@
     ];
 @endphp
     <div class="px-14 relative">
-        <div class="fixed right-0 px-20 mt-10 flex flex-col items-center">
+        <div class="fixed right-0 bottom-5 px-20 mt-10 flex flex-col items-center">
             <span class="font-bold text-3xl text-white bg-black px-4 mb-3 py-1">Click me</span>
             <img class="max-h-36 " src="https://cdn-icons-png.freepik.com/512/5223/5223103.png" />
         </div>
