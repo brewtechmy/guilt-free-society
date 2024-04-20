@@ -11,9 +11,9 @@
     <link href="https://unpkg.com/@pqina/flip/dist/flip.min.css" rel="stylesheet">
 </head>
 
-<body class="hover:cursor-pointer" onclick="location.href='{{ route('byob') }}';">
-    <div class="h-dvh {{ count($advertisements) == 0 ? 'bg-black' : '' }}">
-        <div class="{{ count($advertisements) > 0 ? 'h-3/4 bg-black' : '' }} text-center flex flex-col justify-center">
+<body class="hover:cursor-pointer bg-black" onclick="location.href='{{ route('byob') }}';">
+    <div class="h-dvh">
+        <div class="{{ count($advertisements) > 0 ? 'h-3/4' : '' }} text-center flex flex-col justify-center">
             <img class="max-h-[60%] max-w-[75%] mx-auto" src="{{ url('/images/gfs_main_logo.jpg') }}"
                 alt="gfs_main_logo">
                 <div class="tick w-fit mx-auto text-2xl sm:text-3xl" data-value="{{ $soldCount - 10 > 0 ? $soldCount - 10 : 0 }}"
@@ -29,7 +29,7 @@
         </div>
 
         @if (count($advertisements) > 0)
-            <div class="h-1/4 flex overflow-x-auto" id="carousel">
+            <div class="flex overflow-x-auto" id="carousel">
                 @foreach ($advertisements as $key => $ads)
                     <img src="{{ $ads->photo->getUrl() }}" alt="{{ $ads->photo->name }}">
                 @endforeach

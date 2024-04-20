@@ -4,6 +4,8 @@
 
 #carousel-ow {
   height: 25%;
+  max-width: 1080px;
+  margin: auto;
 }
 
 #carousel-mw, #carousel-iw, #carousel {
