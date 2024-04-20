@@ -82,7 +82,7 @@
 
     <main class="max-w-[100vw]">
         <div class="mx-auto max-w-[1260px]">
-            <div class="sm:mx-12 bg-slate-50/45">
+            <div class="bg-slate-50/45">
                 @yield('content')
             </div>
         </div>
