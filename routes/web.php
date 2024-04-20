@@ -80,7 +80,8 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.', 'namespace' => 'Admin', 'mi
     Route::post('journeys/ckmedia', 'JourneyController@storeCKEditorImages')->name('journeys.storeCKEditorImages');
     Route::resource('journeys', 'JourneyController')->only([
         'index',
-        'destroy'
+        'destroy',
+        'store'
     ]);
 });
 Route::group(['prefix' => 'profile', 'as' => 'profile.', 'namespace' => 'Auth', 'middleware' => ['auth']], function () {
