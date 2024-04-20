@@ -269,4 +269,12 @@ return [
             'deleted_at_helper'  => ' ',
         ],
     ],
+    'journey' => [
+        'title' => 'Our Journey',
+        'title_singular' => 'Journey Image',
+        'fields' => [
+            'id' => 'ID',
+            'image' => 'Image',
+        ]
+    ]
 ];

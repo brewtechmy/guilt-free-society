@@ -72,8 +72,16 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.', 'namespace' => 'Admin', 'mi
 
     Route::resource('sections', 'SectionController')->only([
         'index'
-    ]);;
+    ]);
     Route::put('sections', 'SectionController@update')->name('sections.update');
+
+    Route::delete('journeys/destroy', 'JourneyController@massDestroy')->name('journeys.massDestroy');
+    Route::post('journeys/media', 'JourneyController@storeMedia')->name('journeys.storeMedia');
+    Route::post('journeys/ckmedia', 'JourneyController@storeCKEditorImages')->name('journeys.storeCKEditorImages');
+    Route::resource('journeys', 'JourneyController')->only([
+        'index',
+        'destroy'
+    ]);
 });
 Route::group(['prefix' => 'profile', 'as' => 'profile.', 'namespace' => 'Auth', 'middleware' => ['auth']], function () {
     // Change password
