@@ -82,7 +82,10 @@
                     <div class="py-4">
                         <div class="mx-70 border-8 border-black">
                             <div>
-                                Placeholder
+                                <iframe
+                                src="{{$link}}?embedded=true"
+                                width="900" height="606" frameborder="0" marginheight="0"
+                                marginwidth="0">Loading…</iframe>
                             </div>
                         </div>
                     </div>

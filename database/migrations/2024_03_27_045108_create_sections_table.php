@@ -15,14 +15,40 @@ return new class extends Migration
         Schema::create('sections', function (Blueprint $table) {
             $table->id();
             $table->string('key');
-            $table->string('value');
+            $table->longText('value');
+            $table->string('input_type');
             $table->timestamps();
             $table->softDeletes();
         });
 
         Section::insert([
             'key' => 'number_bowl_sold',
-            'value' => '0'
+            'value' => '0',
+            'input_type' => 'number'
+        ]);
+
+        Section::insert([
+            'key' => 'our_vision_text',
+            'value' => '',
+            'input_type' => 'ckeditor'
+        ]);
+
+        Section::insert([
+            'key' => 'our_values_text',
+            'value' => '',
+            'input_type' => 'ckeditor'
+        ]);
+
+        Section::insert([
+            'key' => 'our_mission_text',
+            'value' => '',
+            'input_type' => 'ckeditor'
+        ]);
+
+        Section::insert([
+            'key' => 'help_us_improve_link',
+            'value' => '',
+            'input_type' => 'text'
         ]);
     }
 

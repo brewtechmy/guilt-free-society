@@ -23,12 +23,9 @@
             <div class="flex flex-col py-4 gap-3">
                 <img class="rounded-full border-8 border-black aspect-square max-w-72 mx-auto"
                     src="{{ url('/images/gfs_main_logo.jpg') }}" alt="gfs_main_logo" />
-                <span class="text-2xl">We believe in one thing - <b>Eat Well, Live Better</b>
-                </span>
-                <span class="text-2xl">So, we promise to bring you only <b> Food Made Real</b>.</span>
-                <span class="text-2xl">Every day, we strive to curate healthy bowls which are delicious and
-                    nutritious to
-                    help improve your overall health and well-being.</span>
+                    <span class="text-2xl">
+                        {!! $texts['our_values_text']['value'] !!}
+                    </span>
             </div>
         </div>
         <div class="flex flex-col gap-5">
@@ -36,18 +33,14 @@
                 <span class="text-6xl font-semibold">Our Vision</span>
                 <div class="flex flex-row items-center gap-6 py-4">
                     <img class="aspect-square max-w-72" src="{{ url('/images/vision.png') }}" />
-                    <span class="text-2xl items-center">Our local community sees
-                        a significant improvement in their
-                        physical, mental health & well-being.
+                    <span class="text-2xl items-center">{!! $texts['our_vision_text']['value'] !!}
                     </span>
                 </div>
             </div>
             <div class="basis-1/2">
                 <span class="text-6xl font-semibold">Our Mission</span>
                 <div class="flex flex-row items-center gap-6 py-4">
-                    <span class="text-2xl items-center">To establish a one-stop centre
-                        in your neighbourhood
-                        that provides healthy fast food, fitness training and mental health services.
+                    <span class="text-2xl items-center">{!! $texts['our_mission_text']['value'] !!}
                     </span>
                     <img class="aspect-square max-w-72" src="{{ url('/images/mission.png') }}" />
                 </div>
