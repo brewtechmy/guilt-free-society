@@ -8,6 +8,14 @@
   margin: auto;
 }
 
+#menuCarousel-ow {
+  max-width: 300px;
+}
+
+.tns-visually-hidden {
+  display: none;
+}
+
 #carousel-mw, #carousel-iw, #carousel {
   height: 100%;
 }

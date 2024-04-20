@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     @vite('resources/css/app.css')
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.4/tiny-slider.css">
     <title>@yield('title', 'Your Laravel App')</title>
 </head>
 
@@ -49,13 +50,13 @@
                             Contact Us
                         </a>
                         @if (count($advertisements) > 0)
-                            <div class="shrink-0 w-[250px]">
-                                <div class="h-[120px] flex overflow-x-auto" style="overflow:hidden"
-                                    id="menuCarousel">
-                                    @foreach ($advertisements as $key => $ads)
-                                    <img class="min-w-[250px]" src="{{ $ads->photo->getUrl() }}" alt="{{ $ads->photo->name }}">
-                                    @endforeach
-                                </div>
+                            <div class="
+                                h-[120px]
+                                 flex overflow-x-auto"
+                                style="overflow:hidden" id="menuCarousel">
+                                @foreach ($advertisements as $key => $ads)
+                                    <img src="{{ $ads->photo->getUrl() }}" alt="{{ $ads->photo->name }}">
+                                @endforeach
                             </div>
                         @endif
                     </div>
