@@ -50,10 +50,7 @@
                             Contact Us
                         </a>
                         @if (count($advertisements) > 0)
-                            <div class="
-                                h-[120px]
-                                 flex overflow-x-auto"
-                                style="overflow:hidden" id="menuCarousel">
+                            <div class="h-[120px] flex" id="menuCarousel">
                                 @foreach ($advertisements as $key => $ads)
                                     <img src="{{ $ads->photo->getUrl() }}" alt="{{ $ads->photo->name }}">
                                 @endforeach
