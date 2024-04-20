@@ -85,8 +85,8 @@ Route::group(['prefix' => 'profile', 'as' => 'profile.', 'namespace' => 'Auth', 
     }
 });
 
-Route::get('/byob', 'MenuController@index')->name('byob')->middleware([]);
-Route::get('/story', 'StoryController')->name('story')->middleware([]);
+Route::get('/byob', 'MenuController@index')->name('byob');
+Route::get('/story', 'StoryController')->name('story');
 Route::get('/welcome', 'LandingPageController')->name('landing-page');
-Route::get('/contact-us', 'ContactController')->name('contact-us')->middleware([]);;
+Route::get('/contact-us', 'ContactController')->name('contact-us');
 Route::get('/join-us', 'JoinUsController')->name('join-us');
