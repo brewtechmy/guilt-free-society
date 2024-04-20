@@ -16,7 +16,7 @@
         <div class="{{ count($advertisements) > 0 ? 'h-3/4 bg-black' : '' }} text-center flex flex-col justify-center">
             <img class="max-h-[60%] max-w-[75%] mx-auto" src="{{ url('/images/gfs_main_logo.jpg') }}"
                 alt="gfs_main_logo">
-            <div class="tick w-fit mx-auto text-2xl sm:text-3xl" data-value="{{ $soldCount - 10 }}"
+                <div class="tick w-fit mx-auto text-2xl sm:text-3xl" data-value="{{ $soldCount - 10 > 0 ? $soldCount - 10 : 0 }}"
                 data-did-init="setupFlip">
                 <div data-repeat="true" aria-hidden="true">
                     <span data-view="flip"></span>
