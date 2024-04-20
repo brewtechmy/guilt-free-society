@@ -23,9 +23,9 @@
             <div class="flex flex-col py-4 gap-3">
                 <img class="rounded-full border-8 border-black aspect-square max-w-[55vw] mx-auto sm:max-w-72"
                     src="{{ url('/images/gfs_main_logo.jpg') }}" alt="gfs_main_logo" />
-                    <span class="text-2xl text-justify">
-                        {!! $texts['our_values_text']['value'] !!}
-                    </span>
+                <span class="text-2xl text-justify">
+                    {!! $texts['our_values_text']['value'] !!}
+                </span>
             </div>
         </div>
         <div class="flex flex-col gap-10">
@@ -47,41 +47,29 @@
             </div>
         </div>
     </div>
-    <div class="px-5 sm:px-14 flex flex-col pt-5">
-        <div class="text-6xl font-semibold text-center md:text-left">Our Journey</div>
-        <div class="py-4">
-            <div class="mx-70 border-8 border-black rounded-lg">
-                <div class="grid grid-cols-2 md:grid-cols-4 gap-4 items-center">
-                    <div class="grid gap-4">
-                        @foreach (array_slice($arr, 0, 3) as $v)
-                            <div>
-                                <img class="h-auto max-w-full rounded-lg" src="{{ asset($v) }}" alt="">
-                            </div>
-                        @endforeach
-                    </div>
-                    <div class="grid gap-4">
-                        @foreach (array_slice($arr, 3, 3) as $v)
-                            <div>
-                                <img class="h-auto max-w-full rounded-lg" src="{{ asset($v) }}" alt="">
-                            </div>
-                        @endforeach
-                    </div>
-                    <div class="grid gap-4">
-                        @foreach (array_slice($arr, 6, 3) as $v)
-                            <div>
-                                <img class="h-auto max-w-full rounded-lg" src="{{ asset($v) }}" alt="">
-                            </div>
-                        @endforeach
-                    </div>
-                    <div class="grid gap-4">
-                        @foreach (array_slice($arr, 9, 3) as $v)
-                            <div>
-                                <img class="h-auto max-w-full rounded-lg" src="{{ asset($v) }}" alt="">
-                            </div>
-                        @endforeach
-                    </div>
+    @if (count($journeys) > 0)
+        <div class="px-5 sm:px-14 flex flex-col pt-5">
+            <div class="text-6xl font-semibold text-center md:text-left">Our Journey</div>
+            <div class="py-4">
+                <div class="mx-70 border-8 border-black rounded-lg">
+                    <div class="grid grid-cols-2 md:grid-cols-4 gap-4 items-center">
+                        @for ($i = 0; $i < count($journeys); $i = $i + 3)
+                            <div class="grid gap-4">
+                                @for ($j = $i; $j < $i + 3; $j++)
+                                    <div>
+                                        @if (isset($journeys[$j]))
+                                            <img class="h-auto max-w-full rounded-lg" src="{{ $journeys[$j]->getUrl() }}"
+                                                alt="">
+                                        @else
+                                        @break
+                                    @endif
+                                </div>
+                            @endfor
+                        </div>
+                    @endfor
                 </div>
             </div>
         </div>
     </div>
+@endif
 @endsection
