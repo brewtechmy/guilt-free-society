@@ -40,7 +40,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.2/min/tiny-slider.js"></script>
     <script src="https://unpkg.com/@pqina/flip/dist/flip.min.js"></script>
     <script>
-        if (<?php echo $advertisements; ?>.length > 0)
+        @if (count($advertisements) > 0)
             var slider = tns({
                 container: '#carousel',
                 items: 1,
@@ -55,6 +55,7 @@
                     },
                 }
             });
+        @endif
 
 
         function setupFlip(tick) {

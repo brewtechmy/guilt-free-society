@@ -62,7 +62,7 @@
 
                     <script src="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.2/min/tiny-slider.js"></script>
                     <script>
-                        if (<?php echo $advertisements; ?>.length > 0)
+                        @if (count($advertisements) > 0)
                             var slider = tns({
                                 container: '#menuCarousel',
                                 items: 1,
@@ -72,6 +72,7 @@
                                 autoplayTimeout: 3500,
                                 autoplayButtonOutput: false,
                             });
+                        @endif
                     </script>
                 </div>
             </div>
