@@ -22,10 +22,10 @@
             <span class="text-6xl font-semibold">Our Outlets</span>
         </div>
         <div class="py-4 grid gap-10 lg:grid-cols-2 lg:gap-5">
-            @foreach($outlets as $key => $outlet)
+            @foreach ($outlets as $key => $outlet)
                 <div class="grid gap-5 lg:grid-cols-2">
                     <div class="min-w-44 max-w-64 basis-2/5 self-center">
-                        @if($outlet->photo)
+                        @if ($outlet->photo)
                             <img class="rounded-full border-8 border-black aspect-square" src="{{ $outlet->photo->getUrl() }}" />
                         @else
                             <img class="rounded-full border-8 border-black aspect-square" src=""/>
@@ -80,13 +80,12 @@
                 <div class="py-4">
                     <span class="text-6xl font-semibold">Help Us Improve</span>
                     <div class="py-4">
-                        <div class="mx-70 border-8 border-black">
-                            <div>
-                                <iframe
-                                src="{{$link}}?embedded=true"
+                        <div class="mx-70 border-8 rounded-lg border-black">
+                            <iframe
+                                class="w-full"
+                                src="{{ $link }}?embedded=true"
                                 width="900" height="606" frameborder="0" marginheight="0"
                                 marginwidth="0">Loading…</iframe>
-                            </div>
                         </div>
                     </div>
                 </div>
