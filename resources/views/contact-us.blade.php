@@ -19,7 +19,7 @@
     @endphp
     <div class="sm:px-14 relative">
         <div class="pt-5 text-center md:text-left">
-            <span class="text-6xl font-semibold ">Our Outlets</span>
+            <span class="text-6xl font-semibold">Our Outlets</span>
         </div>
         <div class="py-4 grid gap-10 lg:grid-cols-2 lg:gap-x-5 lg:gap-y-10">
             @foreach ($outlets as $key => $outlet)
@@ -32,8 +32,8 @@
                         @endif
                     </div>
                     <div class="flex flex-col basis-3/5 text-center lg:text-left gap-3">
-                        <div class="text-2xl items-center font-bold">{{ $outlet->name }}</div>
-                        <span class="text-md items-center">
+                        <div class="text-2xl items-center font-bold px-2 md:px-0">{{ $outlet->name }}</div>
+                        <span class="text-md items-center px-2 md:px-0">
                             <div>
                                 {{ $outlet->address }}
                             </div>
@@ -80,7 +80,9 @@
         <div class="flex flex-col mt-2">
             <div class="basis-1/2">
                 <div class="py-4">
-                    <span class="text-6xl font-semibold">Help Us Improve</span>
+                    <div class="text-center md:text-left">
+                        <span class="text-6xl font-semibold ">Help Us Improve</span>
+                    </div>
                     <div class="py-4">
                         <div class="mx-70 border-8 rounded-lg border-black">
                             <iframe
