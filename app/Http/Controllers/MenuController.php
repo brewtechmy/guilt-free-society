@@ -24,7 +24,6 @@ class MenuController extends Controller
      */
     public function index()
     {
-        $advertisements = Advertisement::with(['media'])->orderBy('position')->get();
-        return view('byob', compact('advertisements'));
+        return view('byob');
     }
 }
