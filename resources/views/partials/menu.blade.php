@@ -56,7 +56,7 @@
                                     </a>
                                 </li>
                             @endcan --}}
-                            @can('content_page_access')
+                            {{-- @can('content_page_access')
                                 <li class="nav-item">
                                     <a href="{{ route("admin.content-pages.index") }}" class="nav-link {{ request()->is("admin/content-pages") || request()->is("admin/content-pages/*") ? "active" : "" }}">
                                         <i class="fa-fw nav-icon fas fa-file">
@@ -67,7 +67,7 @@
                                         </p>
                                     </a>
                                 </li>
-                            @endcan
+                            @endcan --}}
                             @can('advertisement_access')
                                 <li class="nav-item">
                                     <a href="{{ route("admin.advertisements.index") }}" class="nav-link {{ request()->is("admin/advertisements") || request()->is("admin/advertisements/*") ? "active" : "" }}">
