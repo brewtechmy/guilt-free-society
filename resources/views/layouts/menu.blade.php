@@ -33,7 +33,7 @@
                             class="flex-1 p-5 flex items-center justify-center hover:cursor-pointer {{ request()->is('byob') ? 'bg-[#e2fbe2] text-black' : '' }}">
                             Build Your Own Bowl
                         </a>
-                        <a class="flex-1 p-5 flex items-center justify-center hover:cursor-pointer">
+                        <a href="{{ route('menu') }}" class="flex-1 p-5 flex items-center justify-center hover:cursor-pointer {{ request()->is("menu") ? "bg-[#e2fbe2] text-black" : "" }}">
                             Menu
                         </a>
                         <a href="{{ route('story') }}"

@@ -72,6 +72,111 @@
                     'kcal' => 696
                 ]
             ]
+        ],
+        [
+            'title' => 'Protein',
+            'list' => [
+                [
+                    'name' => 'Chicken',
+                    'img' => 'https://www.wholesomeyum.com/wp-content/uploads/2021/12/wholesomeyum-Air-Fryer-Chicken-Breast-Recipe-32.jpg',
+                    'kcal' => 246
+                ],
+                [
+                    'name' => 'Fish',
+                    'img' => 'https://kitchenatics.com/wp-content/uploads/2020/06/Grilled-Fish-Fillet-with-BBQ-Vegetables-500x500.jpg',
+                    'kcal' => 345
+                ],
+                [
+                    'name' => 'Beef',
+                    'img' => 'https://www.simplyrecipes.com/thmb/0viHgWhjDdQ2caxPC6xozUvloQA=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/__opt__aboutcom__coeus__resources__content_migration__simply_recipes__uploads__2018__06__Grilled-Steak-LEAD-HORIZONTAL-33b562e0f6ce4a30b42a0ec603005569.jpg',
+                    'kcal' => 233
+                ],
+                [
+                    'name' => 'Shrimp',
+                    'img' => 'https://www.acouplecooks.com/wp-content/uploads/2018/09/Grilled-Shrimp-006.jpg',
+                    'kcal' => 231
+                ],
+                [
+                    'name' => 'Egg',
+                    'img' => 'https://assets.bonappetit.com/photos/58c95c88aafcc51ad9a32bc9/3:2/w_4998,h_3332,c_limit/jammy-soft-boiled-eggs.jpg',
+                    'kcal' => 696
+                ],
+                [
+                    'name' => 'Protein Powder',
+                    'img' => 'https://thedaily9.in/wp-content/uploads/2023/01/Protein-shakes.jpg',
+                    'kcal' => 696
+                ]
+            ]
+        ],
+        [
+            'title' => 'Protein',
+            'list' => [
+                [
+                    'name' => 'Chicken',
+                    'img' => 'https://www.wholesomeyum.com/wp-content/uploads/2021/12/wholesomeyum-Air-Fryer-Chicken-Breast-Recipe-32.jpg',
+                    'kcal' => 246
+                ],
+                [
+                    'name' => 'Fish',
+                    'img' => 'https://kitchenatics.com/wp-content/uploads/2020/06/Grilled-Fish-Fillet-with-BBQ-Vegetables-500x500.jpg',
+                    'kcal' => 345
+                ],
+                [
+                    'name' => 'Beef',
+                    'img' => 'https://www.simplyrecipes.com/thmb/0viHgWhjDdQ2caxPC6xozUvloQA=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/__opt__aboutcom__coeus__resources__content_migration__simply_recipes__uploads__2018__06__Grilled-Steak-LEAD-HORIZONTAL-33b562e0f6ce4a30b42a0ec603005569.jpg',
+                    'kcal' => 233
+                ],
+                [
+                    'name' => 'Shrimp',
+                    'img' => 'https://www.acouplecooks.com/wp-content/uploads/2018/09/Grilled-Shrimp-006.jpg',
+                    'kcal' => 231
+                ],
+                [
+                    'name' => 'Egg',
+                    'img' => 'https://assets.bonappetit.com/photos/58c95c88aafcc51ad9a32bc9/3:2/w_4998,h_3332,c_limit/jammy-soft-boiled-eggs.jpg',
+                    'kcal' => 696
+                ],
+                [
+                    'name' => 'Protein Powder',
+                    'img' => 'https://thedaily9.in/wp-content/uploads/2023/01/Protein-shakes.jpg',
+                    'kcal' => 696
+                ]
+            ]
+        ],
+        [
+            'title' => 'Protein',
+            'list' => [
+                [
+                    'name' => 'Chicken',
+                    'img' => 'https://www.wholesomeyum.com/wp-content/uploads/2021/12/wholesomeyum-Air-Fryer-Chicken-Breast-Recipe-32.jpg',
+                    'kcal' => 246
+                ],
+                [
+                    'name' => 'Fish',
+                    'img' => 'https://kitchenatics.com/wp-content/uploads/2020/06/Grilled-Fish-Fillet-with-BBQ-Vegetables-500x500.jpg',
+                    'kcal' => 345
+                ],
+                [
+                    'name' => 'Beef',
+                    'img' => 'https://www.simplyrecipes.com/thmb/0viHgWhjDdQ2caxPC6xozUvloQA=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/__opt__aboutcom__coeus__resources__content_migration__simply_recipes__uploads__2018__06__Grilled-Steak-LEAD-HORIZONTAL-33b562e0f6ce4a30b42a0ec603005569.jpg',
+                    'kcal' => 233
+                ],
+                [
+                    'name' => 'Shrimp',
+                    'img' => 'https://www.acouplecooks.com/wp-content/uploads/2018/09/Grilled-Shrimp-006.jpg',
+                    'kcal' => 231
+                ],
+                [
+                    'name' => 'Egg',
+                    'img' => 'https://assets.bonappetit.com/photos/58c95c88aafcc51ad9a32bc9/3:2/w_4998,h_3332,c_limit/jammy-soft-boiled-eggs.jpg',
+                    'kcal' => 696
+                ],
+                [
+                    'name' => 'Protein Powder',
+                    'img' => 'https://thedaily9.in/wp-content/uploads/2023/01/Protein-shakes.jpg',
+                    'kcal' => 696
+                ]
+            ]
         ]
     ];
 @endphp

@@ -26,4 +26,9 @@ class MenuController extends Controller
     {
         return view('byob');
     }
+
+    public function menu()
+    {
+        return view('menu');
+    }
 }
