@@ -21,10 +21,10 @@
         <div class="flex flex-row pt-5">
             <span class="text-6xl font-semibold">Our Outlets</span>
         </div>
-        <div class="py-4 grid gap-10 lg:grid-cols-2 lg:gap-5">
+        <div class="py-4 grid gap-10 lg:grid-cols-2 lg:gap-x-5 lg:gap-y-10">
             @foreach ($outlets as $key => $outlet)
                 <div class="grid gap-5 lg:grid-cols-2">
-                    <div class="min-w-44 max-w-64 basis-2/5 self-center">
+                    <div class="w-56 basis-2/5 self-center justify-self-center">
                         @if ($outlet->photo)
                             <img class="rounded-full border-8 border-black aspect-square" src="{{ $outlet->photo->getUrl() }}" />
                         @else
@@ -75,8 +75,8 @@
                 </div>
             </div> --}}
         </div>
-        <div class="flex flex-col">
-            <div class="basis-1/2 mx-1">
+        <div class="flex flex-col mt-2">
+            <div class="basis-1/2">
                 <div class="py-4">
                     <span class="text-6xl font-semibold">Help Us Improve</span>
                     <div class="py-4">
