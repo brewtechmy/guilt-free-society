@@ -58,6 +58,18 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.', 'namespace' => 'Admin', 'mi
     Route::post('products/ckmedia', 'ProductController@storeCKEditorImages')->name('products.storeCKEditorImages');
     Route::resource('products', 'ProductController');
 
+    // Ingredient Category
+    Route::delete('ingredient-categories/destroy', 'IngredientCategoryController@massDestroy')->name('ingredient-categories.massDestroy');
+    Route::post('ingredient-categories/media', 'IngredientCategoryController@storeMedia')->name('ingredient-categories.storeMedia');
+    Route::post('ingredient-categories/ckmedia', 'IngredientCategoryController@storeCKEditorImages')->name('ingredient-categories.storeCKEditorImages');
+    Route::resource('ingredient-categories', 'IngredientCategoryController');
+
+    // Ingredient
+    Route::delete('ingredients/destroy', 'IngredientController@massDestroy')->name('ingredients.massDestroy');
+    Route::post('ingredients/media', 'IngredientController@storeMedia')->name('ingredients.storeMedia');
+    Route::post('ingredients/ckmedia', 'IngredientController@storeCKEditorImages')->name('ingredients.storeCKEditorImages');
+    Route::resource('ingredients', 'IngredientController');
+
     // Advertisement
     Route::delete('advertisements/destroy', 'AdvertisementController@massDestroy')->name('advertisements.massDestroy');
     Route::post('advertisements/media', 'AdvertisementController@storeMedia')->name('advertisements.storeMedia');
