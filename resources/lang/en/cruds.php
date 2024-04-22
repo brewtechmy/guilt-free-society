@@ -326,5 +326,23 @@ return [
             'id' => 'ID',
             'image' => 'Image',
         ]
+    ],
+    'service' => [
+        'title'          => 'Services',
+        'title_singular' => 'Service',
+        'fields'         => [
+            'id'                   => 'ID',
+            'id_helper'            => ' ',
+            'description'                 => 'Description',
+            'description_helper'          => ' ',
+            'created_at'           => 'Created at',
+            'created_at_helper'    => ' ',
+            'updated_at'           => 'Updated at',
+            'updated_at_helper'    => ' ',
+            'deleted_at'           => 'Deleted at',
+            'deleted_at_helper'    => ' ',
+            'photo'                => 'Photo',
+            'photo_helper'         => ' ',
+        ],
     ]
 ];

@@ -112,6 +112,16 @@
                                     </p>
                                 </a>
                             </li>
+                            <li class="nav-item">
+                                <a href="{{ route("admin.services.index") }}" class="nav-link {{ request()->is("admin/services") || request()->is("admin/services/*") ? "active" : "" }}">
+                                    <i class="fa-fw nav-icon fas fa-image">
+
+                                    </i>
+                                    <p>
+                                        {{ trans('cruds.service.title') }}
+                                    </p>
+                                </a>
+                            </li>
                         </ul>
                     </li>
                 @endcan

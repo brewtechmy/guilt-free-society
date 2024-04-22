@@ -82,11 +82,13 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.', 'namespace' => 'Admin', 'mi
     Route::post('outlets/ckmedia', 'OutletController@storeCKEditorImages')->name('outlets.storeCKEditorImages');
     Route::resource('outlets', 'OutletController');
 
+    // Section
     Route::resource('sections', 'SectionController')->only([
         'index'
     ]);
     Route::put('sections', 'SectionController@update')->name('sections.update');
 
+    // Journey
     Route::delete('journeys/destroy', 'JourneyController@massDestroy')->name('journeys.massDestroy');
     Route::post('journeys/media', 'JourneyController@storeMedia')->name('journeys.storeMedia');
     Route::post('journeys/ckmedia', 'JourneyController@storeCKEditorImages')->name('journeys.storeCKEditorImages');
@@ -95,6 +97,12 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.', 'namespace' => 'Admin', 'mi
         'destroy',
         'store'
     ]);
+
+    // Our Services
+    Route::delete('services/destroy', 'ServiceController@massDestroy')->name('services.massDestroy');
+    Route::post('services/media', 'ServiceController@storeMedia')->name('services.storeMedia');
+    Route::post('services/ckmedia', 'ServiceController@storeCKEditorImages')->name('services.storeCKEditorImages');
+    Route::resource('services', 'ServiceController');
 });
 Route::group(['prefix' => 'profile', 'as' => 'profile.', 'namespace' => 'Auth', 'middleware' => ['auth']], function () {
     // Change password
