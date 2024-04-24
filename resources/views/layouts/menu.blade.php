@@ -31,18 +31,18 @@
                 <div class="h-[120px] hidden w-full grow text-white md:block md:w-auto" id="navbar-default">
                     <div class="h-full w-full flex text-center align-middle">
                         <a href="{{ route('byob') }}"
-                            class="flex-1 p-5 flex items-center justify-center hover:cursor-pointer {{ request()->is('byob') ? 'bg-[#e2fbe2] text-black' : '' }}">
+                            class="flex-1 p-4 flex items-center justify-center hover:cursor-pointer {{ request()->is('byob') ? 'bg-[#e2fbe2] text-black' : '' }}">
                             Build Your Own Bowl
                         </a>
-                        <a class="flex-1 p-5 flex items-center justify-center hover:cursor-pointer">
+                        <a class="flex-1 p-4 flex items-center justify-center hover:cursor-pointer">
                             Menu
                         </a>
                         <a href="{{ route('story') }}"
-                            class="flex-1 p-5 flex items-center justify-center hover:cursor-pointer {{ request()->is('story') ? 'bg-[#e2fbe2] text-black' : '' }}">
+                            class="flex-1 p-4 flex items-center justify-center hover:cursor-pointer {{ request()->is('story') ? 'bg-[#e2fbe2] text-black' : '' }}">
                             Our Story
                         </a>
                         <a href="{{ route('service') }}"
-                            class="flex-1 p-5 flex items-center justify-center hover:cursor-pointer {{ request()->is('service') ? 'bg-[#e2fbe2] text-black' : '' }}">
+                            class="flex-1 p-3 flex items-center justify-center hover:cursor-pointer {{ request()->is('service') ? 'bg-[#e2fbe2] text-black' : '' }}">
                             Our Service
                         </a>
                         <a href="{{ route('join-us') }}"
@@ -50,7 +50,7 @@
                             Join Us
                         </a>
                         <a href="{{ route('contact-us') }}"
-                            class="flex-1 p-5 flex items-center justify-center hover:cursor-pointer {{ request()->is('contact-us') ? 'bg-[#e2fbe2] text-black' : '' }}">
+                            class="flex-1 p-2 flex items-center justify-center hover:cursor-pointer {{ request()->is('contact-us') ? 'bg-[#e2fbe2] text-black' : '' }}">
                             Contact Us
                         </a>
                         @if (count($advertisements) > 0)
