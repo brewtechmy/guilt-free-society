@@ -41,6 +41,10 @@
                             class="flex-1 p-5 flex items-center justify-center hover:cursor-pointer {{ request()->is('story') ? 'bg-[#e2fbe2] text-black' : '' }}">
                             Our Story
                         </a>
+                        <a href="{{ route('service') }}"
+                            class="flex-1 p-5 flex items-center justify-center hover:cursor-pointer {{ request()->is('service') ? 'bg-[#e2fbe2] text-black' : '' }}">
+                            Our Service
+                        </a>
                         <a href="{{ route('join-us') }}"
                             class="flex-1 p-5 flex items-center justify-center hover:cursor-pointer {{ request()->is('join-us') ? 'bg-[#e2fbe2] text-black' : '' }}">
                             Join Us
