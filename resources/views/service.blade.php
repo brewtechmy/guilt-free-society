@@ -1,5 +1,5 @@
 @extends('layouts.menu')
-@section('title', 'GFS - Join Us')
+@section('title', 'GFS - Our Service')
 @section('content')
     <div class="px-3 sm:px-14 relative">
         <div class="flex flex-row pt-5">
