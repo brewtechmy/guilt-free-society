@@ -3,7 +3,7 @@
 @section('content')
     <div class="px-3 sm:px-14 relative">
         <div class="flex flex-row pt-5">
-            <span class="text-6xl font-semibold mx-auto md:mx-0">Partner With Us</span>
+            <span class="text-6xl font-semibold mx-auto text-center md:mx-0">Partner With Us</span>
         </div>
         <div class="py-5 gap-8 lg:grid lg:grid-cols-5">
             <div class="col-span-2 flex flex-col">
