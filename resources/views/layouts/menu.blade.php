@@ -30,7 +30,7 @@
                             d="M1 1h15M1 7h15M1 13h15" />
                     </svg>
                 </button>
-                <div class="hidde w-full text-white md:grow md:block md:w-auto md:h-[120px]" id="navbar-default">
+                <div class="hidden w-full text-white md:grow md:block md:w-auto md:h-[120px]" id="navbar-default">
                     <div class="h-full w-full text-center align-middle flex flex-col md:flex-row">
                         <a href="{{ route('byob') }}"
                             class="flex-1 flex items-center justify-center rounded-lg p-2 md:rounded-none md:p-4 hover:cursor-pointer {{ request()->is('byob') ? 'bg-[#e2fbe2] text-black' : '' }}">
