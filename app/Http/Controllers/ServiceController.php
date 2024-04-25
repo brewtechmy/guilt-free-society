@@ -2,8 +2,6 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Section;
-use App\Models\Journey;
 use App\Models\Service;
 
 class ServiceController extends Controller

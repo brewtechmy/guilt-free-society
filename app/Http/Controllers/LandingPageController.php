@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use App\Models\Advertisement;
 use App\Models\Section;
-use Illuminate\Http\Request;
 
 class LandingPageController extends Controller
 {
