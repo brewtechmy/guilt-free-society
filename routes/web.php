@@ -58,6 +58,18 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.', 'namespace' => 'Admin', 'mi
     Route::post('products/ckmedia', 'ProductController@storeCKEditorImages')->name('products.storeCKEditorImages');
     Route::resource('products', 'ProductController');
 
+    // Ingredient Category
+    Route::delete('ingredient-categories/destroy', 'IngredientCategoryController@massDestroy')->name('ingredient-categories.massDestroy');
+    Route::post('ingredient-categories/media', 'IngredientCategoryController@storeMedia')->name('ingredient-categories.storeMedia');
+    Route::post('ingredient-categories/ckmedia', 'IngredientCategoryController@storeCKEditorImages')->name('ingredient-categories.storeCKEditorImages');
+    Route::resource('ingredient-categories', 'IngredientCategoryController');
+
+    // Ingredient
+    Route::delete('ingredients/destroy', 'IngredientController@massDestroy')->name('ingredients.massDestroy');
+    Route::post('ingredients/media', 'IngredientController@storeMedia')->name('ingredients.storeMedia');
+    Route::post('ingredients/ckmedia', 'IngredientController@storeCKEditorImages')->name('ingredients.storeCKEditorImages');
+    Route::resource('ingredients', 'IngredientController');
+
     // Advertisement
     Route::delete('advertisements/destroy', 'AdvertisementController@massDestroy')->name('advertisements.massDestroy');
     Route::post('advertisements/media', 'AdvertisementController@storeMedia')->name('advertisements.storeMedia');
@@ -70,10 +82,27 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.', 'namespace' => 'Admin', 'mi
     Route::post('outlets/ckmedia', 'OutletController@storeCKEditorImages')->name('outlets.storeCKEditorImages');
     Route::resource('outlets', 'OutletController');
 
+    // Section
     Route::resource('sections', 'SectionController')->only([
         'index'
-    ]);;
+    ]);
     Route::put('sections', 'SectionController@update')->name('sections.update');
+
+    // Journey
+    Route::delete('journeys/destroy', 'JourneyController@massDestroy')->name('journeys.massDestroy');
+    Route::post('journeys/media', 'JourneyController@storeMedia')->name('journeys.storeMedia');
+    Route::post('journeys/ckmedia', 'JourneyController@storeCKEditorImages')->name('journeys.storeCKEditorImages');
+    Route::resource('journeys', 'JourneyController')->only([
+        'index',
+        'destroy',
+        'store'
+    ]);
+
+    // Our Services
+    Route::delete('services/destroy', 'ServiceController@massDestroy')->name('services.massDestroy');
+    Route::post('services/media', 'ServiceController@storeMedia')->name('services.storeMedia');
+    Route::post('services/ckmedia', 'ServiceController@storeCKEditorImages')->name('services.storeCKEditorImages');
+    Route::resource('services', 'ServiceController');
 });
 Route::group(['prefix' => 'profile', 'as' => 'profile.', 'namespace' => 'Auth', 'middleware' => ['auth']], function () {
     // Change password
@@ -85,9 +114,10 @@ Route::group(['prefix' => 'profile', 'as' => 'profile.', 'namespace' => 'Auth', 
     }
 });
 
+Route::get('/welcome', 'LandingPageController')->name('landing-page');
 Route::get('/byob', 'MenuController@index')->name('byob');
 Route::get('/story', 'StoryController')->name('story');
-Route::get('/menu', 'MenuController@menu')->name('menu')
-Route::get('/welcome', 'LandingPageController')->name('landing-page');
-Route::get('/contact-us', 'ContactController')->name('contact-us');
+Route::get('/menu', 'MenuController@menu')->name('menu');
+Route::get('/service', 'ServiceController')->name('service');
 Route::get('/join-us', 'JoinUsController')->name('join-us');
+Route::get('/contact-us', 'ContactController')->name('contact-us');

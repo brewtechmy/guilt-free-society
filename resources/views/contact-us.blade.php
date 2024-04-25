@@ -17,8 +17,8 @@
             'https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-11.jpg',
         ];
     @endphp
-    <div class="px-14 relative">
-        <div class="flex flex-row pt-5">
+    <div class="sm:px-14 relative">
+        <div class="pt-5 text-center md:text-left">
             <span class="text-6xl font-semibold">Our Outlets</span>
         </div>
         <div class="py-4 grid gap-10 lg:grid-cols-2 lg:gap-x-5 lg:gap-y-10">
@@ -31,9 +31,9 @@
                             <img class="rounded-full border-8 border-black aspect-square" src=""/>
                         @endif
                     </div>
-                    <div class="flex flex-col basis-3/5">
-                        <div class="text-2xl items-center font-bold">{{ $outlet->name }}</div>
-                        <span class="text-md items-center mt-2">
+                    <div class="flex flex-col basis-3/5 text-center lg:text-left gap-3">
+                        <div class="text-2xl items-center font-bold px-2 md:px-0">{{ $outlet->name }}</div>
+                        <span class="text-md items-center px-2 md:px-0">
                             <div>
                                 {{ $outlet->address }}
                             </div>
@@ -44,17 +44,19 @@
                                 {{ $outlet->contact_no }}
                             </div>
                         </span>
-                        {!! $outlet->embed_map_url !!}
+                        <div class="outlet-gmap-wrapper">
+                            {!! $outlet->embed_map_url !!}
+                        </div>
                     </div>
                 </div>
             @endforeach
             {{-- <div class="grid gap-5 lg:grid-cols-2">
-                <div class="min-w-44 max-w-64 basis-2/5 self-center">
+                <div class="w-56 basis-2/5 self-center justify-self-center">
                     <img class="rounded-full border-8 border-black aspect-square" src="/images/outlet_imgs/outlet2.png" />
                 </div>
-                <div class="flex flex-col basis-3/5">
+                <div class="flex flex-col basis-3/5 text-center lg:text-left gap-3">
                     <div class="text-2xl items-center font-bold whitespace-nowrap">Guilt Free Society +</div>
-                    <span class="text-md items-center mt-2">
+                    <span class="text-md items-center">
                         <div>
                             The Walk, Riverson
                             Jln Riverson 1, 88000 Kota Kinabalu
@@ -78,7 +80,9 @@
         <div class="flex flex-col mt-2">
             <div class="basis-1/2">
                 <div class="py-4">
-                    <span class="text-6xl font-semibold">Help Us Improve</span>
+                    <div class="text-center md:text-left">
+                        <span class="text-6xl font-semibold ">Help Us Improve</span>
+                    </div>
                     <div class="py-4">
                         <div class="mx-70 border-8 rounded-lg border-black">
                             <iframe

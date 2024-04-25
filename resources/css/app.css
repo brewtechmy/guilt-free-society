@@ -4,8 +4,37 @@
 
 #carousel-ow {
   height: 25%;
+  max-width: 1080px;
+  margin: auto;
+}
+
+#menuCarousel-ow {
+  max-width: 300px;
 }
 
 #carousel-mw, #carousel-iw, #carousel {
   height: 100%;
+}
+
+.outlet-gmap-wrapper iframe {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 2;
+}
+
+
+@media (min-width: 640px) {
+  .outlet-gmap-wrapper iframe {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 3.5;
+  }
+}
+
+@media (min-width: 1024px) {
+  .outlet-gmap-wrapper iframe {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 5/4;
+  }
 }

@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     @vite('resources/css/app.css')
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.4/tiny-slider.css">
     <title>@yield('title', 'Your Laravel App')</title>
 </head>
 
@@ -30,32 +31,33 @@
                 <div class="h-[120px] hidden w-full grow text-white md:block md:w-auto" id="navbar-default">
                     <div class="h-full w-full flex text-center align-middle">
                         <a href="{{ route('byob') }}"
-                            class="flex-1 p-5 flex items-center justify-center hover:cursor-pointer {{ request()->is('byob') ? 'bg-[#e2fbe2] text-black' : '' }}">
+                            class="flex-1 p-4 flex items-center justify-center hover:cursor-pointer {{ request()->is('byob') ? 'bg-[#e2fbe2] text-black' : '' }}">
                             Build Your Own Bowl
                         </a>
                         <a href="{{ route('menu') }}" class="flex-1 p-5 flex items-center justify-center hover:cursor-pointer {{ request()->is("menu") ? "bg-[#e2fbe2] text-black" : "" }}">
                             Menu
                         </a>
                         <a href="{{ route('story') }}"
-                            class="flex-1 p-5 flex items-center justify-center hover:cursor-pointer {{ request()->is('story') ? 'bg-[#e2fbe2] text-black' : '' }}">
+                            class="flex-1 p-4 flex items-center justify-center hover:cursor-pointer {{ request()->is('story') ? 'bg-[#e2fbe2] text-black' : '' }}">
                             Our Story
+                        </a>
+                        <a href="{{ route('service') }}"
+                            class="flex-1 p-3 flex items-center justify-center hover:cursor-pointer {{ request()->is('service') ? 'bg-[#e2fbe2] text-black' : '' }}">
+                            Our Service
                         </a>
                         <a href="{{ route('join-us') }}"
                             class="flex-1 p-5 flex items-center justify-center hover:cursor-pointer {{ request()->is('join-us') ? 'bg-[#e2fbe2] text-black' : '' }}">
                             Join Us
                         </a>
                         <a href="{{ route('contact-us') }}"
-                            class="flex-1 p-5 flex items-center justify-center hover:cursor-pointer {{ request()->is('contact-us') ? 'bg-[#e2fbe2] text-black' : '' }}">
+                            class="flex-1 p-2 flex items-center justify-center hover:cursor-pointer {{ request()->is('contact-us') ? 'bg-[#e2fbe2] text-black' : '' }}">
                             Contact Us
                         </a>
                         @if (count($advertisements) > 0)
-                            <div class="shrink-0 w-[250px]">
-                                <div class="h-[120px] flex overflow-x-auto" style="overflow:hidden"
-                                    id="menuCarousel">
-                                    @foreach ($advertisements as $key => $ads)
-                                    <img class="min-w-[250px]" src="{{ $ads->photo->getUrl() }}" alt="{{ $ads->photo->name }}">
-                                    @endforeach
-                                </div>
+                            <div class="h-[120px] flex" id="menuCarousel">
+                                @foreach ($advertisements as $key => $ads)
+                                    <img src="{{ $ads->photo->getUrl() }}" alt="{{ $ads->photo->name }}">
+                                @endforeach
                             </div>
                         @endif
                     </div>
