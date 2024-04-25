@@ -84,7 +84,7 @@
                         <span class="text-6xl font-semibold ">Help Us Improve</span>
                     </div>
                     <div class="py-4">
-                        <div class="mx-70 border-8 rounded-lg border-black">
+                        <div class="rounded-lg border-black md:mx-70 md:border-8">
                             <iframe
                                 class="w-full"
                                 src="{{ $link }}?embedded=true"
