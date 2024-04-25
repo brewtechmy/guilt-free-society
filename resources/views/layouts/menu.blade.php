@@ -14,7 +14,7 @@
 <body class="bg-[#e2fbe2]">
 
     <header>
-        <nav class="bg-black border-gray-200 rounded-lg md:rounded-none">
+        <nav class="bg-black border-gray-200 rounded-b-lg md:rounded-none">
             <div class="max-w-screen-xl items-center mx-auto justify-between flex flex-wrap p-2 md:p-0 md:flex-nowrap">
                 <a href="{{ route('landing-page') }}" class="shrink-0 flex items-center space-x-3 rtl:space-x-reverse">
                     <img class="h-[60px] w-[60px] md:h-[120px] md:w-[120px]" src="{{ url('/images/gfs_main_logo.jpg') }}"
