@@ -1,5 +1,5 @@
 @extends('layouts.menu')
-@section('title', 'GFS - Build Your Own Bowl')
+@section('title', 'GFS - Our Story')
 @section('content')
     @php
         $arr = [
