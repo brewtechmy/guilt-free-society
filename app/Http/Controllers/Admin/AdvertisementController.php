@@ -38,6 +38,13 @@ class AdvertisementController extends Controller
 
     public function store(StoreAdvertisementRequest $request)
     {
+        $existPosition = Advertisement::where("position", $request['position'])->first();
+        if(isset($existPosition)){
+            $maxPositionValue = Advertisement::max('position');
+            $existPosition->position = $maxPositionValue + 1;
+            $existPosition->save();
+        }
+
         $advertisement = Advertisement::create($request->all());
 
         if ($request->input('photo', false)) {
@@ -60,6 +67,12 @@ class AdvertisementController extends Controller
 
     public function update(UpdateAdvertisementRequest $request, Advertisement $advertisement)
     {
+        $existPosition = Advertisement::where("position", $request['position'])->first();
+        if(isset($existPosition)){
+            $existPosition->position = $advertisement->position;
+            $existPosition->save();
+        }
+
         $advertisement->update($request->all());
 
         if ($request->input('photo', false)) {
