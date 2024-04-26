@@ -33,27 +33,27 @@
                 <div class="hidden w-full text-white md:grow md:block md:w-auto md:h-[120px]" id="navbar-default">
                     <div class="h-full w-full text-center align-middle flex flex-col md:flex-row">
                         <a href="{{ route('byob') }}"
-                            class="flex-1 flex items-center justify-center rounded-lg p-2 md:rounded-none md:p-4 hover:cursor-pointer {{ request()->is('byob') ? 'bg-[#e2fbe2] text-black' : '' }}">
+                            class="flex-1 lg:text-xl flex items-center justify-center rounded-lg p-2 md:rounded-none md:p-4 hover:cursor-pointer {{ request()->is('byob') ? 'bg-[#e2fbe2] text-black' : '' }}">
                             Build Your Own Bowl
                         </a>
                         <a href="{{ route('menu') }}"
-                            class="flex-1 flex items-center justify-center rounded-lg p-2 md:rounded-none md:p-5 hover:cursor-pointer {{ request()->is("menu") ? "bg-[#e2fbe2] text-black" : "" }}">
+                            class="flex-1 lg:text-xl flex items-center justify-center rounded-lg p-2 md:rounded-none md:p-5 hover:cursor-pointer {{ request()->is("menu") ? "bg-[#e2fbe2] text-black" : "" }}">
                             Menu
                         </a>
                         <a href="{{ route('story') }}"
-                            class="flex-1 flex items-center justify-center rounded-lg p-2 md:rounded-none md:p-4 hover:cursor-pointer {{ request()->is('story') ? 'bg-[#e2fbe2] text-black' : '' }}">
+                            class="flex-1 lg:text-xl flex items-center justify-center rounded-lg p-2 md:rounded-none md:p-4 hover:cursor-pointer {{ request()->is('story') ? 'bg-[#e2fbe2] text-black' : '' }}">
                             Our Story
                         </a>
                         <a href="{{ route('service') }}"
-                            class="flex-1 flex items-center justify-center rounded-lg p-2 md:rounded-none md:p-3 hover:cursor-pointer {{ request()->is('service') ? 'bg-[#e2fbe2] text-black' : '' }}">
+                            class="flex-1 lg:text-xl flex items-center justify-center rounded-lg p-2 md:rounded-none md:p-3 hover:cursor-pointer {{ request()->is('service') ? 'bg-[#e2fbe2] text-black' : '' }}">
                             Our Service
                         </a>
                         <a href="{{ route('join-us') }}"
-                            class="flex-1 flex items-center justify-center rounded-lg p-2 md:rounded-none md:p-5 hover:cursor-pointer {{ request()->is('join-us') ? 'bg-[#e2fbe2] text-black' : '' }}">
+                            class="flex-1 lg:text-xl flex items-center justify-center rounded-lg p-2 md:rounded-none md:p-5 hover:cursor-pointer {{ request()->is('join-us') ? 'bg-[#e2fbe2] text-black' : '' }}">
                             Join Us
                         </a>
                         <a href="{{ route('contact-us') }}"
-                            class="flex-1 flex items-center justify-center rounded-lg p-2 md:rounded-none md:p-2 hover:cursor-pointer {{ request()->is('contact-us') ? 'bg-[#e2fbe2] text-black' : '' }}">
+                            class="flex-1 lg:text-xl flex items-center justify-center rounded-lg p-2 md:rounded-none md:p-2 hover:cursor-pointer {{ request()->is('contact-us') ? 'bg-[#e2fbe2] text-black' : '' }}">
                             Contact Us
                         </a>
                         @if (count($advertisements) > 0)
@@ -72,7 +72,7 @@
 
     <main class="max-w-[100vw]">
         <div class="mx-auto max-w-[1260px]">
-            <div class="bg-slate-50/45">
+            <div>
                 @yield('content')
             </div>
         </div>
