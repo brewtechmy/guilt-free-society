@@ -18,6 +18,7 @@ class DatabaseSeeder extends Seeder
             OutletsTableSeeder::class,
             JourneyTableSeeder::class,
             AdvertisementTableSeeder::class,
+            IngredientTableSeeder::class,
         ]);
     }
 }
