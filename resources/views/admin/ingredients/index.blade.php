@@ -41,9 +41,6 @@
                             {{ trans('cruds.ingredient.fields.fat') }} (g)
                         </th>
                         <th>
-                            {{ trans('cruds.ingredient.fields.calories') }} (kcal)
-                        </th>
-                        <th>
                             {{ trans('cruds.ingredient.fields.category') }}
                         </th>
                         {{-- <th>
@@ -77,9 +74,6 @@
                             </td>
                             <td>
                                 {{ $ingredient->fat ?? '' }}
-                            </td>
-                            <td>
-                                {{ $ingredient->calories ?? '' }}
                             </td>
                             <td>
                                 @foreach($ingredient->categories as $key => $item)

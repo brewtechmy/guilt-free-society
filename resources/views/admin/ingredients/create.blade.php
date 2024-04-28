@@ -50,14 +50,6 @@
                 <span class="help-block">{{ trans('cruds.ingredient.fields.fat_helper') }}</span>
             </div>
             <div class="form-group">
-                <label class="required" for="calories">{{ trans('cruds.ingredient.fields.calories') }} (kcal)</label>
-                <input class="form-control {{ $errors->has('calories') ? 'is-invalid' : '' }}" type="number" name="calories" id="calories" value="{{ old('calories', '') }}" step="0.01" required>
-                @if($errors->has('calories'))
-                    <span class="text-danger">{{ $errors->first('calories') }}</span>
-                @endif
-                <span class="help-block">{{ trans('cruds.ingredient.fields.calories_helper') }}</span>
-            </div>
-            <div class="form-group">
                 <label class="required" for="categories">{{ trans('cruds.ingredient.fields.category') }}</label>
                 <select class="form-control select2 {{ $errors->has('categories') ? 'is-invalid' : '' }}" name="categories[]" id="categories">
                     @foreach($categories as $id => $category)

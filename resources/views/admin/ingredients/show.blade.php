@@ -65,14 +65,6 @@
                     </tr>
                     <tr>
                         <th>
-                            {{ trans('cruds.ingredient.fields.calories') }} (kcal)
-                        </th>
-                        <td>
-                            {{ $ingredient->calories }}
-                        </td>
-                    </tr>
-                    <tr>
-                        <th>
                             {{ trans('cruds.ingredient.fields.category') }}
                         </th>
                         <td>

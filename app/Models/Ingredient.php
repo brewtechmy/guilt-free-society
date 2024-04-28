@@ -32,7 +32,6 @@ class Ingredient extends Model implements HasMedia
         'protein',
         'carbohydrate',
         'fat',
-        'calories',
         'created_at',
         'updated_at',
         'deleted_at',

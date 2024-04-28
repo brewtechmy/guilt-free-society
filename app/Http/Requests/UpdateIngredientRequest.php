@@ -38,9 +38,6 @@ class UpdateIngredientRequest extends FormRequest
             'fat' => [
                 'required',
             ],
-            'calories' => [
-                'required',
-            ],
             'categories.*' => [
                 'integer',
             ],

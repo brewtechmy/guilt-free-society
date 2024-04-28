@@ -18,7 +18,6 @@ return new class extends Migration
             $table->decimal('protein');
             $table->decimal('carbohydrate');
             $table->decimal('fat');
-            $table->decimal('calories');
             $table->timestamps();
             $table->softDeletes();
         });
