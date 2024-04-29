@@ -103,6 +103,12 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.', 'namespace' => 'Admin', 'mi
     Route::post('services/media', 'ServiceController@storeMedia')->name('services.storeMedia');
     Route::post('services/ckmedia', 'ServiceController@storeCKEditorImages')->name('services.storeCKEditorImages');
     Route::resource('services', 'ServiceController');
+
+    // Join Us Page
+    Route::delete('join-us-pages/destroy', 'JoinUsPageController@massDestroy')->name('join-us-pages.massDestroy');
+    Route::post('join-us-pages/media', 'JoinUsPageController@storeMedia')->name('join-us-pages.storeMedia');
+    Route::post('join-us-pages/ckmedia', 'JoinUsPageController@storeCKEditorImages')->name('join-us-pages.storeCKEditorImages');
+    Route::resource('join-us-pages', 'JoinUsPageController');
 });
 Route::group(['prefix' => 'profile', 'as' => 'profile.', 'namespace' => 'Auth', 'middleware' => ['auth']], function () {
     // Change password

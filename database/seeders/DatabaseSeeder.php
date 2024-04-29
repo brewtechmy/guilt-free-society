@@ -16,6 +16,7 @@ class DatabaseSeeder extends Seeder
             RoleUserTableSeeder::class,
             ProductCategoriesTableSeeder::class,
             OutletsTableSeeder::class,
+            JoinUsPageSeeder::class,
             JourneyTableSeeder::class,
             AdvertisementTableSeeder::class,
             IngredientTableSeeder::class,

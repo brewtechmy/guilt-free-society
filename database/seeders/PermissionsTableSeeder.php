@@ -246,6 +246,26 @@ class PermissionsTableSeeder extends Seeder
                 'id'    => 59,
                 'title' => 'outlet_access',
             ],
+            [
+                'id'    => 60,
+                'title' => 'join_us_page_access',
+            ],
+            [
+                'id'    => 61,
+                'title' => 'join_us_page_create',
+            ],
+            [
+                'id'    => 62,
+                'title' => 'join_us_page_edit',
+            ],
+            [
+                'id'    => 63,
+                'title' => 'join_us_page_show',
+            ],
+            [
+                'id'    => 64,
+                'title' => 'join_us_page_delete',
+            ],
         ];
 
         Permission::insert($permissions);

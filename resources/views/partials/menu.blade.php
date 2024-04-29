@@ -21,8 +21,8 @@
                     </a>
                 </li> --}}
                 @can('content_management_access')
-                    <li class="nav-item has-treeview {{ request()->is("admin/content-categories*", "admin/content-tags*", "admin/content-pages*", "admin/advertisements*", "admin/outlets*", "admin/sections*", "admin/journeys*") ? "menu-open" : "" }}">
-                        <a class="nav-link nav-dropdown-toggle {{ request()->is("admin/content-categories*", "admin/content-tags*", "admin/content-pages*", "admin/advertisements*", "admin/outlets*", "admin/sections*", "admin/journeys*") ? "active" : "" }}" href="#">
+                    <li class="nav-item has-treeview {{ request()->is("admin/content-categories*", "admin/content-tags*", "admin/content-pages*", "admin/advertisements*", "admin/outlets*", "admin/sections*", "admin/journeys*","admin/join-us-pages*") ? "menu-open" : "" }}">
+                        <a class="nav-link nav-dropdown-toggle {{ request()->is("admin/content-categories*", "admin/content-tags*", "admin/content-pages*", "admin/advertisements*", "admin/outlets*", "admin/sections*", "admin/journeys*","admin/join-us-pages*") ? "active" : "" }}" href="#">
                             <i class="fa-fw nav-icon fas fa-book">
 
                             </i>
@@ -80,7 +80,19 @@
                                     </a>
                                 </li>
                             @endcan
-                            {{-- @can('outlet_access') --}}
+                            @can('join_us_page_access')
+                                <li class="nav-item">
+                                    <a href="{{ route("admin.join-us-pages.index") }}" class="nav-link {{ request()->is("admin/join-us-pages") || request()->is("admin/join-us-pages/*") ? "active" : "" }}">
+                                        <i class="fa-fw fas fa-child">
+
+                                        </i>
+                                        <p>
+                                            {{ trans('cruds.joinUsPage.title') }}
+                                        </p>
+                                    </a>
+                                </li>
+                            @endcan
+                            @can('outlet_access')
                                 <li class="nav-item">
                                     <a href="{{ route("admin.outlets.index") }}" class="nav-link {{ request()->is("admin/outlets") || request()->is("admin/outlets/*") ? "active" : "" }}">
                                         <i class="fa-fw nav-icon fas fa-map-marker-alt">
@@ -91,7 +103,7 @@
                                         </p>
                                     </a>
                                 </li>
-                            {{-- @endcan --}}
+                            @endcan
                             <li class="nav-item">
                                 <a href="{{ route("admin.sections.index") }}" class="nav-link {{ request()->is("admin/sections") || request()->is("admin/sections/*") ? "active" : "" }}">
                                     <i class="fa-fw nav-icon fas fa-align-justify">
