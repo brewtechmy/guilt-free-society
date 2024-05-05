@@ -356,7 +356,7 @@
                             <div class="flex flex-col items-center min-w-24 md:min-w-44 lg:min-w-56 xl:min-w-64 md:ml-12 mr-4">
                                 <img class="rounded-full border-4 lg:border-8 border-black aspect-square w-full" src="{{ $ingredient->photo->thumbnail }}" />
                                 <span class="text-base md:text-xl lg:text-3xl whitespace-nowrap">{{$ingredient->name}}</span>
-                                <span class="text-base md:text-xl lg:text-3xl">({{$ingredient->calories]}} kcal)</span>
+                                <span class="text-base md:text-xl lg:text-3xl">({{$ingredient->calories}} kcal)</span>
                             </div>
                             <div class="wheel-outline mr-6 transform duration-300 scale-0">
                                 <div id="acw-{{$categoryIndex.'-'.$ingredientIndex}}" class="counter w-8 md:w-10 lg:w-12 h-11 md:h-14 lg:h-20">0</div>
