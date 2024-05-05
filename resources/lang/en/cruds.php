@@ -187,6 +187,8 @@ return [
             'calories_helper'       => ' ',
             'price'              => 'Price',
             'price_helper'       => ' ',
+            'ingredient'           => 'Ingredients',
+            'ingredient_helper'    => ' ',
             'category'           => 'Categories',
             'category_helper'    => ' ',
             'tag'                => 'Tags',
@@ -333,6 +335,8 @@ return [
         'fields'         => [
             'id'                   => 'ID',
             'id_helper'            => ' ',
+            'title'                 => 'Title',
+            'title_helper'          => ' ',
             'description'                 => 'Description',
             'description_helper'          => ' ',
             'created_at'           => 'Created at',
@@ -367,6 +371,20 @@ return [
             'position_helper'    => ' ',
             'is_main'            => 'Main Spotlight Image',
             'is_main_helper'     => ' ',
+        ],
+    ],
+    'setting' => [
+        'title'          => 'Settings',
+        'title_singular' => 'Setting',
+        'fields'         => [
+            'calories_formula' => 'Calories Formula',
+            'calories_formula_helper' => ' ',
+            'created_at'         => 'Created at',
+            'created_at_helper'  => ' ',
+            'updated_at'         => 'Updated At',
+            'updated_at_helper'  => ' ',
+            'deleted_at'         => 'Deleted At',
+            'deleted_at_helper'  => ' ',
         ],
     ],
 ];

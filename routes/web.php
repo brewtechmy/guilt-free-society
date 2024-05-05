@@ -109,6 +109,11 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.', 'namespace' => 'Admin', 'mi
     Route::post('join-us-pages/media', 'JoinUsPageController@storeMedia')->name('join-us-pages.storeMedia');
     Route::post('join-us-pages/ckmedia', 'JoinUsPageController@storeCKEditorImages')->name('join-us-pages.storeCKEditorImages');
     Route::resource('join-us-pages', 'JoinUsPageController');
+
+    // Setting
+    Route::resource('settings', 'SettingController');
+    Route::put('settings', 'SettingController@update')->name('settings.update');
+
 });
 Route::group(['prefix' => 'profile', 'as' => 'profile.', 'namespace' => 'Auth', 'middleware' => ['auth']], function () {
     // Change password

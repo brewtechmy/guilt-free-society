@@ -126,7 +126,7 @@
                             </li>
                             <li class="nav-item">
                                 <a href="{{ route("admin.services.index") }}" class="nav-link {{ request()->is("admin/services") || request()->is("admin/services/*") ? "active" : "" }}">
-                                    <i class="fa-fw nav-icon fas fa-image">
+                                    <i class="fa-fw nav-icon fas fa-lightbulb">
 
                                     </i>
                                     <p>
@@ -251,6 +251,16 @@
                         </ul>
                     </li>
                 @endcan
+                <li class="nav-item">
+                    <a href="{{ route("admin.settings.index") }}" class="nav-link {{ request()->is("admin/sections") || request()->is("admin/sections/*") ? "active" : "" }}">
+                        <i class="fa-fw nav-icon fas fa-cog">
+
+                        </i>
+                        <p>
+                            {{ trans('cruds.setting.title') }}
+                        </p>
+                    </a>
+                </li>
                 @if(file_exists(app_path('Http/Controllers/Auth/ChangePasswordController.php')))
                     @can('profile_password_edit')
                         <li class="nav-item">

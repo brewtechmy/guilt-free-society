@@ -86,7 +86,8 @@ class IngredientTableSeeder extends Seeder
         foreach ($bases as $base) {
             $ingredient = Ingredient::create($base);
             $ingredient->categories()->sync([$baseId]);
-            $ingredient->addMediaFromUrl('https://st4.depositphotos.com/24022680/38137/i/450/depositphotos_381374504-stock-photo-basmati-white-rice-solid-texture.jpg')->toMediaCollection('photo');
+            $ingredient->addMedia("database/seeders/ingredient_images/white-rice.png")->preservingOriginal()->toMediaCollection('photo');
+            // $ingredient->addMediaFromUrl('https://st4.depositphotos.com/24022680/38137/i/450/depositphotos_381374504-stock-photo-basmati-white-rice-solid-texture.jpg')->toMediaCollection('photo');
         }
 
         // Protein
@@ -203,7 +204,8 @@ class IngredientTableSeeder extends Seeder
         foreach ($proteins as $protein) {
             $ingredient = Ingredient::create($protein);
             $ingredient->categories()->sync([$proteinId]);
-            $ingredient->addMediaFromUrl('https://media.istockphoto.com/id/172900971/photo/grilled-chicken.jpg?s=612x612&w=0&k=20&c=crqZAq_4tr_dw4EGng9YvWWFAsh8VzotdETySHFUMzw=')->toMediaCollection('photo');
+            $ingredient->addMedia("database/seeders/ingredient_images/grilled-chicken.png")->preservingOriginal()->toMediaCollection('photo');
+            // $ingredient->addMediaFromUrl('https://media.istockphoto.com/id/172900971/photo/grilled-chicken.jpg?s=612x612&w=0&k=20&c=crqZAq_4tr_dw4EGng9YvWWFAsh8VzotdETySHFUMzw=')->toMediaCollection('photo');
         }
 
         // Sides
@@ -390,7 +392,8 @@ class IngredientTableSeeder extends Seeder
         foreach ($sides as $side) {
             $ingredient = Ingredient::create($side);
             $ingredient->categories()->sync([$sideId]);
-            $ingredient->addMediaFromUrl('https://media.istockphoto.com/id/471644399/photo/fresh-japanese-cucumbers.jpg?s=612x612&w=0&k=20&c=aLLEFoIM8vGrrwinio4ID3TMoswcT4kPuHzTefVlRGA=')->toMediaCollection('photo');
+            $ingredient->addMedia("database/seeders/ingredient_images/cherry-tomatoes.png")->preservingOriginal()->toMediaCollection('photo');
+            // $ingredient->addMediaFromUrl('https://media.istockphoto.com/id/471644399/photo/fresh-japanese-cucumbers.jpg?s=612x612&w=0&k=20&c=aLLEFoIM8vGrrwinio4ID3TMoswcT4kPuHzTefVlRGA=')->toMediaCollection('photo');
         }
 
         // Toppings
@@ -542,7 +545,8 @@ class IngredientTableSeeder extends Seeder
         foreach ($toppings as $topping) {
             $ingredient = Ingredient::create($topping);
             $ingredient->categories()->sync([$toppingId]);
-            $ingredient->addMediaFromUrl('https://kanikab2b.com.my/image/cache/catalog/htb1rgl4jcuybunksmryq6aa3pxae-500x500.webp')->toMediaCollection('photo');
+            $ingredient->addMedia("database/seeders/ingredient_images/spring-onion.png")->preservingOriginal()->toMediaCollection('photo');
+            // $ingredient->addMediaFromUrl('https://kanikab2b.com.my/image/cache/catalog/htb1rgl4jcuybunksmryq6aa3pxae-500x500.webp')->toMediaCollection('photo');
         }
 
         // Sauce
@@ -624,7 +628,8 @@ class IngredientTableSeeder extends Seeder
         foreach ($sauces as $sauce) {
             $ingredient = Ingredient::create($sauce);
             $ingredient->categories()->sync([$sauceId]);
-            $ingredient->addMediaFromUrl('https://img.freepik.com/premium-photo/top-view-wasabi-mayo-wooden-bowl-isolated-white-background_865659-19576.jpg')->toMediaCollection('photo');
+            $ingredient->addMedia("database/seeders/ingredient_images/almond-butter.png")->preservingOriginal()->toMediaCollection('photo');
+            // $ingredient->addMediaFromUrl('https://img.freepik.com/premium-photo/top-view-wasabi-mayo-wooden-bowl-isolated-white-background_865659-19576.jpg')->toMediaCollection('photo');
         }
     }
 }

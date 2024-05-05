@@ -3,11 +3,12 @@
 namespace App\Models;
 
 use DateTimeInterface;
-use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\SoftDeletes;
 use Spatie\MediaLibrary\HasMedia;
+use Illuminate\Support\Facades\Cache;
+use Illuminate\Database\Eloquent\Model;
 use Spatie\MediaLibrary\InteractsWithMedia;
+use Illuminate\Database\Eloquent\SoftDeletes;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Spatie\MediaLibrary\MediaCollections\Models\Media;
 
 class Ingredient extends Model implements HasMedia
@@ -18,6 +19,7 @@ class Ingredient extends Model implements HasMedia
 
     protected $appends = [
         'photo',
+        'calories'
     ];
 
     protected $dates = [
@@ -63,5 +65,23 @@ class Ingredient extends Model implements HasMedia
         }
 
         return $file;
+    }
+
+    public function getCaloriesAttribute()
+    {
+        $calories = 0;
+        $protein = $this->protein;
+        $carbohydrate = $this->carbohydrate;
+        $fat = $this->fat;
+
+        $formula = Cache::remember('formula', 3600, function () {
+            return '$calories = ' . Setting::where('key', 'calories_formula')->first()->value . ';';
+        });
+        
+        // evaluate a formula string as PHP code
+        eval($formula);
+
+        // Return the calculated calories
+        return $calories;
     }
 }

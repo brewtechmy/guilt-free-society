@@ -111,39 +111,50 @@ Counter.prototype.setPos = function(x){
 	var itemFat = parseFloat(item['fat']).toFixed(2)
 	var itemQuantity = parseFloat(item['quantity']).toFixed(2)
 	var itemCalorie = parseFloat(item['kcal']).toFixed(2)
-	// var cq = isNaN(parseFloat(document.getElementById('carb-quantity').innerHTML).toFixed(2)) ? 0 : parseFloat(document.getElementById('carb-quantity').innerHTML).toFixed(2)
-	// var cc = isNaN(parseFloat(document.getElementById('carb-calories').innerHTML).toFixed(2)) ? 0 : parseFloat(document.getElementById('carb-calories').innerHTML).toFixed(2)
-	// var pq = isNaN(parseFloat(document.getElementById('protein-quantity').innerHTML).toFixed(2)) ? 0 : parseFloat(document.getElementById('protein-quantity').innerHTML).toFixed(2)
-	// var pc = isNaN(parseFloat(document.getElementById('protein-calories').innerHTML).toFixed(2)) ? 0 : parseFloat(document.getElementById('protein-calories').innerHTML).toFixed(2)
-	// var fq = isNaN(parseFloat(document.getElementById('fat-quantity').innerHTML).toFixed(2)) ? 0 : parseFloat(document.getElementById('fat-quantity').innerHTML).toFixed(2)
-	// var fc = isNaN(parseFloat(document.getElementById('fat-calories').innerHTML).toFixed(2)) ? 0 : parseFloat(document.getElementById('fat-calories').innerHTML).toFixed(2)
+	var cq = isNaN(parseFloat(document.getElementById('carb-quantity').innerHTML).toFixed(2)) ? 0 : parseFloat(document.getElementById('carb-quantity').innerHTML).toFixed(2)
+	var cc = isNaN(parseFloat(document.getElementById('carb-calories').innerHTML).toFixed(2)) ? 0 : parseFloat(document.getElementById('carb-calories').innerHTML).toFixed(2)
+	var pq = isNaN(parseFloat(document.getElementById('protein-quantity').innerHTML).toFixed(2)) ? 0 : parseFloat(document.getElementById('protein-quantity').innerHTML).toFixed(2)
+	var pc = isNaN(parseFloat(document.getElementById('protein-calories').innerHTML).toFixed(2)) ? 0 : parseFloat(document.getElementById('protein-calories').innerHTML).toFixed(2)
+	var fq = isNaN(parseFloat(document.getElementById('fat-quantity').innerHTML).toFixed(2)) ? 0 : parseFloat(document.getElementById('fat-quantity').innerHTML).toFixed(2)
+	var fc = isNaN(parseFloat(document.getElementById('fat-calories').innerHTML).toFixed(2)) ? 0 : parseFloat(document.getElementById('fat-calories').innerHTML).toFixed(2)
 
-	// document.getElementById('carb-quantity').innerHTML = parseFloat(cq - prev*itemCarb + pos*itemCarb).toFixed(2)
-	// document.getElementById('protein-quantity').innerHTML = parseFloat(pq - prev*itemProtein + pos*itemProtein).toFixed(2)
-	// document.getElementById('fat-quantity').innerHTML = parseFloat(fq - prev*itemFat + pos*itemFat).toFixed(2)
+	cq = parseFloat(cq - prev*itemCarb + pos*itemCarb).toFixed(2)
+	document.getElementById('carb-quantity').innerHTML = cq
+	pq = parseFloat(pq - prev*itemProtein + pos*itemProtein).toFixed(2)
+	document.getElementById('protein-quantity').innerHTML = pq
+	fq = parseFloat(fq - prev*itemFat + pos*itemFat).toFixed(2)
+	document.getElementById('fat-quantity').innerHTML = fq
 
-	if(prev != pos){
-		var irow = document.querySelector("tr[id*='nut-tr-"+this.posId+"']")
-		if(irow){
-			if(pos != 0){
-				document.querySelector("tr[id*='nut-tr-"+this.posId+"']").innerHTML = '<td>'+itemName+'</td><td>'+parseFloat(pos*itemQuantity).toFixed(2)+'</td><td>'+parseFloat(pos*itemProtein).toFixed(2)+'</td><td>'+parseFloat(pos*itemCarb).toFixed(2)+'</td><td>'+parseFloat(pos*itemFat).toFixed(2)+'</td><td>'+parseFloat(pos*itemCalorie).toFixed(2)+'</td>'
-				totalCalorie +=
-				totalCarbs
-				totalFat
-				totalProtein
-				t
-			}else{
-				document.querySelector("tr[id*='nut-tr-"+this.posId+"']").remove()
-			}
-		}else{
-			var newTr = document.createElement("tr");
-			newTr.setAttribute("id", "nut-tr-"+this.posId);
-			newTr.innerHTML = '<td>'+itemName+'</td><td>'+parseFloat(pos*itemQuantity).toFixed(2)+'</td><td>'+parseFloat(pos*itemProtein).toFixed(2)+'</td><td>'+parseFloat(pos*itemCarb).toFixed(2)+'</td><td>'+parseFloat(pos*itemFat).toFixed(2)+'</td><td>'+parseFloat(pos*itemCalorie).toFixed(2)+'</td>'
-			document.getElementById('nut-tbody').appendChild(newTr)
-		}
-	}
 
-	var totalrow = document.querySelector("tr[id*='nut-tr-total']")
+	cc = parseFloat(cq*carbMultiplier).toFixed(2)
+	document.getElementById('carb-calories').innerHTML = cc
+	pc = parseFloat(pq*proteinMultiplier).toFixed(2)
+	document.getElementById('protein-calories').innerHTML = pc
+	fc = parseFloat(fq*fatMultiplier).toFixed(2)
+	document.getElementById('fat-calories').innerHTML = fc
+	document.getElementById('total-cal').innerHTML = (parseFloat(cc) + parseFloat(pc) + parseFloat(fc)).toFixed(2)
+	// if(prev != pos){
+	// 	var irow = document.querySelector("tr[id*='nut-tr-"+this.posId+"']")
+	// 	if(irow){
+	// 		if(pos != 0){
+	// 			document.querySelector("tr[id*='nut-tr-"+this.posId+"']").innerHTML = '<td>'+itemName+'</td><td>'+parseFloat(pos*itemQuantity).toFixed(2)+'</td><td>'+parseFloat(pos*itemProtein).toFixed(2)+'</td><td>'+parseFloat(pos*itemCarb).toFixed(2)+'</td><td>'+parseFloat(pos*itemFat).toFixed(2)+'</td><td>'+parseFloat(pos*itemCalorie).toFixed(2)+'</td>'
+	// 			totalCalorie +=
+	// 			totalCarbs
+	// 			totalFat
+	// 			totalProtein
+	// 			t
+	// 		}else{
+	// 			document.querySelector("tr[id*='nut-tr-"+this.posId+"']").remove()
+	// 		}
+	// 	}else{
+	// 		var newTr = document.createElement("tr");
+	// 		newTr.setAttribute("id", "nut-tr-"+this.posId);
+	// 		newTr.innerHTML = '<td>'+itemName+'</td><td>'+parseFloat(pos*itemQuantity).toFixed(2)+'</td><td>'+parseFloat(pos*itemProtein).toFixed(2)+'</td><td>'+parseFloat(pos*itemCarb).toFixed(2)+'</td><td>'+parseFloat(pos*itemFat).toFixed(2)+'</td><td>'+parseFloat(pos*itemCalorie).toFixed(2)+'</td>'
+	// 		document.getElementById('nut-tbody').appendChild(newTr)
+	// 	}
+	// }
+
+	// var totalrow = document.querySelector("tr[id*='nut-tr-total']")
 	// if(totalrow){
 	// 	if(document.getElementById('nut-tbody').childNodes.length > 1){}
 	// }else{
@@ -214,45 +225,76 @@ Counter.prototype.previous = function(){
 
 Counter.prototype.mouseWheel = function(){
 
-	var self = this;
-	var lastScroll=0, eventCount=0;
+    var self = this;
+    var lastScroll=0, eventCount=0;
 
-	//function attached to onmousewheel
-	return function(e){
-		if(self.options.mousewheel==false) return;
+    this.DOM.counter.addEventListener('click', function(e) {
+        var rect = self.DOM.counter.getBoundingClientRect();
+        var y = e.clientY - rect.top; // Getting y-coordinate relative to the counter element
+        if (y < rect.height / 2) {
+            self.next();
+        } else {
+            self.previous();
+        }
+    });
 
-		// cross-browser wheel delta
-		e = window.event || e; // old IE support
-		e.preventDefault();
+    this.DOM.counter.addEventListener('touchstart', function(e) {
+        var touch = e.touches[0];
+        this.touchY = touch.clientY;
+        e.stopPropagation();
+        e.preventDefault();
+    });
 
-		var now = Date.now();
-		var dif = now-lastScroll;
+    this.DOM.counter.addEventListener('touchmove', function(e) {
+        var touch = e.touches[0];
+        var deltaY = touch.clientY - this.touchY;
+        if (deltaY > 5) {
+            self.next();
+            this.touchY = touch.clientY;
+        } else if (deltaY < -5) {
+            self.previous();
+            this.touchY = touch.clientY;
+        }
+        e.stopPropagation();
+        e.preventDefault();
+    });
 
-		this.lastScroll = now;
+    //function attached to onmousewheel
+    return function(e){
+        if(self.options.mousewheel==false) return;
 
-		var delta = e.wheelDelta;
-		//var delta = Math.max(-1, Math.min(1, (e.wheelDelta || -e.detail)));
+        // cross-browser wheel delta
+        e = window.event || e; // old IE support
+        e.preventDefault();
 
-		if(self.options.inverted)
-			delta*=-1;
+        var now = Date.now();
+        var dif = now-lastScroll;
 
-		if(e.webkitDirectionInvertedFromDevice)
-			delta*=-1;
+        this.lastScroll = now;
 
-		if((dif>20 && Math.abs(delta)>=12) || Math.abs(eventCount)>50){
-			if(delta>0){
-				self.next();
-			}
-			else{
-				self.previous();
-			}
-			eventCount = 0;
-		}
-		else{
-			eventCount+=e.wheelDelta;
-		}
+        var delta = e.wheelDelta;
+        //var delta = Math.max(-1, Math.min(1, (e.wheelDelta || -e.detail)));
 
-		//console.log("timestamp %s \t dif: %s \t deltaMode: %s \t inverted: %s \t wheelDelta: %s \t delta: %s \t x: %d",
-		//			e.timeStamp, dif, e.deltaMode, e.webkitDirectionInvertedFromDevice, e.wheelDelta, delta, wheel);
-	};
+        if(self.options.inverted)
+            delta*=-1;
+
+        if(e.webkitDirectionInvertedFromDevice)
+            delta*=-1;
+
+        if((dif>20 && Math.abs(delta)>=12) || Math.abs(eventCount)>50){
+            if(delta>0){
+                self.next();
+            }
+            else{
+                self.previous();
+            }
+            eventCount = 0;
+        }
+        else{
+            eventCount+=e.wheelDelta;
+        }
+
+        //console.log("timestamp %s \t dif: %s \t deltaMode: %s \t inverted: %s \t wheelDelta: %s \t delta: %s \t x: %d",
+        //			e.timeStamp, dif, e.deltaMode, e.webkitDirectionInvertedFromDevice, e.wheelDelta, delta, wheel);
+    };
 };

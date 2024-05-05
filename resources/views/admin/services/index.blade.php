@@ -22,9 +22,9 @@
                         <th width="10">
 
                         </th>
-                        {{-- <th>
-                            {{ trans('cruds.service.fields.id') }}
-                        </th> --}}
+                        <th>
+                            {{ trans('cruds.service.fields.title') }}
+                        </th>
                         <th>
                             {{ trans('cruds.service.fields.description') }}
                         </th>
@@ -65,9 +65,9 @@
                             <td>
 
                             </td>
-                            {{-- <td>
-                                {{ $service->id ?? '' }}
-                            </td> --}}
+                            <td>
+                                {{ $service->title ?? '' }}
+                            </td>
                             <td>
                                 {!! $service->description ?? '' !!}
                             </td>

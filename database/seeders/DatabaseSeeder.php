@@ -14,12 +14,13 @@ class DatabaseSeeder extends Seeder
             PermissionRoleTableSeeder::class,
             UsersTableSeeder::class,
             RoleUserTableSeeder::class,
+            IngredientTableSeeder::class,
             ProductCategoriesTableSeeder::class,
+            ProductTableSeeder::class,
             OutletsTableSeeder::class,
             JoinUsPageSeeder::class,
             JourneyTableSeeder::class,
             AdvertisementTableSeeder::class,
-            IngredientTableSeeder::class,
         ]);
     }
 }
