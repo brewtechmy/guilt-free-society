@@ -367,4 +367,18 @@ return [
             'deleted_at_helper'  => ' ',
         ],
     ],
+    'setting' => [
+        'title'          => 'Settings',
+        'title_singular' => 'Setting',
+        'fields'         => [
+            'calories_formula' => 'Calories Formula',
+            'calories_formula_helper' => ' ',
+            'created_at'         => 'Created at',
+            'created_at_helper'  => ' ',
+            'updated_at'         => 'Updated At',
+            'updated_at_helper'  => ' ',
+            'deleted_at'         => 'Deleted At',
+            'deleted_at_helper'  => ' ',
+        ],
+    ],
 ];
