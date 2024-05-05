@@ -20,7 +20,8 @@ class ProductTableSeeder extends Seeder
         ]);
         $product1->categories()->sync([1]);
         $product1->ingredients()->sync([1,2]);
-        $product1->addMediaFromUrl('https://sushidaily.com/media/2kqljj3h/salmon-poke_top-view_bowl.jpg?width=SushiDaily.Domain.ViewModels.Shared.SrcSetData&quality=80')->toMediaCollection('photo');
+        $product1->addMedia("database/seeders/product_images/fruit-bowl.png")->preservingOriginal()->toMediaCollection('photo');
+        // $product1->addMediaFromUrl('https://sushidaily.com/media/2kqljj3h/salmon-poke_top-view_bowl.jpg?width=SushiDaily.Domain.ViewModels.Shared.SrcSetData&quality=80')->toMediaCollection('photo');
         
         $product2 = Product::create([
             'name' => 'Colourful Vegan',
@@ -29,7 +30,8 @@ class ProductTableSeeder extends Seeder
         ]);
         $product2->categories()->sync([1]);
         $product2->ingredients()->sync([3,4,5]);
-        $product2->addMediaFromUrl('https://sushidaily.com/media/2kqljj3h/salmon-poke_top-view_bowl.jpg?width=SushiDaily.Domain.ViewModels.Shared.SrcSetData&quality=80')->toMediaCollection('photo');
+        $product2->addMedia("database/seeders/product_images/colourful-vegan.png")->preservingOriginal()->toMediaCollection('photo');
+        // $product2->addMediaFromUrl('https://sushidaily.com/media/2kqljj3h/salmon-poke_top-view_bowl.jpg?width=SushiDaily.Domain.ViewModels.Shared.SrcSetData&quality=80')->toMediaCollection('photo');
         
         $product3 = Product::create([
             'name' => 'Chicken Teriyakki Bowl',
@@ -38,7 +40,8 @@ class ProductTableSeeder extends Seeder
         ]);
         $product3->categories()->sync([1]);
         $product3->ingredients()->sync([6,7]);
-        $product3->addMediaFromUrl('https://sushidaily.com/media/2kqljj3h/salmon-poke_top-view_bowl.jpg?width=SushiDaily.Domain.ViewModels.Shared.SrcSetData&quality=80')->toMediaCollection('photo');
+        $product3->addMedia("database/seeders/product_images/teriyakki-chicken-bowl.png")->preservingOriginal()->toMediaCollection('photo');
+        // $product3->addMediaFromUrl('https://sushidaily.com/media/2kqljj3h/salmon-poke_top-view_bowl.jpg?width=SushiDaily.Domain.ViewModels.Shared.SrcSetData&quality=80')->toMediaCollection('photo');
         
         $product4 = Product::create([
             'name' => 'Almond Butter Tofu',
@@ -47,7 +50,8 @@ class ProductTableSeeder extends Seeder
         ]);
         $product4->categories()->sync([1]);
         $product4->ingredients()->sync([8]);
-        $product4->addMediaFromUrl('https://sushidaily.com/media/2kqljj3h/salmon-poke_top-view_bowl.jpg?width=SushiDaily.Domain.ViewModels.Shared.SrcSetData&quality=80')->toMediaCollection('photo');
+        $product4->addMedia("database/seeders/product_images/almond-butter-tofu.png")->preservingOriginal()->toMediaCollection('photo');
+        // $product4->addMediaFromUrl('https://sushidaily.com/media/2kqljj3h/salmon-poke_top-view_bowl.jpg?width=SushiDaily.Domain.ViewModels.Shared.SrcSetData&quality=80')->toMediaCollection('photo');
 
         $juices = [
             [
