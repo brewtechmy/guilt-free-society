@@ -1,0 +1,81 @@
+<?php
+
+namespace Database\Seeders;
+
+use App\Models\Product;
+use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+use Illuminate\Database\Seeder;
+
+class ProductTableSeeder extends Seeder
+{
+    /**
+     * Run the database seeds.
+     */
+    public function run(): void
+    {
+        $product1 = Product::create([
+            'name' => 'Fruit Bowl',
+            'calories' => 832,
+            'price' => 28.90,
+        ]);
+        $product1->categories()->sync([1]);
+        $product1->ingredients()->sync([1,2]);
+        $product1->addMediaFromUrl('https://sushidaily.com/media/2kqljj3h/salmon-poke_top-view_bowl.jpg?width=SushiDaily.Domain.ViewModels.Shared.SrcSetData&quality=80')->toMediaCollection('photo');
+        
+        $product2 = Product::create([
+            'name' => 'Colourful Vegan',
+            'calories' => 417,
+            'price' => 28.90,
+        ]);
+        $product2->categories()->sync([1]);
+        $product2->ingredients()->sync([3,4,5]);
+        $product2->addMediaFromUrl('https://sushidaily.com/media/2kqljj3h/salmon-poke_top-view_bowl.jpg?width=SushiDaily.Domain.ViewModels.Shared.SrcSetData&quality=80')->toMediaCollection('photo');
+        
+        $product3 = Product::create([
+            'name' => 'Chicken Teriyakki Bowl',
+            'calories' => 540,
+            'price' => 28.90,
+        ]);
+        $product3->categories()->sync([1]);
+        $product3->ingredients()->sync([6,7]);
+        $product3->addMediaFromUrl('https://sushidaily.com/media/2kqljj3h/salmon-poke_top-view_bowl.jpg?width=SushiDaily.Domain.ViewModels.Shared.SrcSetData&quality=80')->toMediaCollection('photo');
+        
+        $product4 = Product::create([
+            'name' => 'Almond Butter Tofu',
+            'calories' => 520,
+            'price' => 28.90,
+        ]);
+        $product4->categories()->sync([1]);
+        $product4->ingredients()->sync([8]);
+        $product4->addMediaFromUrl('https://sushidaily.com/media/2kqljj3h/salmon-poke_top-view_bowl.jpg?width=SushiDaily.Domain.ViewModels.Shared.SrcSetData&quality=80')->toMediaCollection('photo');
+
+        $juices = [
+            [
+                'name' => 'Fruit Bowl',
+                'calories' => 832,
+                'price' => 28.90,
+            ],
+            [
+                'name' => 'Colourful Vegan',
+                'calories' => 417,
+                'price' => 28.90,
+            ],
+            [
+                'name' => 'Chicken Teriyakki Bowl',
+                'calories' => 540,
+                'price' => 28.90,
+            ],
+            [
+                'name' => 'Almond Butter Tofu',
+                'calories' => 520,
+                'price' => 28.90,
+            ],
+        ];
+
+        foreach ($juices as $juice) {
+            $ingredient = Product::create($juice);
+            $ingredient->categories()->sync([2]);
+            $ingredient->addMediaFromUrl('https://st5.depositphotos.com/12902820/66216/i/450/depositphotos_662168852-stock-photo-refreshing-layered-summer-watermelon-drink.jpg')->toMediaCollection('photo');
+        }
+    }
+}
