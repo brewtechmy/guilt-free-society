@@ -12,7 +12,7 @@
                         <img class="rounded-full border-8 border-black aspect-square max-w-52 mx-auto" src="{{ $service->photo?->getUrl() ?? 'https://placehold.co/600x600?text=No+Photo' }}" />
                     </div>
                     <div class="flex flex-col justify-center sm:basis-4/6">
-                        <div class="text-2xl items-center font-bold">Title</div>
+                        <div class="text-2xl items-center font-bold">{!! $service->title !!}</div>
                         <span class="text-md items-center mt-2">{!! $service->description !!}</span>
                     </div>
                 </div>

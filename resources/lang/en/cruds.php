@@ -337,6 +337,8 @@ return [
         'fields'         => [
             'id'                   => 'ID',
             'id_helper'            => ' ',
+            'title'                 => 'Title',
+            'title_helper'          => ' ',
             'description'                 => 'Description',
             'description_helper'          => ' ',
             'created_at'           => 'Created at',

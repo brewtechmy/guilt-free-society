@@ -11,6 +11,14 @@
             @method('PUT')
             @csrf
             <div class="form-group">
+              <label for="title">{{ trans('cruds.service.fields.title') }}</label>
+              <textarea class="form-control ckeditor {{ $errors->has('title') ? 'is-invalid' : '' }}" name="title" id="title">{!! old('title', $service->title) !!}</textarea>
+              @if($errors->has('title'))
+                  <span class="text-danger">{{ $errors->first('title') }}</span>
+              @endif
+              <span class="help-block">{{ trans('cruds.service.fields.title_helper') }}</span>
+          </div>
+            <div class="form-group">
                 <label for="description">{{ trans('cruds.service.fields.description') }}</label>
                 <textarea class="form-control ckeditor {{ $errors->has('description') ? 'is-invalid' : '' }}" name="description" id="description">{!! old('description', $service->description) !!}</textarea>
                 @if($errors->has('description'))
