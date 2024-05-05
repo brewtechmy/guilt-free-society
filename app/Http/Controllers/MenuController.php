@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Setting;
 use App\Models\IngredientCategory;
+use App\Models\ProductCategory;
 
 class MenuController extends Controller
 {
@@ -31,6 +32,8 @@ class MenuController extends Controller
 
     public function menu()
     {
-        return view('menu');
+        $menuCategories = ProductCategory::with(['products.ingredients'])->get();
+
+        return view('menu', compact('menuCategories'));
     }
 }
