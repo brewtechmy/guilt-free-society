@@ -187,6 +187,8 @@ return [
             'calories_helper'       => ' ',
             'price'              => 'Price',
             'price_helper'       => ' ',
+            'ingredient'           => 'Ingredients',
+            'ingredient_helper'    => ' ',
             'category'           => 'Categories',
             'category_helper'    => ' ',
             'tag'                => 'Tags',

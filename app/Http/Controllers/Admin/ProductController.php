@@ -2,18 +2,19 @@
 
 namespace App\Http\Controllers\Admin;
 
+use Gate;
+use App\Models\Product;
+use App\Models\Ingredient;
+use App\Models\ProductTag;
+use Illuminate\Http\Request;
+use App\Models\ProductCategory;
 use App\Http\Controllers\Controller;
-use App\Http\Controllers\Traits\MediaUploadingTrait;
-use App\Http\Requests\MassDestroyProductRequest;
 use App\Http\Requests\StoreProductRequest;
 use App\Http\Requests\UpdateProductRequest;
-use App\Models\Product;
-use App\Models\ProductCategory;
-use App\Models\ProductTag;
-use Gate;
-use Illuminate\Http\Request;
-use Spatie\MediaLibrary\MediaCollections\Models\Media;
 use Symfony\Component\HttpFoundation\Response;
+use App\Http\Requests\MassDestroyProductRequest;
+use App\Http\Controllers\Traits\MediaUploadingTrait;
+use Spatie\MediaLibrary\MediaCollections\Models\Media;
 
 class ProductController extends Controller
 {
@@ -34,16 +35,16 @@ class ProductController extends Controller
 
         $categories = ProductCategory::pluck('name', 'id');
 
-        $tags = ProductTag::pluck('name', 'id');
+        $ingredients = Ingredient::pluck('name', 'id');
 
-        return view('admin.products.create', compact('categories', 'tags'));
+        return view('admin.products.create', compact('categories', 'ingredients'));
     }
 
     public function store(StoreProductRequest $request)
     {
         $product = Product::create($request->all());
         $product->categories()->sync($request->input('categories', []));
-        $product->tags()->sync($request->input('tags', []));
+        $product->ingredients()->sync($request->input('ingredients', []));
         if ($request->input('photo', false)) {
             $product->addMedia(storage_path('tmp/uploads/' . basename($request->input('photo'))))->toMediaCollection('photo');
         }
@@ -61,18 +62,18 @@ class ProductController extends Controller
 
         $categories = ProductCategory::pluck('name', 'id');
 
-        $tags = ProductTag::pluck('name', 'id');
+        $ingredients = Ingredient::pluck('name', 'id');
 
-        $product->load('categories', 'tags');
+        $product->load('categories', 'ingredients');
 
-        return view('admin.products.edit', compact('categories', 'product', 'tags'));
+        return view('admin.products.edit', compact('categories', 'product', 'ingredients'));
     }
 
     public function update(UpdateProductRequest $request, Product $product)
     {
         $product->update($request->all());
         $product->categories()->sync($request->input('categories', []));
-        $product->tags()->sync($request->input('tags', []));
+        $product->ingredients()->sync($request->input('ingredients', []));
         if ($request->input('photo', false)) {
             if (! $product->photo || $request->input('photo') !== $product->photo->file_name) {
                 if ($product->photo) {
