@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Models\Setting;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Cache;
 use App\Http\Requests\StoreSettingRequest;
 use App\Http\Requests\UpdateSettingRequest;
 
@@ -58,6 +59,8 @@ class SettingController extends Controller
         foreach($request->all() as $key => $value){
             Setting::where('key', $key)->update(['value' => $value]);
         }
+
+        Cache::forget('formula');
 
         return redirect()->route('admin.settings.index');
     }
