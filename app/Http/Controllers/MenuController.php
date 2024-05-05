@@ -2,6 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Setting;
+use App\Models\IngredientCategory;
+use App\Models\ProductCategory;
+
 class MenuController extends Controller
 {
     /**
@@ -21,11 +25,15 @@ class MenuController extends Controller
      */
     public function index()
     {
-        return view('byob');
+        $ingredientCategories = IngredientCategory::with(['ingredients'])->get();
+
+        return view('byob', compact('ingredientCategories'));
     }
 
     public function menu()
     {
-        return view('menu');
+        $menuCategories = ProductCategory::with(['products.ingredients'])->get();
+
+        return view('menu', compact('menuCategories'));
     }
 }

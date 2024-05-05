@@ -56,4 +56,9 @@ class IngredientCategory extends Model implements HasMedia
 
         return $file;
     }
+
+    public function ingredients()
+    {
+        return $this->belongsToMany(Ingredient::class);
+    }
 }
