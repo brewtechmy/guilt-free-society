@@ -50,8 +50,8 @@
 
 /* default theme */
 .counter{
-	width: 50px;
-	height: 80px;
+	/* width: 50px; */
+	/* height: 80px; */
 
 	border: 2px inset #666;
 
@@ -77,17 +77,63 @@
 }
 
 .counter .wheel{
-	width: 50px;
-	margin-top: 15px;
+	margin-top: 5px;
 
-	line-height: 50px;
-	height: 50px;
+	line-height: 30px;
+	height: 20px;
 
-	font-size: 30px;
+	font-size: 15px;
+
+	 @media (min-width: 640px) {
+		margin-top: 5px;
+
+		line-height: 30px;
+		height: 20px;
+
+		font-size: 15px;
+    }
+
+    @media (min-width: 768px) {
+		margin-top: 8px;
+
+		line-height: 40px;
+		height: 28px;
+
+		font-size: 20px;
+    }
+
+    @media (min-width: 1024px) {
+		margin-top: 15px;
+
+		line-height: 50px;
+		height: 40px;
+
+		font-size: 30px;
+    }
 
 }
 .counter .wheel .digit{
-	border-top: 1px solid rgba(64,64,64,0.5);
-	border-bottom: 1px solid rgba(128,128,128,0.5);
-	margin-left: -2px
+	/* border-top: 1px solid rgba(64,64,64,0.5);
+	border-bottom: 1px solid rgba(128,128,128,0.5); */
+	width: 2rem;
+	height: 2.75rem;
+
+	@media (min-width: 768px) {
+		.md\:w-10 {
+		  width: 2.5rem;
+		}
+		.md\:h-14 {
+		  height: 3.5rem;
+		}
+	  }
+
+	/* For large screens and above */
+	@media (min-width: 1024px) {
+	.lg\:w-12 {
+		width: 3rem;
+	}
+	.lg\:h-20 {
+		height: 5rem;
+	}
+	}
 }

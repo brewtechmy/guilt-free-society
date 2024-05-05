@@ -301,87 +301,50 @@
     ];
 @endphp
     <div class="px-14 relative">
-        <div class="fixed right-2 bottom-2 flex flex-col items-center">
-            <div id="nut-table" class="hidden">
-                <table class="table-auto bg-gray-200">
-                    <thead>
-                        <tr class="bg-gray-200">
-                            <td>
-                                Item
-                            </td>
-                            <td>
-                                Quantity (g)
-                            </td>
-                            <td>
-                                Protein (g)
-                            </td>
-                            <td>
-                                Carbs (g)
-                            </td>
-                            <td>
-                                Fat (g)
-                            </td>
-                            <td>
-                                Calorie (kcal)
-                            </td>
+        <div class="fixed right-5 bottom-1 flex flex-col items-center">
+            <div id="nut-table" class="transform transition-transform duration-300 origin-bottom scale-0">
+                <table class="table-auto bg-white shadow-md rounded-lg overflow-hidden pr-3">
+                    <thead class="bg-black">
+                        <tr class="text-white">
+                            <th class="px-4 py-2">Nutrition</th>
+                            <th class="px-4 py-2">Quantity (g)</th>
+                            <th class="px-4 py-2 pr-10">Calories (kcal)</th>
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke-width="3" stroke="currentColor" class="w-6 h-6 absolute top-0 right-2 mt-2 cursor-pointer text-white" onclick="toggleCalR()">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
+                            </svg>
                         </tr>
                     </thead>
-                    <!-- <thead>
+                    <tbody id="nut-tbody">
+                        <tr>
+                            <td class="px-4 py-2">Carbs</td>
+                            <td id="carb-quantity" class="px-4 py-2">0</td>
+                            <td id="carb-calories" class="px-4 py-2">0</td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-2">Protein</td>
+                            <td id="protein-quantity" class="px-4 py-2">0</td>
+                            <td id="protein-calories" class="px-4 py-2">0</td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-2">Fat</td>
+                            <td id="fat-quantity" class="px-4 py-2">0</td>
+                            <td id="fat-calories" class="px-4 py-2">0</td>
+                        </tr>
                         <tr class="bg-gray-200">
                             <td>
-                                Nutrition
+                            <button class="btn bg-[#027148] hover:bg-green-500 text-white font-bold py-2 px-4 rounded m-2" onclick="reset()">
+                                Reset
+                            </button>
                             </td>
-                            <td>
-                                Quantity (g)
-                            </td>
-                            <td>
-                                Calories (kcal)
-                            </td>
+                            <td class="px-4 py-2">Total</td>
+                            <td id="total-cal" class="px-4 py-2">0</td>
                         </tr>
-                    </thead> -->
-                    <tbody id='nut-tbody'>
-
                     </tbody>
-                    <!-- <tbody id="nut-tbody">
-                        <tr>
-                            <td>
-                                Carbs
-                            </td>
-                            <td id="carb-quantity">
-                                0.00
-                            </td>
-                            <td id="carb-calories">
-                                0.00
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                Protein
-                            </td>
-                            <td id="protein-quantity">
-                                0.00
-                            </td>
-                            <td id="protein-calories">
-                                0.00
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                Fat
-                            </td>
-                            <td id="fat-quantity">
-                                0.00
-                            </td>
-                            <td id="fat-calories">
-                                0.00
-                            </td>
-                        </tr>
-                    </tbody> -->
                 </table>
             </div>
-            <div class="transition-transform transform origin-bottom-right cursor-pointer" onclick="toggleCal(this)">
-                <span class="font-bold text-3xl text-white bg-black px-4 py-1" id="click-me">Click me</span>
-                <img class="max-h-36 mt-5" id="cal-img" src="https://cdn-icons-png.freepik.com/512/5223/5223103.png" />
+            <div class="ml-auto transform transition-transform duration-300 origin-bottom cursor-pointer" id="click-me" onclick="toggleCal(this)">
+                <span class="font-bold text-sm md:text-base lg:text-xl text-white bg-black px-4 py-1">Click me</span>
+                <img class="max-h-14 md:max-h-20 lg:max-h-28 mt-2" id="cal-img" src="https://cdn-icons-png.freepik.com/512/5223/5223103.png" />
             </div>
         </div>
         <div class="flex flex-col">
@@ -390,13 +353,13 @@
                     <span class="text-xl md:text-4xl lg:text-6xl font-semibold">{{$v['title']}}</span>
                     <div class="flex mt-4 px-8 overflow-x-auto overflow-y-hidden w-full">
                         @foreach ($v['list'] as $ik => $li)
-                            <div class="flex flex-col items-center min-w-24 md:min-w-44 lg:min-w-56 xl:min-w-64 mx-8">
-                                <img class="rounded-full border-8 border-black aspect-square w-full" src="{{ asset($li['img']) }}" />
+                            <div class="flex flex-col items-center min-w-24 md:min-w-44 lg:min-w-56 xl:min-w-64 md:ml-12 mr-4">
+                                <img class="rounded-full border-4 lg:border-8 border-black aspect-square w-full" src="{{ asset($li['img']) }}" />
                                 <span class="text-base md:text-xl lg:text-3xl whitespace-nowrap">{{$li['name']}}</span>
                                 <span class="text-base md:text-xl lg:text-3xl">({{$li['kcal']}} kcal)</span>
                             </div>
-                            <div class="wheel inline-block align-middle hidden mr-6">
-                                <div id="acw-{{$k.'-'.$ik}}" class="counter">0</div>
+                            <div class="wheel-outline mr-6 transform duration-300 scale-0">
+                                <div id="acw-{{$k.'-'.$ik}}" class="counter w-8 md:w-10 lg:w-12 h-11 md:h-14 lg:h-20">0</div>
                             </div>
                         @endforeach
                     </div>
@@ -406,6 +369,9 @@
     </div>
     <script type="text/javascript">
         var arr = @json($arr);
+        var carbMultiplier = @json(4);
+        var proteinMultiplier = @json(4);
+        var fatMultiplier = @json(9);
         const elementList = document.querySelectorAll("[id^='acw']");
         elementList.forEach(element => {
             var counter = new Counter(element.id);
@@ -413,15 +379,43 @@
         });
 
         function toggleCal(e){
-            const wheelList = document.querySelectorAll("[class^='wheel']");
-            e.classList.toggle('scale-50');
-            e.classList.toggle('bottom-0');
-            e.classList.toggle('right-0');
+            const wheelList = document.querySelectorAll("[class^='wheel-outline']");
             wheelList.forEach(element => {
-                element.classList.toggle("hidden")
+                element.classList.toggle("scale-0")
             });
+            e.classList.toggle('scale-0');
+            setTimeout(() => {
+                e.classList.toggle('hidden');
+                document.getElementById('nut-table').classList.toggle("scale-0")
+            }, 300);
+        }
+        function toggleCalR(){
+            const wheelList = document.querySelectorAll("[class^='wheel-outline']");
+            document.getElementById('nut-table').classList.toggle('scale-0');
+            setTimeout(() => {
+                document.getElementById('click-me').classList.toggle("hidden")
+            }, 300);
+            setTimeout(() => {
+                document.getElementById('click-me').classList.toggle("scale-0")
+            }, 400);
+            wheelList.forEach(element => {
+                element.classList.toggle("scale-0")
+            });
+        }
 
-            document.getElementById('nut-table').classList.toggle("hidden")
+        function reset(){
+            const elementList = document.querySelectorAll("[id^='acw']");
+            elementList.forEach(element => {
+                var counter = new Counter(element.id);
+                counter.options.inverted = true;
+            });
+	        document.getElementById('carb-quantity').innerHTML = 0.00.toFixed(2)
+            document.getElementById('protein-quantity').innerHTML = 0.00.toFixed(2)
+            document.getElementById('fat-quantity').innerHTML = 0.00.toFixed(2)
+            document.getElementById('carb-calories').innerHTML = 0.00.toFixed(2)
+            document.getElementById('protein-calories').innerHTML = 0.00.toFixed(2)
+            document.getElementById('fat-calories').innerHTML = 0.00.toFixed(2)
+            document.getElementById('total-cal').innerHTML = 0.00.toFixed(2)
         }
     </script>
 @endsection
