@@ -20,6 +20,29 @@
                 <span class="help-block">{{ trans('cruds.joinUsPage.fields.title_helper') }}</span>
             </div>
             <div class="form-group">
+                <label for="position">{{ trans('cruds.joinUsPage.fields.position') }}</label>
+                <input class="form-control {{ $errors->has('position') ? 'is-invalid' : '' }}" type="number" name="position" id="position" value="{{ old('position', '') }}" step="1">
+                @if($errors->has('position'))
+                    <div class="invalid-feedback">
+                        {{ $errors->first('position') }}
+                    </div>
+                @endif
+                <span class="help-block">{{ trans('cruds.joinUsPage.fields.position_helper') }}</span>
+            </div>
+            <div class="form-group">
+                <div class="form-check {{ $errors->has('is_main') ? 'is-invalid' : '' }}">
+                    <input type="hidden" name="is_main" value="0">
+                    <input class="form-check-input" type="checkbox" name="is_main" id="is_main" value="1" {{ old('is_main', 0) == 1 ? 'checked' : '' }}>
+                    <label class="form-check-label" for="is_main">{{ trans('cruds.joinUsPage.fields.is_main') }}</label>
+                </div>
+                @if($errors->has('is_main'))
+                    <div class="invalid-feedback">
+                        {{ $errors->first('is_main') }}
+                    </div>
+                @endif
+                <span class="help-block">{{ trans('cruds.joinUsPage.fields.is_main_helper') }}</span>
+            </div>
+            <div class="form-group">
                 <label for="description">{{ trans('cruds.joinUsPage.fields.description') }}</label>
                 <textarea class="form-control ckeditor {{ $errors->has('description') ? 'is-invalid' : '' }}" name="description" id="description">{!! old('description') !!}</textarea>
                 @if($errors->has('description'))

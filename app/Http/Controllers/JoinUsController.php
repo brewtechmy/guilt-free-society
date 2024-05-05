@@ -8,8 +8,10 @@ class JoinUsController extends Controller
 {
     public function __invoke()
     {
-        $joinUs = JoinUsPage::all();
-        // $link = Section::where('key', 'help_us_improve_link')->first()->value;
-        return view('join-us', compact("joinUs"));
+        $joinUs = JoinUsPage::where('is_main',0)->orderby('position')->get();
+
+        $mainPhoto = JoinUsPage::where('is_main',1)->first();
+
+        return view('join-us', compact("joinUs","mainPhoto"));
     }
 }

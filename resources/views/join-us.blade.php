@@ -9,7 +9,7 @@
             <div class="col-span-2 flex flex-col">
                 <div class="grow flex flex-col justify-center">
                     <img class="rounded-full border-8 border-black aspect-square max-w-72 mx-auto"
-                        src="https://placehold.co/600x600" />
+                        src="{{ $mainPhoto->photo ? $mainPhoto->photo->getUrl() : ""}}" />
                 </div>
             </div>
             <div class="overflow-y-auto grid gap-5 mx-8 sm:mx-0 lg:col-span-3 lg:gap-8">

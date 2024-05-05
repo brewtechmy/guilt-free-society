@@ -32,6 +32,12 @@
                             {{ trans('cruds.joinUsPage.fields.description') }}
                         </th>
                         <th>
+                            {{ trans('cruds.joinUsPage.fields.position') }}
+                        </th>
+                        <th>
+                            {{ trans('cruds.joinUsPage.fields.is_main') }}
+                        </th>
+                        <th>
                             {{ trans('cruds.joinUsPage.fields.photo') }}
                         </th>
                         <th>
@@ -53,6 +59,16 @@
                             </td>
                             <td>
                                 {!! $joinUsPage->description ?? '' !!}
+                            </td>
+                            <td>
+                                {{ $joinUsPage->position ?? '' }}
+                            </td>
+                            <td>
+                                @if ($joinUsPage->is_main)
+                                    &check;
+                                @else
+                                    &#10005;
+                                @endif
                             </td>
                             <td>
                                 @if($joinUsPage->photo)

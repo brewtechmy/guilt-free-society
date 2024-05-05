@@ -14,7 +14,7 @@ class JoinUsPage extends Model implements HasMedia
 {
     use SoftDeletes, InteractsWithMedia, HasFactory;
 
-    public $table = 'join_us';
+    public $table = 'join_us_pages';
 
     protected $appends = [
         'photo',
@@ -28,6 +28,8 @@ class JoinUsPage extends Model implements HasMedia
 
     protected $fillable = [
         'title',
+        'position',
+        'is_main',
         'description',
         'created_at',
         'updated_at',

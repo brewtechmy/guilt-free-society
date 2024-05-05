@@ -11,9 +11,11 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('join_us', function (Blueprint $table) {
+        Schema::create('join_us_pages', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('title')->nullable();
+            $table->integer('position')->nullable();
+            $table->boolean('is_main')->default(0)->nullable();
             $table->longText('description')->nullable();
             $table->timestamps();
             $table->softDeletes();
