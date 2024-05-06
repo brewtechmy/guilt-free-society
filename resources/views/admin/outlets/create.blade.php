@@ -51,13 +51,15 @@
             </div>
             <div class="form-group">
                 <label for="embed_map_url">{{ trans('cruds.outlet.fields.embed_map_url') }}</label>
-                <textarea class="form-control {{ $errors->has('embed_map_url') ? 'is-invalid' : '' }}" name="embed_map_url" id="embed_map_url">{{ old('embed_map_url') }}</textarea>
+                <textarea class="form-control {{ $errors->has('embed_map_url') ? 'is-invalid' : '' }}" name="embed_map_url" id="embed_map_url" onchange="showPreview()">{{ old('embed_map_url') }}</textarea>
                 @if($errors->has('embed_map_url'))
                     <div class="invalid-feedback">
                         {{ $errors->first('embed_map_url') }}
                     </div>
                 @endif
                 <span class="help-block">{{ trans('cruds.outlet.fields.embed_map_url_helper') }}</span>
+            </div>
+            <div class="form-group" id="previewMap">
             </div>
             <div class="form-group">
                 <label for="photo">{{ trans('cruds.outlet.fields.photo') }}</label>
@@ -84,6 +86,16 @@
 @endsection
 
 @section('scripts')
+<script>
+    function showPreview() {
+        var embedContent = document.getElementById("embed_map_url").value;
+        if (embedContent.trim().startsWith("<iframe")) {
+            document.getElementById("previewMap").innerHTML = embedContent;
+        } else {
+            document.getElementById("previewMap").innerHTML = "<span style='color: red; font-weight: bold;'>NOT VALID EMBEDDED IFRAME LINK!!!</span>";
+        }
+    }
+</script>
 <script>
     Dropzone.options.photoDropzone = {
     url: '{{ route('admin.outlets.storeMedia') }}',
