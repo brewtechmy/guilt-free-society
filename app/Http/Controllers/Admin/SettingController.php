@@ -62,7 +62,7 @@ class SettingController extends Controller
 
         Cache::forget('formula');
 
-        return redirect()->route('admin.settings.index');
+        return redirect()->route('admin.settings.index')->with('message', __('global.update_setting_success'));
     }
 
     /**

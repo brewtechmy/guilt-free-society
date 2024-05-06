@@ -23,6 +23,6 @@ class SectionController extends Controller
             Section::where('key', $key)->update(['value' => $value]);
         }
 
-        return redirect()->route('admin.sections.index');
+        return redirect()->route('admin.sections.index')->with('message', __('global.update_section_success'));
     }
 }

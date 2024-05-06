@@ -54,6 +54,8 @@ return [
     'yourAccountNeedsAdminApproval'  => 'Your accounts needs an administrator approval in order to log in',
     'submit'                         => 'Submit',
     'relatedData'                    => 'Related Data',
+    'update_section_success'         => 'Sections updated successfully',
+    'update_setting_success'         => 'Settings updated successfully',
     'update_profile_success'         => 'Profile updated successfully',
     'change_password_success'        => 'Password changed successfully',
     'delete_account_success'         => 'Account deleted successfully',
