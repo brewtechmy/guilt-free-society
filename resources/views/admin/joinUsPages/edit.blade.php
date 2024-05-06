@@ -10,51 +10,58 @@
         <form method="POST" action="{{ route("admin.join-us-pages.update", [$joinUsPage->id]) }}" enctype="multipart/form-data">
             @method('PUT')
             @csrf
-            <div class="form-group">
-                <label for="title">{{ trans('cruds.joinUsPage.fields.title') }}</label>
-                <input class="form-control {{ $errors->has('title') ? 'is-invalid' : '' }}" type="text" name="title" id="title" value="{{ old('title', $joinUsPage->title) }}">
-                @if($errors->has('title'))
-                    <div class="invalid-feedback">
-                        {{ $errors->first('title') }}
-                    </div>
-                @endif
-                <span class="help-block">{{ trans('cruds.joinUsPage.fields.title_helper') }}</span>
-            </div>
-            <div class="form-group">
-                <label for="position">{{ trans('cruds.joinUsPage.fields.position') }}</label>
-                <input class="form-control {{ $errors->has('position') ? 'is-invalid' : '' }}" type="number" name="position" id="position" value="{{ old('position', $joinUsPage->position) }}" step="1">
-                @if($errors->has('position'))
-                    <div class="invalid-feedback">
-                        {{ $errors->first('position') }}
-                    </div>
-                @endif
-                <span class="help-block">{{ trans('cruds.joinUsPage.fields.position_helper') }}</span>
-            </div>
-            <div class="form-group">
-                <div class="form-check {{ $errors->has('is_main') ? 'is-invalid' : '' }}">
-                    <input type="hidden" name="is_main" value="0">
-                    <input class="form-check-input" type="checkbox" name="is_main" id="is_main" value="1" {{ $joinUsPage->is_main || old('is_main', 0) === 1 ? 'checked' : '' }}>
-                    <label class="form-check-label" for="is_main">{{ trans('cruds.joinUsPage.fields.is_main') }}</label>
+            @if(!$joinUsPage->is_main)
+                <div class="form-group">
+                    <label for="title">{{ trans('cruds.joinUsPage.fields.title') }}</label>
+                    <input class="form-control {{ $errors->has('title') ? 'is-invalid' : '' }}" type="text" name="title" id="title" value="{{ old('title', $joinUsPage->title) }}">
+                    @if($errors->has('title'))
+                        <div class="invalid-feedback">
+                            {{ $errors->first('title') }}
+                        </div>
+                    @endif
+                    <span class="help-block">{{ trans('cruds.joinUsPage.fields.title_helper') }}</span>
                 </div>
-                @if($errors->has('is_main'))
-                    <div class="invalid-feedback">
-                        {{ $errors->first('is_main') }}
+                <div class="form-group">
+                    <label for="position">{{ trans('cruds.joinUsPage.fields.position') }}</label>
+                    <input class="form-control {{ $errors->has('position') ? 'is-invalid' : '' }}" type="number" name="position" id="position" value="{{ old('position', $joinUsPage->position) }}" min="1" max ="{{ $maxPositionValue }}" step="1">
+                    @if($errors->has('position'))
+                        <div class="invalid-feedback">
+                            {{ $errors->first('position') }}
+                        </div>
+                    @endif
+                    <span class="help-block">{{ trans('cruds.joinUsPage.fields.position_helper') }}</span>
+                </div>
+                {{-- <div class="form-group">
+                    <div class="form-check {{ $errors->has('is_main') ? 'is-invalid' : '' }}">
+                        <input type="hidden" name="is_main" value="0">
+                        <input class="form-check-input" type="checkbox" name="is_main" id="is_main" value="1" {{ $joinUsPage->is_main || old('is_main', 0) === 1 ? 'checked' : '' }}>
+                        <label class="form-check-label" for="is_main">{{ trans('cruds.joinUsPage.fields.is_main') }}</label>
                     </div>
-                @endif
-                <span class="help-block">{{ trans('cruds.joinUsPage.fields.is_main_helper') }}</span>
-            </div>
+                    @if($errors->has('is_main'))
+                        <div class="invalid-feedback">
+                            {{ $errors->first('is_main') }}
+                        </div>
+                    @endif
+                    <span class="help-block">{{ trans('cruds.joinUsPage.fields.is_main_helper') }}</span>
+                </div> --}}
+                <div class="form-group">
+                    <label for="description">{{ trans('cruds.joinUsPage.fields.description') }}</label>
+                    <textarea class="form-control ckeditor {{ $errors->has('description') ? 'is-invalid' : '' }}" name="description" id="description">{!! old('description', $joinUsPage->description) !!}</textarea>
+                    @if($errors->has('description'))
+                        <div class="invalid-feedback">
+                            {{ $errors->first('description') }}
+                        </div>
+                    @endif
+                    <span class="help-block">{{ trans('cruds.joinUsPage.fields.description_helper') }}</span>
+                </div>
+            @else
+            @endif
             <div class="form-group">
-                <label for="description">{{ trans('cruds.joinUsPage.fields.description') }}</label>
-                <textarea class="form-control ckeditor {{ $errors->has('description') ? 'is-invalid' : '' }}" name="description" id="description">{!! old('description', $joinUsPage->description) !!}</textarea>
-                @if($errors->has('description'))
-                    <div class="invalid-feedback">
-                        {{ $errors->first('description') }}
-                    </div>
+                @if (!$joinUsPage->is_main)
+                    <label for="photo">{{ trans('cruds.joinUsPage.fields.photo') }}</label>
+                @else
+                    <label for="photo">Main Spotlight Photo for Join Us Page</label>
                 @endif
-                <span class="help-block">{{ trans('cruds.joinUsPage.fields.description_helper') }}</span>
-            </div>
-            <div class="form-group">
-                <label for="photo">{{ trans('cruds.joinUsPage.fields.photo') }}</label>
                 <div class="needsclick dropzone {{ $errors->has('photo') ? 'is-invalid' : '' }}" id="photo-dropzone">
                 </div>
                 @if($errors->has('photo'))

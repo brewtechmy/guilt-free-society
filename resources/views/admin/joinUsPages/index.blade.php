@@ -23,16 +23,13 @@
 
                         </th>
                         <th>
-                            {{ trans('cruds.joinUsPage.fields.id') }}
+                            {{ trans('cruds.joinUsPage.fields.position') }}
                         </th>
                         <th>
                             {{ trans('cruds.joinUsPage.fields.title') }}
                         </th>
                         <th>
                             {{ trans('cruds.joinUsPage.fields.description') }}
-                        </th>
-                        <th>
-                            {{ trans('cruds.joinUsPage.fields.position') }}
                         </th>
                         <th>
                             {{ trans('cruds.joinUsPage.fields.is_main') }}
@@ -52,16 +49,13 @@
 
                             </td>
                             <td>
-                                {{ $joinUsPage->id ?? '' }}
+                                {{ $joinUsPage->position ?? '' }}
                             </td>
                             <td>
                                 {{ $joinUsPage->title ?? '' }}
                             </td>
                             <td>
                                 {!! $joinUsPage->description ?? '' !!}
-                            </td>
-                            <td>
-                                {{ $joinUsPage->position ?? '' }}
                             </td>
                             <td>
                                 @if ($joinUsPage->is_main)
@@ -89,14 +83,15 @@
                                         {{ trans('global.edit') }}
                                     </a>
                                 @endcan
-
-                                @can('join_us_page_delete')
-                                    <form action="{{ route('admin.join-us-pages.destroy', $joinUsPage->id) }}" method="POST" onsubmit="return confirm('{{ trans('global.areYouSure') }}');" style="display: inline-block;">
-                                        <input type="hidden" name="_method" value="DELETE">
-                                        <input type="hidden" name="_token" value="{{ csrf_token() }}">
-                                        <input type="submit" class="btn btn-xs btn-danger" value="{{ trans('global.delete') }}">
-                                    </form>
-                                @endcan
+                                @if (!$joinUsPage->is_main)
+                                    @can('join_us_page_delete')
+                                        <form action="{{ route('admin.join-us-pages.destroy', $joinUsPage->id) }}" method="POST" onsubmit="return confirm('{{ trans('global.areYouSure') }}');" style="display: inline-block;">
+                                            <input type="hidden" name="_method" value="DELETE">
+                                            <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                                            <input type="submit" class="btn btn-xs btn-danger" value="{{ trans('global.delete') }}">
+                                        </form>
+                                    @endcan
+                                @endif
 
                             </td>
 
@@ -148,7 +143,7 @@
 
   $.extend(true, $.fn.dataTable.defaults, {
     orderCellsTop: true,
-    order: [[ 1, 'desc' ]],
+    order: [[ 1, 'asc' ]],
     pageLength: 100,
   });
   let table = $('.datatable-JoinUsPage:not(.ajaxTable)').DataTable({ buttons: dtButtons })

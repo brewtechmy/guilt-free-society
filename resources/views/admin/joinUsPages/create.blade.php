@@ -21,7 +21,7 @@
             </div>
             <div class="form-group">
                 <label for="position">{{ trans('cruds.joinUsPage.fields.position') }}</label>
-                <input class="form-control {{ $errors->has('position') ? 'is-invalid' : '' }}" type="number" name="position" id="position" value="{{ old('position', '') }}" step="1">
+                <input class="form-control {{ $errors->has('position') ? 'is-invalid' : '' }}" type="number" name="position" id="position" value="{{ old('position', '') }}" min="1" max="{{ $maxPositionValue }}" step="1">
                 @if($errors->has('position'))
                     <div class="invalid-feedback">
                         {{ $errors->first('position') }}

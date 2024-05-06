@@ -30,11 +30,20 @@ class JoinUsPageController extends Controller
     {
         abort_if(Gate::denies('join_us_page_create'), Response::HTTP_FORBIDDEN, '403 Forbidden');
 
-        return view('admin.joinUsPages.create');
+        $maxPositionValue = JoinUsPage::where('is_main',0)->count();
+
+        return view('admin.joinUsPages.create', compact('maxPositionValue'));
     }
 
     public function store(StoreJoinUsPageRequest $request)
     {
+        $existPosition = JoinUsPage::where("position", $request['position'])->first();
+        if(isset($existPosition)){
+            $maxPositionValue = JoinUsPage::where('is_main',0)->count();
+            $existPosition->position = $maxPositionValue + 1;
+            $existPosition->save();
+        }
+
         $joinUsPage = JoinUsPage::create($request->all());
 
         if ($request->input('photo', false)) {
@@ -52,11 +61,19 @@ class JoinUsPageController extends Controller
     {
         abort_if(Gate::denies('join_us_page_edit'), Response::HTTP_FORBIDDEN, '403 Forbidden');
 
-        return view('admin.joinUsPages.edit', compact('joinUsPage'));
+        $maxPositionValue = JoinUsPage::where('is_main',0)->count();
+
+        return view('admin.joinUsPages.edit', compact('joinUsPage','maxPositionValue'));
     }
 
     public function update(UpdateJoinUsPageRequest $request, JoinUsPage $joinUsPage)
     {
+        $existPosition = JoinUsPage::where("position", $request['position'])->first();
+        if(isset($existPosition)){
+            $existPosition->position = $joinUsPage->position;
+            $existPosition->save();
+        }
+
         $joinUsPage->update($request->all());
 
         if ($request->input('photo', false)) {
