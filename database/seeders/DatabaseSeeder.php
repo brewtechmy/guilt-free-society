@@ -18,6 +18,7 @@ class DatabaseSeeder extends Seeder
             ProductCategoriesTableSeeder::class,
             ProductTableSeeder::class,
             OutletsTableSeeder::class,
+            ServiceTableSeeder::class,
             JoinUsPageSeeder::class,
             JourneyTableSeeder::class,
             AdvertisementTableSeeder::class,

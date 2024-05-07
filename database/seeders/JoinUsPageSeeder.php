@@ -16,11 +16,11 @@ class JoinUsPageSeeder extends Seeder
         $joinUs = [
             [
                 'id'    => 1,
-                'title' => null,
+                'title' => '-',
                 'position' => null,
-                'description' => null,
+                'description' => '-',
                 'is_main' => true,
-                'image_path' => 'Partner-with-us.png'
+                'image_path' => 'join-us-main.png'
             ],
             [
                 'id'    => 2,

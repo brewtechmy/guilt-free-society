@@ -49,7 +49,7 @@
 
                             </td>
                             <td>
-                                {{ $joinUsPage->position ?? '' }}
+                                {{ $joinUsPage->position ?? 'Main' }}
                             </td>
                             <td>
                                 {{ $joinUsPage->title ?? '' }}
