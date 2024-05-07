@@ -18,14 +18,6 @@
                     @if (!$joinUsPage->is_main)
                         <tr>
                             <th>
-                                {{ trans('cruds.joinUsPage.fields.id') }}
-                            </th>
-                            <td>
-                                {{ $joinUsPage->id }}
-                            </td>
-                        </tr>
-                        <tr>
-                            <th>
                                 {{ trans('cruds.joinUsPage.fields.title') }}
                             </th>
                             <td>

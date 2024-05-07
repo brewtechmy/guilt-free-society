@@ -51,7 +51,7 @@
             </div>
             <div class="form-group">
                 <label for="embed_map_url">{{ trans('cruds.outlet.fields.embed_map_url') }}</label>
-                <textarea class="form-control {{ $errors->has('embed_map_url') ? 'is-invalid' : '' }}" name="embed_map_url" id="embed_map_url" onchange="showPreview()">{{ old('embed_map_url') }}</textarea>
+                <textarea class="form-control {{ $errors->has('embed_map_url') ? 'is-invalid' : '' }}" name="embed_map_url" id="embed_map_url" onkeyup="showPreview()">{{ old('embed_map_url') }}</textarea>
                 @if($errors->has('embed_map_url'))
                     <div class="invalid-feedback">
                         {{ $errors->first('embed_map_url') }}
