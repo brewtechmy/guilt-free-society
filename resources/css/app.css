@@ -26,6 +26,23 @@ body {
   aspect-ratio: 2;
 }
 
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+  cursor: pointer;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.no-scrollbar {
+  cursor: pointer;
+  -ms-overflow-style: none;
+  /* IE and Edge */
+  scrollbar-width: none;
+  /* Firefox */
+  cursor: pointer;
+}
+
+
+
 
 @media (min-width: 640px) {
   .outlet-gmap-wrapper iframe {

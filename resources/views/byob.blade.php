@@ -332,9 +332,9 @@
                         </tr>
                         <tr class="bg-gray-200">
                             <td>
-                            <button class="btn bg-[#027148] hover:bg-green-500 text-white font-bold py-2 px-4 rounded m-2" onclick="reset()">
-                                Reset
-                            </button>
+                                <button class="btn bg-[#027148] hover:bg-green-500 text-white font-bold py-2 px-4 rounded m-2" onclick="reset()">
+                                    Reset
+                                </button>
                             </td>
                             <td class="px-4 py-2">Total</td>
                             <td id="total-cal" class="px-4 py-2">0</td>
@@ -351,15 +351,15 @@
             @foreach ($ingredientCategories as $categoryIndex => $category)
                 <div class="py-4">
                     <span class="text-xl md:text-4xl lg:text-6xl font-semibold">{{ $category->name }}</span>
-                    <div class="flex mt-4 px-8 overflow-x-auto overflow-y-hidden w-full">
+                    <div class="flex mt-4 px-8 overflow-x-auto overflow-y-hidden w-full no-scrollbar">
                         @foreach ($category->ingredients as $ingredientIndex => $ingredient)
                             <div class="flex flex-col items-center min-w-24 md:min-w-44 lg:min-w-56 xl:min-w-64 md:ml-12 mr-4">
                                 <img class="rounded-full border-4 lg:border-8 border-black aspect-square w-full" src="{{ $ingredient->photo->thumbnail }}" />
-                                <span class="text-base md:text-xl lg:text-3xl whitespace-nowrap">{{$ingredient->name}}</span>
-                                <span class="text-base md:text-xl lg:text-3xl">({{$ingredient->calories}} kcal)</span>
+                                <span class="text-base md:text-xl lg:text-3xl whitespace-nowrap">{{ $ingredient->name }}</span>
+                                <span class="text-base md:text-xl lg:text-3xl">({{ $ingredient->calories }} kcal)</span>
                             </div>
                             <div class="wheel-outline mr-6 transform duration-300 scale-0">
-                                <div id="acw-{{$categoryIndex.'-'.$ingredientIndex}}" class="counter w-8 md:w-10 lg:w-12 h-11 md:h-14 lg:h-20">0</div>
+                                <div id="acw-{{ $categoryIndex . '-' . $ingredientIndex }}" class="counter w-8 md:w-10 lg:w-12 h-11 md:h-14 lg:h-20">0</div>
                             </div>
                         @endforeach
                     </div>
@@ -378,7 +378,7 @@
             counter.options.inverted = true;
         });
 
-        function toggleCal(e){
+        function toggleCal(e) {
             const wheelList = document.querySelectorAll("[class^='wheel-outline']");
             wheelList.forEach(element => {
                 element.classList.toggle("scale-0")
@@ -389,7 +389,8 @@
                 document.getElementById('nut-table').classList.toggle("scale-0")
             }, 300);
         }
-        function toggleCalR(){
+
+        function toggleCalR() {
             const wheelList = document.querySelectorAll("[class^='wheel-outline']");
             document.getElementById('nut-table').classList.toggle('scale-0');
             setTimeout(() => {
@@ -403,13 +404,13 @@
             });
         }
 
-        function reset(){
+        function reset() {
             const elementList = document.querySelectorAll("[id^='acw']");
             elementList.forEach(element => {
                 var counter = new Counter(element.id);
                 counter.options.inverted = true;
             });
-	        document.getElementById('carb-quantity').innerHTML = 0.00.toFixed(2)
+            document.getElementById('carb-quantity').innerHTML = 0.00.toFixed(2)
             document.getElementById('protein-quantity').innerHTML = 0.00.toFixed(2)
             document.getElementById('fat-quantity').innerHTML = 0.00.toFixed(2)
             document.getElementById('carb-calories').innerHTML = 0.00.toFixed(2)
@@ -417,5 +418,31 @@
             document.getElementById('fat-calories').innerHTML = 0.00.toFixed(2)
             document.getElementById('total-cal').innerHTML = 0.00.toFixed(2)
         }
+    </script>
+    <script>
+        const dragScrolls = document.querySelectorAll('.no-scrollbar');
+
+        dragScrolls.forEach((dragScroll) => {
+            let isMouseDown = false;
+            let startX, scrollLeft;
+
+            dragScroll.addEventListener('mousedown', (e) => {
+                isMouseDown = true;
+                startX = e.pageX - dragScroll.offsetLeft;
+                scrollLeft = dragScroll.scrollLeft;
+            });
+
+            dragScroll.addEventListener('mousemove', (e) => {
+                if (!isMouseDown) return;
+                e.preventDefault();
+                const x = e.pageX - dragScroll.offsetLeft;
+                const walk = (x - startX) * 3; // Adjust scrolling speed here
+                dragScroll.scrollLeft = scrollLeft - walk;
+            });
+
+            dragScroll.addEventListener('mouseup', () => {
+                isMouseDown = false;
+            });
+        });
     </script>
 @endsection
