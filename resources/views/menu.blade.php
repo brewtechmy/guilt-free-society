@@ -140,11 +140,11 @@
             @foreach ($menuCategories as $categoryIndex => $category)
                 <div class="py-4">
                     <span class="text-xl md:text-4xl lg:text-6xl font-semibold">{{ $category->name }}</span>
-                    <div class="flex mt-4 px-8 overflow-x-auto overflow-y-hidden w-full no-scrollbar">
+                    <div class="flex mt-4 py-3 px-8 overflow-x-auto overflow-y-hidden w-full no-scrollbar">
                         @foreach ($category->products as $menuIndex => $menu)
                             <div class="flex flex-col items-center min-w-24 md:min-w-44 lg:min-w-56 xl:min-w-64 mx-8 cursor-pointer">
                                 <img class="rounded-full border-8 border-black aspect-square w-full hover:scale-105" src="{{ $menu->photo->thumbnail }}" data-description="{{ $categoryIndex . '-' . $menuIndex }}" onclick="showDetails(this)" />
-                                <span class="text-base md:text-xl lg:text-3xl whitespace-nowrap">{{ $menu->name }}</span>
+                                <span class="text-base md:text-xl lg:text-3xl whitespace-nowrap mt-3">{{ $menu->name }}</span>
                                 <span class="text-xs md:text-base lg:text-xl">({{ $menu->ingredients->sum('calories') }} kcal)</span>
                                 <span class="text-base md:text-xl lg:text-3xl">RM {{ $menu->price }}</span>
                             </div>
