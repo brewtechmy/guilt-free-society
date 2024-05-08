@@ -30,8 +30,8 @@ class AppServiceProvider extends ServiceProvider
             $setting = Setting::where('key', 'calories_formula')->first();
 
             return !empty($setting)
-                ? '$calories = ' . $setting . ';'
-                : null;
+                ? '$calories = ' . $setting->value . ';'
+                : '$calories = (4 * $protein) + (4 * $carbohydrate) + (9 * $fat);';
         });
 
         if ($formula != null) {
