@@ -142,7 +142,7 @@
             }
         }
     @endphp
-    <div class="px-14 relative">
+    <div class="px-3 sm:px-14 relative">
         <div class="flex flex-col">
             @foreach ($menuCategories as $categoryIndex => $category)
                 <div class="py-4">

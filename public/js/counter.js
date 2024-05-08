@@ -7,6 +7,7 @@ var totalProtein = 0
 var totalCarbs = 0
 var totalFat = 0
 var totalCalorie = 0
+var totalQuantity = 0
 function Counter(counterElementId){
 
 	this.pos = 0;
@@ -132,6 +133,7 @@ Counter.prototype.setPos = function(x){
 	document.getElementById('protein-calories').innerHTML = pc
 	fc = parseFloat(fq*fatMultiplier).toFixed(2)
 	document.getElementById('fat-calories').innerHTML = fc
+	document.getElementById('total-quantity').innerHTML = (parseFloat(cq) + parseFloat(pq) + parseFloat(fq)).toFixed(2)
 	document.getElementById('total-cal').innerHTML = (parseFloat(cc) + parseFloat(pc) + parseFloat(fc)).toFixed(2)
 	// if(prev != pos){
 	// 	var irow = document.querySelector("tr[id*='nut-tr-"+this.posId+"']")
