@@ -147,7 +147,7 @@
             @foreach ($menuCategories as $categoryIndex => $category)
                 <div class="py-4">
                     <span class="text-xl md:text-4xl lg:text-6xl font-semibold">{{ $category->name }}</span>
-                    <div class="flex mt-4 py-3 px-8 overflow-x-auto overflow-y-hidden w-full no-scrollbar">
+                    <div class="flex mt-4 py-3 px-4 overflow-x-auto overflow-y-hidden w-full no-scrollbar">
                         @foreach ($category->products as $menuIndex => $menu)
                             <div class="flex flex-col items-center min-w-24 md:min-w-44 lg:min-w-56 xl:min-w-64 md:ml-12 mr-4 cursor-pointer">
                                 <img class="rounded-full border-4 lg:border-8 border-black aspect-square w-full hover:scale-105" src="{{ $menu->photo->thumbnail }}" data-description="{{ $categoryIndex . '-' . $menuIndex }}" onclick="showDetails(this)" />

@@ -55,24 +55,24 @@ class ProductTableSeeder extends Seeder
 
         $juices = [
             [
-                'name' => 'Fruit Bowl',
+                'name' => 'Apple Juice',
                 'calories' => 832,
-                'price' => 28.90,
+                'price' => 6.00,
             ],
             [
-                'name' => 'Colourful Vegan',
+                'name' => 'Orange Juice',
                 'calories' => 417,
-                'price' => 28.90,
+                'price' => 6.00,
             ],
             [
-                'name' => 'Chicken Teriyakki Bowl',
+                'name' => 'Watermelon Juice',
                 'calories' => 540,
-                'price' => 28.90,
+                'price' => 6.00,
             ],
             [
-                'name' => 'Almond Butter Tofu',
+                'name' => 'Banane Juice',
                 'calories' => 520,
-                'price' => 28.90,
+                'price' => 6.00,
             ],
         ];
 
