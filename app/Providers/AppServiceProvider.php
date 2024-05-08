@@ -27,13 +27,20 @@ class AppServiceProvider extends ServiceProvider
         });
 
         $formula = Cache::remember('formula', 3600, function () {
-            return '$calories = ' . Setting::where('key', 'calories_formula')->first()->value . ';';
+            $setting = Setting::where('key', 'calories_formula')->first();
+
+            return !empty($setting)
+                ? '$calories = ' . $setting . ';'
+                : null;
         });
-        $calculations = extractFormula($formula);
-        config([
-            'settings.protein_multiplier' => $calculations['protein']['multiplier'] ?? 4,
-            'settings.carbohydrate_multiplier' => $calculations['carbohydrate']['multiplier'] ?? 4,
-            'settings.fat_multiplier' => $calculations['fat']['multiplier'] ?? 9
-        ]);
+
+        if ($formula != null) {
+            $calculations = extractFormula($formula);
+            config([
+                'settings.protein_multiplier' => $calculations['protein']['multiplier'] ?? 4,
+                'settings.carbohydrate_multiplier' => $calculations['carbohydrate']['multiplier'] ?? 4,
+                'settings.fat_multiplier' => $calculations['fat']['multiplier'] ?? 9
+            ]);
+        }
     }
 }
