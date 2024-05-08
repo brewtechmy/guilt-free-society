@@ -138,7 +138,7 @@
         foreach ($menuCategories as $categoryIndex => $category) {
             array_push($arr, ['title' => $category->name, 'list' => []]);
             foreach ($category->products as $menuIndex => $menu) {
-                array_push($arr[$categoryIndex]['list'], ['name' => $menu->name, 'kcal' => $menu->calories, 'price' => $menu->price, 'desc' => $menu->description]);
+                array_push($arr[$categoryIndex]['list'], ['name' => $menu->name, 'kcal' => $menu->calories, 'price' => $menu->price, 'description' => $menu->ingredients->pluck('name')->implode(', ')]);
             }
         }
     @endphp
