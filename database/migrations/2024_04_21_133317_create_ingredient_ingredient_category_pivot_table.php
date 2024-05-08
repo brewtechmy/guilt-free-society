@@ -24,6 +24,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('ingredient_ingredient_category_pivot');
+        Schema::dropIfExists('ingredient_ingredient_category');
     }
 };
