@@ -16,4 +16,9 @@ class CreateContentCategoriesTable extends Migration
             $table->softDeletes();
         });
     }
+
+    public function down(): void
+    {
+        Schema::dropIfExists('content_categories');
+    }
 }

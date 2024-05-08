@@ -5,7 +5,7 @@
         <div class="">
             <div class="text-6xl font-semibold text-center md:text-left">Our Values</div>
             <div class="flex flex-col py-4 gap-3">
-                <img class="rounded-full border-8 border-black aspect-square max-w-[55vw] mx-auto sm:max-w-72"
+                <img class="rounded-full border-8 border-black aspect-square object-cover max-w-[55vw] mx-auto sm:max-w-72"
                     src="{{ url('/images/values.png') }}" alt="gfs_main_logo" />
                 <span class="text-2xl text-justify">
                     {!! $texts['our_values_text']['value'] !!}
@@ -16,7 +16,7 @@
             <div class="basis-1/2">
                 <div class="text-6xl font-semibold text-center md:text-left">Our Vision</div>
                 <div class="items-center gap-6 py-4 flex flex-col md:flex-row">
-                    <img class="aspect-square max-w-[55vw]" src="{{ url('/images/vision.png') }}" />
+                    <img class="aspect-square object-cover max-w-[55vw]" src="{{ url('/images/vision.png') }}" />
                     <span class="text-2xl text-justify">{!! $texts['our_vision_text']['value'] !!}
                     </span>
                 </div>
@@ -24,10 +24,10 @@
             <div class="basis-1/2">
                 <div class="text-6xl font-semibold text-center md:text-right">Our Mission</div>
                 <div class="items-center gap-6 py-4 flex flex-col md:flex-row">
-                    <img class="aspect-square max-w-[55vw] block md:hidden" src="{{ url('/images/vision.png') }}" />
+                    <img class="aspect-square object-cover max-w-[55vw] block md:hidden" src="{{ url('/images/vision.png') }}" />
                     <span class="text-2xl text-justify">{!! $texts['our_mission_text']['value'] !!}
                     </span>
-                    <img class="aspect-square max-w-[30vw] ml-auto hidden md:block" src="{{ url('/images/mission.png') }}" />
+                    <img class="aspect-square object-cover max-w-[30vw] ml-auto hidden md:block" src="{{ url('/images/mission.png') }}" />
                 </div>
             </div>
         </div>
@@ -41,7 +41,7 @@
                 rounded-lg">
                 <div class="grid grid-rows-6 md:grid-rows-4 lg:grid-rows-3 grid-flow-col gap-4 auto-rows-max">
                     @for ($i = 0; $i < count($journeys); $i++)
-                        <img class="aspect-square object-fill w-auto h-auto rounded-lg" src="{{ $journeys[$i]->getUrl() }}" alt="">
+                        <img class="aspect-square object-cover w-auto h-auto rounded-lg" src="{{ $journeys[$i]->getUrl() }}" alt="">
                     @endfor
                 </div>
             </div>

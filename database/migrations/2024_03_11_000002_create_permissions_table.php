@@ -15,4 +15,9 @@ class CreatePermissionsTable extends Migration
             $table->softDeletes();
         });
     }
+
+    public function down(): void
+    {
+        Schema::dropIfExists('permissions');
+    }
 }

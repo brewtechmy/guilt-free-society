@@ -15,4 +15,9 @@ class CreateContentCategoryContentPagePivotTable extends Migration
             $table->foreign('content_category_id', 'content_category_id_fk_9582861')->references('id')->on('content_categories')->onDelete('cascade');
         });
     }
+
+    public function down(): void
+    {
+        Schema::dropIfExists('content_category_content_page');
+    }
 }

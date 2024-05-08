@@ -9,7 +9,7 @@
             @foreach ($services as $service)
                 <div class="flex flex-row gap-5">
                     <div class="basis-2/6 self-center hidden sm:block">
-                        <img class="rounded-full border-8 border-black aspect-square max-w-52 mx-auto" src="{{ $service->photo?->getUrl() ?? 'https://placehold.co/600x600?text=No+Photo' }}" />
+                        <img class="rounded-full border-8 border-black aspect-square object-cover max-w-52 mx-auto" src="{{ $service->photo?->getUrl() ?? 'https://placehold.co/600x600?text=No+Photo' }}" />
                     </div>
                     <div class="flex flex-col justify-center sm:basis-4/6">
                         <div class="text-2xl items-center font-bold">{!! $service->title !!}</div>

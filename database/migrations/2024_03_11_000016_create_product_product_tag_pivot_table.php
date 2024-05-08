@@ -15,4 +15,9 @@ class CreateProductProductTagPivotTable extends Migration
             $table->foreign('product_tag_id', 'product_tag_id_fk_9582886')->references('id')->on('product_tags')->onDelete('cascade');
         });
     }
+
+    public function down(): void
+    {
+        Schema::dropIfExists('product_product_tag');
+    }
 }

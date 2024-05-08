@@ -26,9 +26,9 @@
                 <div class="grid gap-5 lg:grid-cols-2">
                     <div class="w-56 basis-2/5 self-center justify-self-center">
                         @if ($outlet->photo)
-                            <img class="rounded-full border-8 border-black aspect-square" src="{{ $outlet->photo->getUrl() }}" />
+                            <img class="rounded-full border-8 border-black aspect-square object-cover" src="{{ $outlet->photo->getUrl() }}" />
                         @else
-                            <img class="rounded-full border-8 border-black aspect-square" src=""/>
+                            <img class="rounded-full border-8 border-black aspect-square object-cover" src=""/>
                         @endif
                     </div>
                     <div class="flex flex-col basis-3/5 text-center lg:text-left gap-3">
@@ -52,7 +52,7 @@
             @endforeach
             {{-- <div class="grid gap-5 lg:grid-cols-2">
                 <div class="w-56 basis-2/5 self-center justify-self-center">
-                    <img class="rounded-full border-8 border-black aspect-square" src="/images/outlet_imgs/outlet2.png" />
+                    <img class="rounded-full border-8 border-black aspect-square object-cover" src="/images/outlet_imgs/outlet2.png" />
                 </div>
                 <div class="flex flex-col basis-3/5 text-center lg:text-left gap-3">
                     <div class="text-2xl items-center font-bold whitespace-nowrap">Guilt Free Society +</div>
