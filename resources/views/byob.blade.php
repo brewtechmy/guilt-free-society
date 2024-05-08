@@ -2,303 +2,13 @@
 @section('title', 'GFS - Build Your Own Bowl')
 @section('content')
     @php
-        $arr = [
-            [
-                'title' => 'Base',
-                'list' => [
-                    [
-                        'name' => 'Brown rice',
-                        'img' => 'https://5.imimg.com/data5/SELLER/Default/2021/3/ZJ/WX/AR/22880332/organic-basmati-brown-rice-500x500.jpg',
-                        'kcal' => 246,
-                        'quantity' => 150,
-                        'protein' => 21.53,
-                        'carbs' => 11.69,
-                        'fat' => 0.05,
-                    ],
-                    [
-                        'name' => 'Quinoa',
-                        'img' => 'https://static01.nyt.com/images/2024/01/04/multimedia/AS-Quinoa-tpjk/AS-Quinoa-tpjk-superJumbo.jpg',
-                        'kcal' => 345,
-                        'quantity' => 150,
-                        'protein' => 21.53,
-                        'carbs' => 11.69,
-                        'fat' => 0.05,
-                    ],
-                    [
-                        'name' => 'Greens',
-                        'img' => 'https://cdn.loveandlemons.com/wp-content/uploads/2021/04/green-salad.jpg',
-                        'kcal' => 233,
-                        'quantity' => 150,
-                        'protein' => 21.53,
-                        'carbs' => 11.69,
-                        'fat' => 0.05,
-                    ],
-                    [
-                        'name' => 'Soba',
-                        'img' => 'https://store.177milkstreet.com/cdn/shop/products/izumo-soba-noodles-umami-insider-28276732887097_700x.jpg?v=1632417414',
-                        'kcal' => 231,
-                        'quantity' => 150,
-                        'protein' => 21.53,
-                        'carbs' => 11.69,
-                        'fat' => 0.05,
-                    ],
-                    [
-                        'name' => 'Rice',
-                        'img' => 'https://img.freepik.com/free-photo/closeup-white-rice-textured_53876-30443.jpg',
-                        'kcal' => 696,
-                        'quantity' => 150,
-                        'protein' => 21.53,
-                        'carbs' => 11.69,
-                        'fat' => 0.05,
-                    ],
-                    [
-                        'name' => 'Potato',
-                        'img' => 'https://www.recipetineats.com/wp-content/uploads/2020/03/Creamy-Mashed-Potato_8-copy.jpg',
-                        'kcal' => 696,
-                        'quantity' => 150,
-                        'protein' => 21.53,
-                        'carbs' => 11.69,
-                        'fat' => 0.05,
-                    ],
-                ],
-            ],
-            [
-                'title' => 'Protein',
-                'list' => [
-                    [
-                        'name' => 'Chicken',
-                        'img' => 'https://www.wholesomeyum.com/wp-content/uploads/2021/12/wholesomeyum-Air-Fryer-Chicken-Breast-Recipe-32.jpg',
-                        'kcal' => 246,
-                        'quantity' => 150,
-                        'protein' => 21.53,
-                        'carbs' => 11.69,
-                        'fat' => 0.05,
-                    ],
-                    [
-                        'name' => 'Fish',
-                        'img' => 'https://kitchenatics.com/wp-content/uploads/2020/06/Grilled-Fish-Fillet-with-BBQ-Vegetables-500x500.jpg',
-                        'kcal' => 345,
-                        'quantity' => 150,
-                        'protein' => 21.53,
-                        'carbs' => 11.69,
-                        'fat' => 0.05,
-                    ],
-                    [
-                        'name' => 'Beef',
-                        'img' => 'https://www.simplyrecipes.com/thmb/0viHgWhjDdQ2caxPC6xozUvloQA=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/__opt__aboutcom__coeus__resources__content_migration__simply_recipes__uploads__2018__06__Grilled-Steak-LEAD-HORIZONTAL-33b562e0f6ce4a30b42a0ec603005569.jpg',
-                        'kcal' => 233,
-                        'quantity' => 150,
-                        'protein' => 21.53,
-                        'carbs' => 11.69,
-                        'fat' => 0.05,
-                    ],
-                    [
-                        'name' => 'Shrimp',
-                        'img' => 'https://www.acouplecooks.com/wp-content/uploads/2018/09/Grilled-Shrimp-006.jpg',
-                        'kcal' => 231,
-                        'quantity' => 150,
-                        'protein' => 21.53,
-                        'carbs' => 11.69,
-                        'fat' => 0.05,
-                    ],
-                    [
-                        'name' => 'Egg',
-                        'img' => 'https://assets.bonappetit.com/photos/58c95c88aafcc51ad9a32bc9/3:2/w_4998,h_3332,c_limit/jammy-soft-boiled-eggs.jpg',
-                        'kcal' => 696,
-                        'quantity' => 150,
-                        'protein' => 21.53,
-                        'carbs' => 11.69,
-                        'fat' => 0.05,
-                    ],
-                    [
-                        'name' => 'Protein Powder',
-                        'img' => 'https://thedaily9.in/wp-content/uploads/2023/01/Protein-shakes.jpg',
-                        'kcal' => 696,
-                        'quantity' => 150,
-                        'protein' => 21.53,
-                        'carbs' => 11.69,
-                        'fat' => 0.05,
-                    ],
-                ],
-            ],
-            [
-                'title' => 'Protein',
-                'list' => [
-                    [
-                        'name' => 'Chicken',
-                        'img' => 'https://www.wholesomeyum.com/wp-content/uploads/2021/12/wholesomeyum-Air-Fryer-Chicken-Breast-Recipe-32.jpg',
-                        'kcal' => 246,
-                        'quantity' => 150,
-                        'protein' => 21.53,
-                        'carbs' => 11.69,
-                        'fat' => 0.05,
-                    ],
-                    [
-                        'name' => 'Fish',
-                        'img' => 'https://kitchenatics.com/wp-content/uploads/2020/06/Grilled-Fish-Fillet-with-BBQ-Vegetables-500x500.jpg',
-                        'kcal' => 345,
-                        'quantity' => 150,
-                        'protein' => 21.53,
-                        'carbs' => 11.69,
-                        'fat' => 0.05,
-                    ],
-                    [
-                        'name' => 'Beef',
-                        'img' => 'https://www.simplyrecipes.com/thmb/0viHgWhjDdQ2caxPC6xozUvloQA=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/__opt__aboutcom__coeus__resources__content_migration__simply_recipes__uploads__2018__06__Grilled-Steak-LEAD-HORIZONTAL-33b562e0f6ce4a30b42a0ec603005569.jpg',
-                        'kcal' => 233,
-                        'quantity' => 150,
-                        'protein' => 21.53,
-                        'carbs' => 11.69,
-                        'fat' => 0.05,
-                    ],
-                    [
-                        'name' => 'Shrimp',
-                        'img' => 'https://www.acouplecooks.com/wp-content/uploads/2018/09/Grilled-Shrimp-006.jpg',
-                        'kcal' => 231,
-                        'quantity' => 150,
-                        'protein' => 21.53,
-                        'carbs' => 11.69,
-                        'fat' => 0.05,
-                    ],
-                    [
-                        'name' => 'Egg',
-                        'img' => 'https://assets.bonappetit.com/photos/58c95c88aafcc51ad9a32bc9/3:2/w_4998,h_3332,c_limit/jammy-soft-boiled-eggs.jpg',
-                        'kcal' => 696,
-                        'quantity' => 150,
-                        'protein' => 21.53,
-                        'carbs' => 11.69,
-                        'fat' => 0.05,
-                    ],
-                    [
-                        'name' => 'Protein Powder',
-                        'img' => 'https://thedaily9.in/wp-content/uploads/2023/01/Protein-shakes.jpg',
-                        'kcal' => 696,
-                        'quantity' => 150,
-                        'protein' => 21.53,
-                        'carbs' => 11.69,
-                        'fat' => 0.05,
-                    ],
-                ],
-            ],
-            [
-                'title' => 'Protein',
-                'list' => [
-                    [
-                        'name' => 'Chicken',
-                        'img' => 'https://www.wholesomeyum.com/wp-content/uploads/2021/12/wholesomeyum-Air-Fryer-Chicken-Breast-Recipe-32.jpg',
-                        'kcal' => 246,
-                        'quantity' => 150,
-                        'protein' => 21.53,
-                        'carbs' => 11.69,
-                        'fat' => 0.05,
-                    ],
-                    [
-                        'name' => 'Fish',
-                        'img' => 'https://kitchenatics.com/wp-content/uploads/2020/06/Grilled-Fish-Fillet-with-BBQ-Vegetables-500x500.jpg',
-                        'kcal' => 345,
-                        'quantity' => 150,
-                        'protein' => 21.53,
-                        'carbs' => 11.69,
-                        'fat' => 0.05,
-                    ],
-                    [
-                        'name' => 'Beef',
-                        'img' => 'https://www.simplyrecipes.com/thmb/0viHgWhjDdQ2caxPC6xozUvloQA=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/__opt__aboutcom__coeus__resources__content_migration__simply_recipes__uploads__2018__06__Grilled-Steak-LEAD-HORIZONTAL-33b562e0f6ce4a30b42a0ec603005569.jpg',
-                        'kcal' => 233,
-                        'quantity' => 150,
-                        'protein' => 21.53,
-                        'carbs' => 11.69,
-                        'fat' => 0.05,
-                    ],
-                    [
-                        'name' => 'Shrimp',
-                        'img' => 'https://www.acouplecooks.com/wp-content/uploads/2018/09/Grilled-Shrimp-006.jpg',
-                        'kcal' => 231,
-                        'quantity' => 150,
-                        'protein' => 21.53,
-                        'carbs' => 11.69,
-                        'fat' => 0.05,
-                    ],
-                    [
-                        'name' => 'Egg',
-                        'img' => 'https://assets.bonappetit.com/photos/58c95c88aafcc51ad9a32bc9/3:2/w_4998,h_3332,c_limit/jammy-soft-boiled-eggs.jpg',
-                        'kcal' => 696,
-                        'quantity' => 150,
-                        'protein' => 21.53,
-                        'carbs' => 11.69,
-                        'fat' => 0.05,
-                    ],
-                    [
-                        'name' => 'Protein Powder',
-                        'img' => 'https://thedaily9.in/wp-content/uploads/2023/01/Protein-shakes.jpg',
-                        'kcal' => 696,
-                        'quantity' => 150,
-                        'protein' => 21.53,
-                        'carbs' => 11.69,
-                        'fat' => 0.05,
-                    ],
-                ],
-            ],
-            [
-                'title' => 'Protein',
-                'list' => [
-                    [
-                        'name' => 'Chicken',
-                        'img' => 'https://www.wholesomeyum.com/wp-content/uploads/2021/12/wholesomeyum-Air-Fryer-Chicken-Breast-Recipe-32.jpg',
-                        'kcal' => 246,
-                        'quantity' => 150,
-                        'protein' => 21.53,
-                        'carbs' => 11.69,
-                        'fat' => 0.05,
-                    ],
-                    [
-                        'name' => 'Fish',
-                        'img' => 'https://kitchenatics.com/wp-content/uploads/2020/06/Grilled-Fish-Fillet-with-BBQ-Vegetables-500x500.jpg',
-                        'kcal' => 345,
-                        'quantity' => 150,
-                        'protein' => 21.53,
-                        'carbs' => 11.69,
-                        'fat' => 0.05,
-                    ],
-                    [
-                        'name' => 'Beef',
-                        'img' => 'https://www.simplyrecipes.com/thmb/0viHgWhjDdQ2caxPC6xozUvloQA=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/__opt__aboutcom__coeus__resources__content_migration__simply_recipes__uploads__2018__06__Grilled-Steak-LEAD-HORIZONTAL-33b562e0f6ce4a30b42a0ec603005569.jpg',
-                        'kcal' => 233,
-                        'quantity' => 150,
-                        'protein' => 21.53,
-                        'carbs' => 11.69,
-                        'fat' => 0.05,
-                    ],
-                    [
-                        'name' => 'Shrimp',
-                        'img' => 'https://www.acouplecooks.com/wp-content/uploads/2018/09/Grilled-Shrimp-006.jpg',
-                        'kcal' => 231,
-                        'quantity' => 150,
-                        'protein' => 21.53,
-                        'carbs' => 11.69,
-                        'fat' => 0.05,
-                    ],
-                    [
-                        'name' => 'Egg',
-                        'img' => 'https://assets.bonappetit.com/photos/58c95c88aafcc51ad9a32bc9/3:2/w_4998,h_3332,c_limit/jammy-soft-boiled-eggs.jpg',
-                        'kcal' => 696,
-                        'quantity' => 150,
-                        'protein' => 21.53,
-                        'carbs' => 11.69,
-                        'fat' => 0.05,
-                    ],
-                    [
-                        'name' => 'Protein Powder',
-                        'img' => 'https://thedaily9.in/wp-content/uploads/2023/01/Protein-shakes.jpg',
-                        'kcal' => 696,
-                        'quantity' => 150,
-                        'protein' => 21.53,
-                        'carbs' => 11.69,
-                        'fat' => 0.05,
-                    ],
-                ],
-            ],
-        ];
+        $arr = [];
+        foreach ($ingredientCategories as $categoryIndex => $category) {
+            array_push($arr, ['title' => $category->name, 'list' => []]);
+            foreach ($category->ingredients as $ingredientIndex => $ingredient) {
+                array_push($arr[$categoryIndex]['list'], ['name' => $ingredient->name, 'kcal' => $ingredient->calories, 'protein' => $ingredient->protein, 'fat' => $ingredient->fat, 'carbs' => $ingredient->carbohydrate]);
+            }
+        }
     @endphp
     <div class="px-14 relative">
         <div class="fixed right-5 bottom-1 flex flex-col items-center">
@@ -343,8 +53,8 @@
                 </table>
             </div>
             <div class="ml-auto transform transition-transform duration-300 origin-bottom cursor-pointer" id="click-me" onclick="toggleCal(this)">
-                <span class="font-bold text-sm md:text-base lg:text-xl text-white bg-black px-4 py-1">Click me</span>
-                <img class="max-h-14 md:max-h-20 lg:max-h-28 mt-2" id="cal-img" src="https://cdn-icons-png.freepik.com/512/5223/5223103.png" />
+                <span class="font-bold text-xs md:text-sm lg:text-base text-white bg-black px-2 py-1">Click me</span>
+                <img class="max-h-10 md:max-h-14 lg:max-h-20 mt-2" id="cal-img" src="https://cdn-icons-png.freepik.com/512/5223/5223103.png" />
             </div>
         </div>
         <div class="flex flex-col">
@@ -368,10 +78,10 @@
         </div>
     </div>
     <script type="text/javascript">
-        var arr = @json($ingredientCategories);
-        var carbMultiplier = @json(4);
-        var proteinMultiplier = @json(4);
-        var fatMultiplier = @json(9);
+        var arr = @json($arr);
+        var carbMultiplier = @json(config('settings.carbohydrate_multiplier'));
+        var proteinMultiplier = @json(config('settings.protein_multiplier'));
+        var fatMultiplier = @json(config('settings.fat_multiplier'));
         const elementList = document.querySelectorAll("[id^='acw']");
         elementList.forEach(element => {
             var counter = new Counter(element.id);

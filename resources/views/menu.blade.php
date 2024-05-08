@@ -134,6 +134,13 @@
                 ],
             ],
         ];
+        $arr = [];
+        foreach ($menuCategories as $categoryIndex => $category) {
+            array_push($arr, ['title' => $category->name, 'list' => []]);
+            foreach ($category->products as $menuIndex => $menu) {
+                array_push($arr[$categoryIndex]['list'], ['name' => $menu->name, 'kcal' => $menu->calories, 'price' => $menu->price, 'desc' => $menu->description]);
+            }
+        }
     @endphp
     <div class="px-14 relative">
         <div class="flex flex-col">
@@ -142,8 +149,8 @@
                     <span class="text-xl md:text-4xl lg:text-6xl font-semibold">{{ $category->name }}</span>
                     <div class="flex mt-4 py-3 px-8 overflow-x-auto overflow-y-hidden w-full no-scrollbar">
                         @foreach ($category->products as $menuIndex => $menu)
-                            <div class="flex flex-col items-center min-w-24 md:min-w-44 lg:min-w-56 xl:min-w-64 mx-8 cursor-pointer">
-                                <img class="rounded-full border-8 border-black aspect-square w-full hover:scale-105" src="{{ $menu->photo->thumbnail }}" data-description="{{ $categoryIndex . '-' . $menuIndex }}" onclick="showDetails(this)" />
+                            <div class="flex flex-col items-center min-w-24 md:min-w-44 lg:min-w-56 xl:min-w-64 md:ml-12 mr-4 cursor-pointer">
+                                <img class="rounded-full border-4 lg:border-8 border-black aspect-square w-full hover:scale-105" src="{{ $menu->photo->thumbnail }}" data-description="{{ $categoryIndex . '-' . $menuIndex }}" onclick="showDetails(this)" />
                                 <span class="text-base md:text-xl lg:text-3xl whitespace-nowrap mt-3">{{ $menu->name }}</span>
                                 <span class="text-xs md:text-base lg:text-xl">({{ $menu->ingredients->sum('calories') }} kcal)</span>
                                 <span class="text-base md:text-xl lg:text-3xl">RM {{ $menu->price }}</span>
@@ -162,7 +169,7 @@
         </div>
     </div>
     <script>
-        var arr = @json($menuCategories);
+        var arr = @json($arr);
 
         function showDetails(element) {
             var description = element.getAttribute('data-description');
@@ -173,18 +180,19 @@
 
             detailsContent.innerHTML = '';
             document.getElementById('item-title').innerHTML = item['name']
-            Object.keys(item['ingredients']).forEach(function(key) {
-                var header = document.createElement('div');
-                header.className = 'text-lg font-semibold mt-4';
-                header.textContent = key;
-                detailsContent.appendChild(header);
+            // Object.keys(item['ingredients']).forEach(function(key) {
+            //     var header = document.createElement('div');
+            //     header.className = 'text-lg font-semibold mt-4';
+            //     header.textContent = key;
+            //     detailsContent.appendChild(header);
 
-                var values = item['ingredients'][key];
-                var detailsString = values.join(', ');
-                var detailsStringElement = document.createElement('p');
-                detailsStringElement.textContent = detailsString;
-                detailsContent.appendChild(detailsStringElement);
-            });
+            //     var values = item['ingredients'][key];
+            //     var detailsString = values.join(', ');
+            //     var detailsStringElement = document.createElement('p');
+            //     detailsStringElement.textContent = detailsString;
+            //     detailsContent.appendChild(detailsStringElement);
+            // });
+            detailsContent.innerHTML = item['description']
 
             var popout = document.getElementById('popout');
             popout.classList.remove('hidden');
