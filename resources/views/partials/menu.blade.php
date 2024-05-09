@@ -21,8 +21,10 @@
                     </a>
                 </li> --}}
                 @can('content_management_access')
-                    <li class="nav-item has-treeview {{ request()->is("admin/content-categories*", "admin/content-tags*", "admin/content-pages*", "admin/advertisements*", "admin/outlets*", "admin/sections*", "admin/journeys*","admin/join-us-pages*") ? "menu-open" : "" }}">
-                        <a class="nav-link nav-dropdown-toggle {{ request()->is("admin/content-categories*", "admin/content-tags*", "admin/content-pages*", "admin/advertisements*", "admin/outlets*", "admin/sections*", "admin/journeys*","admin/join-us-pages*") ? "active" : "" }}" href="#">
+                    <li
+                        class="nav-item has-treeview {{ request()->is('admin/content-categories*', 'admin/content-tags*', 'admin/content-pages*', 'admin/advertisements*', 'admin/outlets*', 'admin/sections*', 'admin/journeys*', 'admin/join-us-pages*', 'admin/services*') ? 'menu-open' : '' }}">
+                        <a class="nav-link nav-dropdown-toggle {{ request()->is('admin/content-categories*', 'admin/content-tags*', 'admin/content-pages*', 'admin/advertisements*', 'admin/outlets*', 'admin/sections*', 'admin/journeys*', 'admin/join-us-pages*', 'admin/services*') ? 'active' : '' }}"
+                            href="#">
                             <i class="fa-fw nav-icon fas fa-book">
 
                             </i>
@@ -70,7 +72,8 @@
                             @endcan --}}
                             @can('advertisement_access')
                                 <li class="nav-item">
-                                    <a href="{{ route("admin.advertisements.index") }}" class="nav-link {{ request()->is("admin/advertisements") || request()->is("admin/advertisements/*") ? "active" : "" }}">
+                                    <a href="{{ route('admin.advertisements.index') }}"
+                                        class="nav-link {{ request()->is('admin/advertisements') || request()->is('admin/advertisements/*') ? 'active' : '' }}">
                                         <i class="fa-fw nav-icon fas fa-bullhorn">
 
                                         </i>
@@ -82,7 +85,8 @@
                             @endcan
                             @can('join_us_page_access')
                                 <li class="nav-item">
-                                    <a href="{{ route("admin.join-us-pages.index") }}" class="nav-link {{ request()->is("admin/join-us-pages") || request()->is("admin/join-us-pages/*") ? "active" : "" }}">
+                                    <a href="{{ route('admin.join-us-pages.index') }}"
+                                        class="nav-link {{ request()->is('admin/join-us-pages') || request()->is('admin/join-us-pages/*') ? 'active' : '' }}">
                                         <i class="fa-fw fas fa-child">
 
                                         </i>
@@ -94,7 +98,8 @@
                             @endcan
                             @can('outlet_access')
                                 <li class="nav-item">
-                                    <a href="{{ route("admin.outlets.index") }}" class="nav-link {{ request()->is("admin/outlets") || request()->is("admin/outlets/*") ? "active" : "" }}">
+                                    <a href="{{ route('admin.outlets.index') }}"
+                                        class="nav-link {{ request()->is('admin/outlets') || request()->is('admin/outlets/*') ? 'active' : '' }}">
                                         <i class="fa-fw nav-icon fas fa-map-marker-alt">
 
                                         </i>
@@ -105,7 +110,8 @@
                                 </li>
                             @endcan
                             <li class="nav-item">
-                                <a href="{{ route("admin.sections.index") }}" class="nav-link {{ request()->is("admin/sections") || request()->is("admin/sections/*") ? "active" : "" }}">
+                                <a href="{{ route('admin.sections.index') }}"
+                                    class="nav-link {{ request()->is('admin/sections') || request()->is('admin/sections/*') ? 'active' : '' }}">
                                     <i class="fa-fw nav-icon fas fa-align-justify">
 
                                     </i>
@@ -115,7 +121,8 @@
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a href="{{ route("admin.journeys.index") }}" class="nav-link {{ request()->is("admin/journeys") || request()->is("admin/journeys/*") ? "active" : "" }}">
+                                <a href="{{ route('admin.journeys.index') }}"
+                                    class="nav-link {{ request()->is('admin/journeys') || request()->is('admin/journeys/*') ? 'active' : '' }}">
                                     <i class="fa-fw nav-icon fas fa-image">
 
                                     </i>
@@ -125,7 +132,8 @@
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a href="{{ route("admin.services.index") }}" class="nav-link {{ request()->is("admin/services") || request()->is("admin/services/*") ? "active" : "" }}">
+                                <a href="{{ route('admin.services.index') }}"
+                                    class="nav-link {{ request()->is('admin/services') || request()->is('admin/services/*') ? 'active' : '' }}">
                                     <i class="fa-fw nav-icon fas fa-lightbulb">
 
                                     </i>
@@ -138,8 +146,10 @@
                     </li>
                 @endcan
                 @can('menu_management_access')
-                    <li class="nav-item has-treeview {{ request()->is("admin/product-categories*") ? "menu-open" : "" }} {{ request()->is("admin/product-tags*") ? "menu-open" : "" }} {{ request()->is("admin/products*") ? "menu-open" : "" }}">
-                        <a class="nav-link nav-dropdown-toggle {{ request()->is("admin/product-categories*") ? "active" : "" }} {{ request()->is("admin/product-tags*") ? "active" : "" }} {{ request()->is("admin/products*") ? "active" : "" }}" href="#">
+                    <li
+                        class="nav-item has-treeview {{ request()->is('admin/product-categories*', 'admin/product-tags*', 'admin/products*', 'admin/ingredient-categories*', 'admin/ingredient*') ? 'menu-open' : '' }}">
+                        <a class="nav-link nav-dropdown-toggle {{ request()->is('admin/product-categories*', 'admin/product-tags*', 'admin/products*', 'admin/ingredient-categories*', 'admin/ingredient*') ? 'active' : '' }}"
+                            href="#">
                             <i class="fa-fw nav-icon fas fa-shopping-cart">
 
                             </i>
@@ -151,7 +161,8 @@
                         <ul class="nav nav-treeview">
                             @can('product_access')
                                 <li class="nav-item">
-                                    <a href="{{ route("admin.ingredients.index") }}" class="nav-link {{ request()->is("admin/ingredients") || request()->is("admin/ingredients/*") ? "active" : "" }}">
+                                    <a href="{{ route('admin.ingredients.index') }}"
+                                        class="nav-link {{ request()->is('admin/ingredients') || request()->is('admin/ingredients/*') ? 'active' : '' }}">
                                         <i class="fa-fw nav-icon fas fa-seedling">
 
                                         </i>
@@ -163,7 +174,8 @@
                             @endcan
                             @can('product_access')
                                 <li class="nav-item">
-                                    <a href="{{ route("admin.products.index") }}" class="nav-link {{ request()->is("admin/products") || request()->is("admin/products/*") ? "active" : "" }}">
+                                    <a href="{{ route('admin.products.index') }}"
+                                        class="nav-link {{ request()->is('admin/products') || request()->is('admin/products/*') ? 'active' : '' }}">
                                         <i class="fa-fw nav-icon fas fa-utensils">
 
                                         </i>
@@ -174,20 +186,22 @@
                                 </li>
                             @endcan
                             {{-- @can('ingredient_category_access') --}}
-                                <li class="nav-item">
-                                    <a href="{{ route("admin.ingredient-categories.index") }}" class="nav-link {{ request()->is("admin/ingredient-categories") || request()->is("admin/ingredient-categories/*") ? "active" : "" }}">
-                                        <i class="fa-fw nav-icon fas fa-dot-circle">
+                            <li class="nav-item">
+                                <a href="{{ route('admin.ingredient-categories.index') }}"
+                                    class="nav-link {{ request()->is('admin/ingredient-categories') || request()->is('admin/ingredient-categories/*') ? 'active' : '' }}">
+                                    <i class="fa-fw nav-icon fas fa-dot-circle">
 
-                                        </i>
-                                        <p>
-                                            {{ trans('cruds.ingredientCategory.title') }}
-                                        </p>
-                                    </a>
-                                </li>
+                                    </i>
+                                    <p>
+                                        {{ trans('cruds.ingredientCategory.title') }}
+                                    </p>
+                                </a>
+                            </li>
                             {{-- @endcan --}}
                             @can('product_category_access')
                                 <li class="nav-item">
-                                    <a href="{{ route("admin.product-categories.index") }}" class="nav-link {{ request()->is("admin/product-categories") || request()->is("admin/product-categories/*") ? "active" : "" }}">
+                                    <a href="{{ route('admin.product-categories.index') }}"
+                                        class="nav-link {{ request()->is('admin/product-categories') || request()->is('admin/product-categories/*') ? 'active' : '' }}">
                                         <i class="fa-fw nav-icon fas fa-dot-circle">
 
                                         </i>
@@ -201,8 +215,10 @@
                     </li>
                 @endcan
                 @can('user_management_access')
-                    <li class="nav-item has-treeview {{ request()->is("admin/permissions*") ? "menu-open" : "" }} {{ request()->is("admin/roles*") ? "menu-open" : "" }} {{ request()->is("admin/users*") ? "menu-open" : "" }}">
-                        <a class="nav-link nav-dropdown-toggle {{ request()->is("admin/permissions*") ? "active" : "" }} {{ request()->is("admin/roles*") ? "active" : "" }} {{ request()->is("admin/users*") ? "active" : "" }}" href="#">
+                    <li
+                        class="nav-item has-treeview {{ request()->is('admin/permissions*') ? 'menu-open' : '' }} {{ request()->is('admin/roles*') ? 'menu-open' : '' }} {{ request()->is('admin/users*') ? 'menu-open' : '' }}">
+                        <a class="nav-link nav-dropdown-toggle {{ request()->is('admin/permissions*') ? 'active' : '' }} {{ request()->is('admin/roles*') ? 'active' : '' }} {{ request()->is('admin/users*') ? 'active' : '' }}"
+                            href="#">
                             <i class="fa-fw nav-icon fas fa-users">
 
                             </i>
@@ -238,7 +254,8 @@
                             @endcan --}}
                             @can('user_access')
                                 <li class="nav-item">
-                                    <a href="{{ route("admin.users.index") }}" class="nav-link {{ request()->is("admin/users") || request()->is("admin/users/*") ? "active" : "" }}">
+                                    <a href="{{ route('admin.users.index') }}"
+                                        class="nav-link {{ request()->is('admin/users') || request()->is('admin/users/*') ? 'active' : '' }}">
                                         <i class="fa-fw nav-icon fas fa-user">
 
                                         </i>
@@ -252,7 +269,8 @@
                     </li>
                 @endcan
                 <li class="nav-item">
-                    <a href="{{ route("admin.settings.index") }}" class="nav-link {{ request()->is("admin/sections") || request()->is("admin/sections/*") ? "active" : "" }}">
+                    <a href="{{ route('admin.settings.index') }}"
+                        class="nav-link {{ request()->is('admin/settings') || request()->is('admin/settings/*') ? 'active' : '' }}">
                         <i class="fa-fw nav-icon fas fa-cog">
 
                         </i>
@@ -261,10 +279,11 @@
                         </p>
                     </a>
                 </li>
-                @if(file_exists(app_path('Http/Controllers/Auth/ChangePasswordController.php')))
+                @if (file_exists(app_path('Http/Controllers/Auth/ChangePasswordController.php')))
                     @can('profile_password_edit')
                         <li class="nav-item">
-                            <a class="nav-link {{ request()->is('profile/password') || request()->is('profile/password/*') ? 'active' : '' }}" href="{{ route('profile.password.edit') }}">
+                            <a class="nav-link {{ request()->is('profile/password') || request()->is('profile/password/*') ? 'active' : '' }}"
+                                href="{{ route('profile.password.edit') }}">
                                 <i class="fa-fw fas fa-key nav-icon">
                                 </i>
                                 <p>
@@ -275,7 +294,8 @@
                     @endcan
                 @endif
                 <li class="nav-item">
-                    <a href="#" class="nav-link" onclick="event.preventDefault(); document.getElementById('logoutform').submit();">
+                    <a href="#" class="nav-link"
+                        onclick="event.preventDefault(); document.getElementById('logoutform').submit();">
                         <p>
                             <i class="fas fa-fw fa-sign-out-alt nav-icon">
 
