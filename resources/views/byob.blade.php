@@ -23,7 +23,7 @@
                                 <span class="text-base md:text-xl lg:text-3xl whitespace-nowrap mt-3 truncate max-w-32 md:max-w-56 lg:max-w-72 xl:max-w-80">{{ $ingredient->name }}</span>
                                 <span class="text-base md:text-xl lg:text-3xl">({{ $ingredient->calories }} kcal)</span>
                             </div>
-                            <div class="wheel-outline mt-6 mr-4 transform duration-300 scale-0">
+                            <div class="wheel-outline sm:mt-20 mt-6 mr-4 transform duration-300 scale-0">
                                 <div id="acw-{{ $categoryIndex . '-' . $ingredientIndex }}" class="counter w-8 md:w-10 lg:w-12 h-11 md:h-14 lg:h-20">0</div>
                             </div>
                         @endforeach
