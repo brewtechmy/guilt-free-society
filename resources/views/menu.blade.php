@@ -150,7 +150,7 @@
                     <div class="flex mt-4 py-3 px-4 overflow-x-auto overflow-y-hidden w-full no-scrollbar">
                         @foreach ($category->products as $menuIndex => $menu)
                             <div class="flex flex-col items-center min-w-24 md:min-w-44 lg:min-w-56 xl:min-w-64 md:ml-12 mr-20 md:mr-8 lg:mr-10 xl:mr-12 cursor-pointer text-ellipsis">
-                                <img class="rounded-full border-4 lg:border-8 border-black aspect-square w-full hover:scale-105" src="{{ $menu->photo->thumbnail }}" data-description="{{ $categoryIndex . '-' . $menuIndex }}" onclick="showDetails(this)" />
+                                <img class="rounded-full border-4 lg:border-8 border-black aspect-square w-full hover:scale-105" src="{{ $menu->photo->getUrl() }}" data-description="{{ $categoryIndex . '-' . $menuIndex }}" onclick="showDetails(this)" />
                                 <span class="text-base md:text-xl lg:text-3xl whitespace-nowrap mt-3 truncate max-w-32 md:max-w-56 lg:max-w-72 xl:max-w-80">{{ $menu->name }}</span>
                                 <span class="text-xs md:text-base lg:text-xl">({{ $menu->ingredients->sum('calories') }} kcal)</span>
                                 <span class="text-base md:text-xl lg:text-3xl">RM {{ $menu->price }}</span>

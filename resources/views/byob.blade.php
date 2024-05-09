@@ -19,7 +19,7 @@
                     <div class="flex mt-4 mx-3 px-4 overflow-x-auto overflow-y-hidden w-full no-scrollbar">
                         @foreach ($category->ingredients as $ingredientIndex => $ingredient)
                             <div class="flex flex-col items-center min-w-24 md:min-w-44 lg:min-w-56 xl:min-w-64 md:ml-12 mx-4">
-                                <img class="rounded-full border-4 lg:border-8 border-black aspect-square w-full" src="{{ $ingredient->photo->thumbnail }}" />
+                                <img class="rounded-full border-4 lg:border-8 border-black aspect-square w-full" src="{{ url($ingredient->photo->getUrl()) }}" />
                                 <span class="text-base md:text-xl lg:text-3xl whitespace-nowrap mt-3 truncate max-w-32 md:max-w-56 lg:max-w-72 xl:max-w-80">{{ $ingredient->name }}</span>
                                 <span class="text-base md:text-xl lg:text-3xl">({{ $ingredient->calories }} kcal)</span>
                             </div>
@@ -90,6 +90,7 @@
     </div>
     <script type="text/javascript">
         var arr = @json($arr);
+        var counters = [];
         var carbMultiplier = @json(config('settings.carbohydrate_multiplier'));
         var proteinMultiplier = @json(config('settings.protein_multiplier'));
         var fatMultiplier = @json(config('settings.fat_multiplier'));
@@ -97,6 +98,7 @@
         elementList.forEach(element => {
             var counter = new Counter(element.id);
             counter.options.inverted = true;
+            counters.push(counter);
         });
 
         function toggleCal(e) {
@@ -128,8 +130,8 @@
         function reset() {
             const elementList = document.querySelectorAll("[id^='acw']");
             elementList.forEach(element => {
-                var counter = new Counter(element.id);
-                counter.options.inverted = true;
+                var counterToReset = counters.find(counter => counter.DOM.counter.id === element.id);
+                counterToReset.setPos(0)
             });
             document.getElementById('carb-quantity').innerHTML = 0.00.toFixed(2)
             document.getElementById('protein-quantity').innerHTML = 0.00.toFixed(2)
