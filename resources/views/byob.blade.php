@@ -20,7 +20,7 @@
                         @foreach ($category->ingredients as $ingredientIndex => $ingredient)
                             <div class="flex flex-col items-center min-w-24 md:min-w-44 lg:min-w-56 xl:min-w-64 md:ml-12 mx-4">
                                 <img class="rounded-full border-4 lg:border-8 border-black aspect-square w-full" src="{{ $ingredient->photo->thumbnail }}" />
-                                <span class="text-base md:text-xl lg:text-3xl whitespace-nowrap mt-3">{{ $ingredient->name }}</span>
+                                <span class="text-base md:text-xl lg:text-3xl whitespace-nowrap mt-3 truncate max-w-32 md:max-w-56 lg:max-w-72 xl:max-w-80">{{ $ingredient->name }}</span>
                                 <span class="text-base md:text-xl lg:text-3xl">({{ $ingredient->calories }} kcal)</span>
                             </div>
                             <div class="wheel-outline mt-6 mr-4 transform duration-300 scale-0">
@@ -75,7 +75,7 @@
                                     Reset
                                 </button>
                             </td>
-                 
+
                         </tr>
                     </tbody>
                 </table>
@@ -86,7 +86,7 @@
             </div>
         </div>
 
-  
+
     </div>
     <script type="text/javascript">
         var arr = @json($arr);
