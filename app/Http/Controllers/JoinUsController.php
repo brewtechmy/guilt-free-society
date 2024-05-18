@@ -10,8 +10,6 @@ class JoinUsController extends Controller
     {
         $joinUs = JoinUsPage::where('is_main',0)->orderby('position')->get();
 
-        $mainPhoto = JoinUsPage::where('is_main',1)->first();
-
-        return view('join-us', compact("joinUs","mainPhoto"));
+        return view('join-us', compact("joinUs"));
     }
 }
