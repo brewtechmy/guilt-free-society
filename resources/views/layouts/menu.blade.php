@@ -37,7 +37,7 @@
                             Build Your Own Bowl
                         </a>
                         <a href="{{ route('menu') }}"
-                            class="flex-1 lg:text-xl flex items-center justify-center rounded-lg p-2 md:rounded-none md:p-5 hover:cursor-pointer {{ request()->is("menu") ? "bg-[#e2fbe2] text-black" : "" }}">
+                            class="flex-1 lg:text-xl flex items-center justify-center rounded-lg p-2 md:rounded-none md:p-4 hover:cursor-pointer {{ request()->is("menu") ? "bg-[#e2fbe2] text-black" : "" }}">
                             Menu
                         </a>
                         <a href="{{ route('story') }}"
@@ -53,7 +53,7 @@
                             Join Us
                         </a>
                         <a href="{{ route('contact-us') }}"
-                            class="flex-1 lg:text-xl flex items-center justify-center rounded-lg p-2 md:rounded-none md:p-2 hover:cursor-pointer {{ request()->is('contact-us') ? 'bg-[#e2fbe2] text-black' : '' }}">
+                            class="flex-1 lg:text-xl flex items-center justify-center rounded-lg p-2 md:rounded-none md:p-3 hover:cursor-pointer {{ request()->is('contact-us') ? 'bg-[#e2fbe2] text-black' : '' }}">
                             Contact Us
                         </a>
                         @if (count($advertisements) > 0)
