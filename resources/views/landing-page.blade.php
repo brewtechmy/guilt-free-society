@@ -12,12 +12,10 @@
 </head>
 
 <body class="hover:cursor-pointer bg-black" onclick="location.href='{{ route('byob') }}';">
-    <div class="h-dvh">
-        <div class="{{ count($advertisements) > 0 ? 'h-3/4' : '' }} text-center flex flex-col justify-center">
-            <img class="max-h-[60%] max-w-[75%] mx-auto" src="{{ url('/images/gfs_main_logo.jpg') }}"
-                alt="gfs_main_logo">
-                <div class="tick w-fit mx-auto text-2xl sm:text-3xl" data-value="{{ $soldCount - 10 > 0 ? $soldCount - 10 : 0 }}"
-                data-did-init="setupFlip">
+    <div class="h-dvh flex flex-col">
+        <div class="{{ count($advertisements) > 0 ? 'h-3/4' : '' }} flex-auto text-center flex flex-col justify-center">
+            <img class="max-h-[60%] max-w-[75%] mx-auto" src="{{ url('/images/gfs_main_logo.jpg') }}" alt="gfs_main_logo">
+            <div class="tick w-fit mx-auto text-2xl sm:text-3xl" data-value="{{ $soldCount - 10 > 0 ? $soldCount - 10 : 0 }}" data-did-init="setupFlip">
                 <div data-repeat="true" aria-hidden="true">
                     <span data-view="flip"></span>
                 </div>
