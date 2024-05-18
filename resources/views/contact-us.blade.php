@@ -32,8 +32,8 @@
                         @endif
                     </div>
                     <div class="flex flex-col basis-3/5 text-center lg:text-left gap-3">
-                        <div class="text-2xl items-center font-bold px-2 md:px-0">{{ $outlet->name }}</div>
-                        <span class="text-md items-center px-2 md:px-0">
+                        <div class="text-2xl font-bold px-2 md:px-0">{{ $outlet->name }}</div>
+                        <span class="text-md px-2 md:px-0">
                             <div>
                                 {{ $outlet->address }}
                             </div>
@@ -55,8 +55,8 @@
                     <img class="rounded-full border-8 border-black aspect-square object-cover" src="/images/outlet_imgs/outlet2.png" />
                 </div>
                 <div class="flex flex-col basis-3/5 text-center lg:text-left gap-3">
-                    <div class="text-2xl items-center font-bold whitespace-nowrap">Guilt Free Society +</div>
-                    <span class="text-md items-center">
+                    <div class="text-2xl font-bold whitespace-nowrap">Guilt Free Society +</div>
+                    <span class="text-md">
                         <div>
                             The Walk, Riverson
                             Jln Riverson 1, 88000 Kota Kinabalu

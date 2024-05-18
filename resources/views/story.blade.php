@@ -14,16 +14,16 @@
         </div>
         <div class="flex flex-col gap-10">
             <div class="basis-1/2">
-                <div class="text-6xl font-semibold text-center md:text-left">Our Vision</div>
-                <div class="items-center gap-6 py-4 flex flex-col md:flex-row">
+                <div class="text-6xl font-semibold text-center sm:text-left">Our Vision</div>
+                <div class="items-center gap-6 py-4 flex flex-col sm:flex-row">
                     <img class="aspect-square object-cover max-w-[55vw]" src="{{ url('/images/vision.png') }}" />
                     <span class="text-2xl text-justify">{!! $texts['our_vision_text']['value'] !!}</span>
                 </div>
             </div>
             <div class="basis-1/2">
-                <div class="text-6xl font-semibold text-center md:text-right">Our Mission</div>
-                <div class="items-center gap-6 py-4 flex flex-col md:flex-row">
-                    <img class="aspect-square object-cover max-w-[30vw] md:ml-auto md:order-last" src="{{ url('/images/mission.png') }}" />
+                <div class="text-6xl font-semibold text-center sm:text-right">Our Mission</div>
+                <div class="items-center gap-6 py-4 flex flex-col sm:flex-row">
+                    <img class="aspect-square object-cover max-w-[30vw] sm:ml-auto sm:order-last" src="{{ url('/images/mission.png') }}" />
                     <span class="text-2xl text-justify">{!! $texts['our_mission_text']['value'] !!}</span>
                 </div>
             </div>
