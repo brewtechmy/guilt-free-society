@@ -17,8 +17,7 @@
                 <div class="text-6xl font-semibold text-center md:text-left">Our Vision</div>
                 <div class="items-center gap-6 py-4 flex flex-col md:flex-row">
                     <img class="aspect-square object-cover max-w-[55vw]" src="{{ url('/images/vision.png') }}" />
-                    <span class="text-2xl text-justify">{!! $texts['our_vision_text']['value'] !!}
-                    </span>
+                    <span class="text-2xl text-justify">{!! $texts['our_vision_text']['value'] !!}</span>
                 </div>
             </div>
             <div class="basis-1/2">
@@ -34,9 +33,7 @@
         <div class="px-5 sm:px-14 flex flex-col pt-5">
             <div class="text-6xl font-semibold text-center md:text-left">Our Journey</div>
             <div class="py-4">
-
-                <div class="mx-70
-                rounded-lg">
+                <div class="mx-70 rounded-lg">
                 <div class="grid grid-rows-6 md:grid-rows-4 lg:grid-rows-3 grid-flow-col gap-4 auto-rows-max">
                     @for ($i = 0; $i < count($journeys); $i++)
                         <img class="aspect-square object-cover w-auto h-auto rounded-lg" src="{{ $journeys[$i]->getUrl() }}" alt="">
