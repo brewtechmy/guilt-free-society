@@ -18,23 +18,6 @@
                 <span class="help-block">{{ trans('cruds.productCategory.fields.name_helper') }}</span>
             </div>
             <div class="form-group">
-                <label for="description">{{ trans('cruds.productCategory.fields.description') }}</label>
-                <textarea class="form-control {{ $errors->has('description') ? 'is-invalid' : '' }}" name="description" id="description">{{ old('description') }}</textarea>
-                @if($errors->has('description'))
-                    <span class="text-danger">{{ $errors->first('description') }}</span>
-                @endif
-                <span class="help-block">{{ trans('cruds.productCategory.fields.description_helper') }}</span>
-            </div>
-            <div class="form-group">
-                <label for="photo">{{ trans('cruds.productCategory.fields.photo') }}</label>
-                <div class="needsclick dropzone {{ $errors->has('photo') ? 'is-invalid' : '' }}" id="photo-dropzone">
-                </div>
-                @if($errors->has('photo'))
-                    <span class="text-danger">{{ $errors->first('photo') }}</span>
-                @endif
-                <span class="help-block">{{ trans('cruds.productCategory.fields.photo_helper') }}</span>
-            </div>
-            <div class="form-group">
                 <button class="btn btn-danger" type="submit">
                     {{ trans('global.save') }}
                 </button>

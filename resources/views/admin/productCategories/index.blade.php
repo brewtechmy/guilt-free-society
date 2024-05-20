@@ -22,18 +22,11 @@
                         <th width="10">
 
                         </th>
-                        <th>
-                            {{ trans('cruds.productCategory.fields.id') }}
-                        </th>
+                       
                         <th>
                             {{ trans('cruds.productCategory.fields.name') }}
                         </th>
-                        <th>
-                            {{ trans('cruds.productCategory.fields.description') }}
-                        </th>
-                        <th>
-                            {{ trans('cruds.productCategory.fields.photo') }}
-                        </th>
+                       
                         <th>
                             &nbsp;
                         </th>
@@ -45,22 +38,11 @@
                             <td>
 
                             </td>
-                            <td>
-                                {{ $productCategory->id ?? '' }}
-                            </td>
+                           
                             <td>
                                 {{ $productCategory->name ?? '' }}
                             </td>
-                            <td>
-                                {{ $productCategory->description ?? '' }}
-                            </td>
-                            <td>
-                                @if($productCategory->photo)
-                                    <a href="{{ $productCategory->photo->getUrl() }}" target="_blank" style="display: inline-block">
-                                        <img src="{{ $productCategory->photo->getUrl('thumb') }}">
-                                    </a>
-                                @endif
-                            </td>
+                            
                             <td>
                                 @can('product_category_show')
                                     <a class="btn btn-xs btn-primary" href="{{ route('admin.product-categories.show', $productCategory->id) }}">

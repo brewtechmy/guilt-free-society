@@ -17,38 +17,10 @@
                 <tbody>
                     <tr>
                         <th>
-                            {{ trans('cruds.productCategory.fields.id') }}
-                        </th>
-                        <td>
-                            {{ $productCategory->id }}
-                        </td>
-                    </tr>
-                    <tr>
-                        <th>
                             {{ trans('cruds.productCategory.fields.name') }}
                         </th>
                         <td>
                             {{ $productCategory->name }}
-                        </td>
-                    </tr>
-                    <tr>
-                        <th>
-                            {{ trans('cruds.productCategory.fields.description') }}
-                        </th>
-                        <td>
-                            {{ $productCategory->description }}
-                        </td>
-                    </tr>
-                    <tr>
-                        <th>
-                            {{ trans('cruds.productCategory.fields.photo') }}
-                        </th>
-                        <td>
-                            @if($productCategory->photo)
-                                <a href="{{ $productCategory->photo->getUrl() }}" target="_blank" style="display: inline-block">
-                                    <img src="{{ $productCategory->photo->getUrl('thumb') }}">
-                                </a>
-                            @endif
                         </td>
                     </tr>
                 </tbody>
