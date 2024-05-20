@@ -7,9 +7,11 @@ body {
 }
 
 #carousel-ow {
-  height: 25%;
-  max-width: 1080px;
+  height: auto;
+  max-height: 25%;
+  max-width: 2048px;
   margin: auto;
+  aspect-ratio: 5;
 }
 
 #menuCarousel-ow {
@@ -41,8 +43,12 @@ body {
   cursor: pointer;
 }
 
-
-
+@media (max-width: 639px) {
+  #carousel-ow {
+    max-width: 1024px;
+    aspect-ratio: 2.5;
+  }
+}
 
 @media (min-width: 640px) {
   .outlet-gmap-wrapper iframe {
