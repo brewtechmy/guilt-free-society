@@ -17,14 +17,6 @@
                 <tbody>
                     <tr>
                         <th>
-                            {{ trans('cruds.user.fields.id') }}
-                        </th>
-                        <td>
-                            {{ $user->id }}
-                        </td>
-                    </tr>
-                    <tr>
-                        <th>
                             {{ trans('cruds.user.fields.name') }}
                         </th>
                         <td>
@@ -39,23 +31,23 @@
                             {{ $user->email }}
                         </td>
                     </tr>
-                    <tr>
+                    {{-- <tr>
                         <th>
                             {{ trans('cruds.user.fields.email_verified_at') }}
                         </th>
                         <td>
                             {{ $user->email_verified_at }}
                         </td>
-                    </tr>
-                    <tr>
+                    </tr> --}}
+                    {{-- <tr>
                         <th>
                             {{ trans('cruds.user.fields.approved') }}
                         </th>
                         <td>
                             <input type="checkbox" disabled="disabled" {{ $user->approved ? 'checked' : '' }}>
                         </td>
-                    </tr>
-                    <tr>
+                    </tr> --}}
+                    {{-- <tr>
                         <th>
                             {{ trans('cruds.user.fields.roles') }}
                         </th>
@@ -64,7 +56,7 @@
                                 <span class="label label-info">{{ $roles->title }}</span>
                             @endforeach
                         </td>
-                    </tr>
+                    </tr> --}}
                 </tbody>
             </table>
             <div class="form-group">
