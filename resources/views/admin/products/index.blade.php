@@ -23,10 +23,10 @@
 
                         </th>
                         <th>
-                            {{ trans('cruds.product.fields.id') }}
+                            {{ trans('cruds.product.fields.name') }}
                         </th>
                         <th>
-                            {{ trans('cruds.product.fields.name') }}
+                            {{ trans('cruds.product.fields.ingredient') }}
                         </th>
                         <th>
                             {{ trans('cruds.product.fields.calories') }}
@@ -52,13 +52,13 @@
 
                             </td>
                             <td>
-                                {{ $product->id ?? '' }}
-                            </td>
-                            <td>
                                 {{ $product->name ?? '' }}
                             </td>
                             <td>
-                                {{ $product->calories ?? '' }}
+                                {{ $product->ingredients->pluck('name')->implode(', ') ?? '' }}
+                            </td>
+                            <td>
+                                {{ $product->calories ?? $product->ingredients->sum('calories') }}
                             </td>
                             <td>
                                 {{ $product->price ?? '' }}
