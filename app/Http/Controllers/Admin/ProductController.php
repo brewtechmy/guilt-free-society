@@ -24,7 +24,7 @@ class ProductController extends Controller
     {
         abort_if(Gate::denies('product_access'), Response::HTTP_FORBIDDEN, '403 Forbidden');
 
-        $products = Product::with(['categories', 'tags', 'media'])->get();
+        $products = Product::with(['ingredients','categories', 'tags', 'media'])->get();
 
         return view('admin.products.index', compact('products'));
     }
@@ -74,6 +74,13 @@ class ProductController extends Controller
         $product->update($request->all());
         $product->categories()->sync($request->input('categories', []));
         $product->ingredients()->sync($request->input('ingredients', []));
+        if ($request->input('has_ingredient')) {
+            $product->update(['calories' => null]);
+        }
+        else{
+            $product->ingredients()->detach();
+        }
+   
         if ($request->input('photo', false)) {
             if (! $product->photo || $request->input('photo') !== $product->photo->file_name) {
                 if ($product->photo) {
@@ -92,7 +99,7 @@ class ProductController extends Controller
     {
         abort_if(Gate::denies('product_show'), Response::HTTP_FORBIDDEN, '403 Forbidden');
 
-        $product->load('categories', 'tags');
+        $product->load('categories', 'tags', 'ingredients');
 
         return view('admin.products.show', compact('product'));
     }

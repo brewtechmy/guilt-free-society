@@ -15,36 +15,13 @@
             </div>
             <table class="table table-bordered table-striped">
                 <tbody>
-                    <tr>
-                        <th>
-                            {{ trans('cruds.product.fields.id') }}
-                        </th>
-                        <td>
-                            {{ $product->id }}
-                        </td>
-                    </tr>
+                   
                     <tr>
                         <th>
                             {{ trans('cruds.product.fields.name') }}
                         </th>
                         <td>
                             {{ $product->name }}
-                        </td>
-                    </tr>
-                    <tr>
-                        <th>
-                            {{ trans('cruds.product.fields.description') }}
-                        </th>
-                        <td>
-                            {{ $product->description }}
-                        </td>
-                    </tr>
-                    <tr>
-                        <th>
-                            {{ trans('cruds.product.fields.price') }}
-                        </th>
-                        <td>
-                            {{ $product->price }}
                         </td>
                     </tr>
                     <tr>
@@ -59,14 +36,30 @@
                     </tr>
                     <tr>
                         <th>
-                            {{ trans('cruds.product.fields.tag') }}
+                            {{ trans('cruds.product.fields.price') }}
                         </th>
                         <td>
-                            @foreach($product->tags as $key => $tag)
-                                <span class="label label-info">{{ $tag->name }}</span>
-                            @endforeach
+                            {{ $product->price }}
                         </td>
                     </tr>
+                    
+                    <tr>
+                        <th>
+                            {{ trans('cruds.product.fields.ingredient') }}
+                        </th>
+                        <td>
+                            {{ $product->ingredients->pluck('name')->implode(', ') ?? '' }}
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>
+                            {{ trans('cruds.product.fields.calories') }}
+                        </th>
+                        <td>
+                            {{ $product->calories ?? $product->ingredients->sum('calories') }}
+                        </td>
+                    </tr>
+                    
                     <tr>
                         <th>
                             {{ trans('cruds.product.fields.photo') }}

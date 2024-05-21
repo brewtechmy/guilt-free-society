@@ -75,7 +75,7 @@
                 <span class="help-block">{{ trans('cruds.ingredient.fields.category_helper') }}</span>
             </div>
             <div class="form-group">
-                <label for="photo">{{ trans('cruds.ingredient.fields.photo') }}</label>
+                <label class="required" for="photo">{{ trans('cruds.ingredient.fields.photo') }}</label>
                 <div class="needsclick dropzone {{ $errors->has('photo') ? 'is-invalid' : '' }}" id="photo-dropzone">
                 </div>
                 @if($errors->has('photo'))

@@ -15,7 +15,6 @@ class ProductTableSeeder extends Seeder
     {
         $product1 = Product::create([
             'name' => 'Fruit Bowl',
-            'calories' => 832,
             'price' => 28.90,
         ]);
         $product1->categories()->sync([1]);
@@ -25,7 +24,6 @@ class ProductTableSeeder extends Seeder
         
         $product2 = Product::create([
             'name' => 'Colourful Vegan',
-            'calories' => 417,
             'price' => 28.90,
         ]);
         $product2->categories()->sync([1]);
@@ -35,7 +33,6 @@ class ProductTableSeeder extends Seeder
         
         $product3 = Product::create([
             'name' => 'Chicken Teriyakki Bowl',
-            'calories' => 540,
             'price' => 28.90,
         ]);
         $product3->categories()->sync([1]);
@@ -45,7 +42,6 @@ class ProductTableSeeder extends Seeder
         
         $product4 = Product::create([
             'name' => 'Almond Butter Tofu',
-            'calories' => 520,
             'price' => 28.90,
         ]);
         $product4->categories()->sync([1]);
