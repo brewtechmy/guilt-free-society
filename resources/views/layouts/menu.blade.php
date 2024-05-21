@@ -9,6 +9,7 @@
     <script src="{{ asset('js/counter.js') }}"></script>
     <link href="{{ asset('css/counter.css') }}" rel="stylesheet" />
     <title>@yield('title', 'Your Laravel App')</title>
+    <link rel="icon" href="{{ url('/images/gfs_main_logo.jpg') }}">
 </head>
 
 <body class="bg-[#e2fbe2]">

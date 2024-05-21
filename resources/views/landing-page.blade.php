@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.4/tiny-slider.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link href="https://unpkg.com/@pqina/flip/dist/flip.min.css" rel="stylesheet">
+    <link rel="icon" href="{{ url('/images/gfs_main_logo.jpg') }}">
 </head>
 
 <body class="hover:cursor-pointer bg-black" onclick="location.href='{{ route('byob') }}';">
