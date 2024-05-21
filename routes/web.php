@@ -87,6 +87,7 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.', 'namespace' => 'Admin', 'mi
         'index'
     ]);
     Route::put('sections', 'SectionController@update')->name('sections.update');
+    Route::post('sections/media', 'SectionController@storeMedia')->name('sections.storeMedia');
 
     // Journey
     Route::delete('journeys/destroy', 'JourneyController@massDestroy')->name('journeys.massDestroy');

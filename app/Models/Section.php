@@ -29,6 +29,7 @@ class Section extends Model implements HasMedia
     protected $fillable = [
         'key',
         'value',
+        'input_type',
         'created_at',
         'updated_at',
         'deleted_at',
