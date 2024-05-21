@@ -44,6 +44,9 @@ class StoreIngredientRequest extends FormRequest
             'categories' => [
                 'array',
             ],
+            'photo' => [
+                'required',
+            ],
         ];
     }
 }

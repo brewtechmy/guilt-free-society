@@ -36,6 +36,9 @@ class UpdateProductRequest extends FormRequest
             'tags' => [
                 'array',
             ],
+            'photo' => [
+                'required',
+            ],
         ];
     }
 }

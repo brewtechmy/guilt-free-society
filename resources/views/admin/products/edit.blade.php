@@ -70,7 +70,7 @@
                     <span class="help-block">{{ trans('cruds.product.fields.calories_helper') }}</span>
                 </div>
                 <div class="form-group">
-                    <label for="photo">{{ trans('cruds.product.fields.photo') }}</label>
+                    <label class="required" for="photo">{{ trans('cruds.product.fields.photo') }}</label>
                     <div class="needsclick dropzone {{ $errors->has('photo') ? 'is-invalid' : '' }}" id="photo-dropzone">
                     </div>
                     @if ($errors->has('photo'))
