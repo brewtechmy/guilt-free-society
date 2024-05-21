@@ -34,6 +34,10 @@
                 </li>
             </ul>
 
+            <button class="btn btn-info" onclick="window.open('/','_blank')">
+                View Website
+            </button>
+
             <!-- Right navbar links -->
             @if(count(config('panel.available_languages', [])) > 1)
                 <ul class="navbar-nav ml-auto">
