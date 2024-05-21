@@ -6,7 +6,7 @@
             <div class="text-6xl font-semibold text-center md:text-left">Our Values</div>
             <div class="flex flex-col py-4 gap-3">
                 <img class="rounded-full border-8 border-black aspect-square object-cover max-w-[55vw] mx-auto sm:max-w-72"
-                    src="{{ url('/images/values.png') }}" alt="gfs_main_logo" />
+                src="{{ $images['our_values_image']->getUrl() }}"/>
                 <span class="text-2xl text-justify">
                     {!! $texts['our_values_text']['value'] !!}
                 </span>
@@ -16,14 +16,14 @@
             <div class="basis-1/2">
                 <div class="text-6xl font-semibold text-center sm:text-left">Our Vision</div>
                 <div class="items-center gap-6 py-4 flex flex-col sm:flex-row">
-                    <img class="aspect-square object-cover max-w-[55vw]" src="{{ url('/images/vision.png') }}" />
+                    <img class="aspect-square object-cover max-w-[55vw]" src="{{ $images['our_vision_image']->getUrl() }}" />
                     <span class="text-2xl text-justify">{!! $texts['our_vision_text']['value'] !!}</span>
                 </div>
             </div>
             <div class="basis-1/2">
                 <div class="text-6xl font-semibold text-center sm:text-right">Our Mission</div>
                 <div class="items-center gap-6 py-4 flex flex-col sm:flex-row">
-                    <img class="aspect-square object-cover max-w-[30vw] sm:ml-auto sm:order-last" src="{{ url('/images/mission.png') }}" />
+                    <img class="aspect-square object-cover max-w-[30vw] sm:ml-auto sm:order-last" src="{{ $images['our_mission_image']->getUrl() }}" />
                     <span class="text-2xl text-justify">{!! $texts['our_mission_text']['value'] !!}</span>
                 </div>
             </div>
