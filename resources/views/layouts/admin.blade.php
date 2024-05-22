@@ -7,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ trans('panel.site_title') }}</title>
+    <title>{{ trans('panel.bo_title') }}</title>
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" rel="stylesheet" />
     <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.5/css/select2.min.css" rel="stylesheet" />
     <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.47/css/bootstrap-datetimepicker.min.css" rel="stylesheet" />
@@ -34,12 +34,14 @@
                 </li>
             </ul>
 
-            <button class="btn btn-info" onclick="window.open('/','_blank')">
-                View Website
-            </button>
+            <ul class="navbar-nav ml-auto">
+              <button class="btn btn-info" onclick="window.open('/','_blank')">
+                  View Website
+              </button>
+            </ul>
 
             <!-- Right navbar links -->
-            @if(count(config('panel.available_languages', [])) > 1)
+            {{-- @if(count(config('panel.available_languages', [])) > 1)
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item dropdown">
                         <a class="nav-link" data-toggle="dropdown" href="#">
@@ -52,7 +54,7 @@
                         </div>
                     </li>
                 </ul>
-            @endif
+            @endif --}}
 
         </nav>
 

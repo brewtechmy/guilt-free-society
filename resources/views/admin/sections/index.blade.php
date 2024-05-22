@@ -10,44 +10,42 @@
                 @method('PUT')
                 @csrf
                 @foreach ($sections as $section)
-                    <div class="form-group">
-                        <label class="required" for={{ $section->key }}>{{ trans('cruds.section.fields.' . $section->key) }}
-                            {{ $section->input_type == 'image' ? '(jpeg/jpg/png/gif)' : '' }}</label>
-                        @if ($section->input_type == 'ckeditor')
-                            <textarea class="form-control ckeditor {{ $errors->has($section->key) ? 'is-invalid' : '' }}" name={{ $section->key }}
-                                id={{ $section->key }}>{!! old($section->key, $section->value) !!}</textarea>
+                    <label class="required" for={{ $section->key }}>{{ trans('cruds.section.fields.' . $section->key) }}
+                        {{ $section->input_type == 'image' ? '(jpeg/jpg/png/gif)' : '' }}</label>
+                    @if ($section->input_type == 'ckeditor')
+                        <div class="form-group">
+                            <textarea class="form-control ckeditor {{ $errors->has($section->key) ? 'is-invalid' : '' }}" name={{ $section->key }} id={{ $section->key }}>{!! old($section->key, $section->value) !!}</textarea>
                             @if ($errors->has($section->key))
                                 <div class="invalid-feedback">
                                     {{ $errors->first($section->key) }}
                                 </div>
                             @endif
-                            <span
-                                class="help-block">{{ trans('cruds.section.fields.' . $section->key . '_helper') }}</span>
-                        @elseif ($section->input_type == 'text' || $section->input_type == 'number')
-                            <input class="form-control {{ $errors->has($section->key) ? 'is-invalid' : '' }}"
-                                type={{ $section->input_type }} name={{ $section->key }} id={{ $section->key }}
-                                value="{{ old($section->key, $section->value) }}" required />
+                            <span class="help-block">{{ trans('cruds.section.fields.' . $section->key . '_helper') }}</span>
+                        </div>
+                    @elseif ($section->input_type == 'text' || $section->input_type == 'number')
+                        <div class="form-group">
+                            <input class="form-control {{ $errors->has($section->key) ? 'is-invalid' : '' }}" type={{ $section->input_type }} name={{ $section->key }} id={{ $section->key }} value="{{ old($section->key, $section->value) }}" required />
                             @if ($errors->has($section->key))
                                 <div class="invalid-feedback">
                                     {{ $errors->first($section->key) }}
                                 </div>
                             @endif
-                            <span
-                                class="help-block">{{ trans('cruds.section.fields.' . $section->key . '_helper') }}</span>
-                        @elseif ($section->input_type == 'image')
-                            <div class="needsclick dropzone {{ $errors->has($section->key) ? 'is-invalid' : '' }}"
-                                id="{{ $section->key }}-dropzone">
+                            <span class="help-block">{{ trans('cruds.section.fields.' . $section->key . '_helper') }}</span>
+                        </div>
+                    @elseif ($section->input_type == 'image')
+                        <div class="form-group">
+                            <div class="needsclick dropzone {{ $errors->has($section->key) ? 'is-invalid' : '' }}" id="{{ $section->key }}-dropzone">
                                 @if ($errors->has($section->key))
                                     <div class="invalid-feedback">
                                         {{ $errors->first($section->key) }}
                                     </div>
                                 @endif
-                                <span
-                                    class="help-block">{{ trans('cruds.section.fields.' . $section->key . '_helper') }}</span>
-                            @else
-                                <div>Contact Administrator for assistance.</div>
-                        @endif
-                    </div>
+                                <span class="help-block">{{ trans('cruds.section.fields.' . $section->key . '_helper') }}</span>
+                            </div>
+                        </div>
+                        @else
+                            <div>Contact Administrator for assistance.</div>
+                    @endif
                 @endforeach
                 <div class="form-group">
                     <button class="btn btn-danger" id="submit" type="submit">
