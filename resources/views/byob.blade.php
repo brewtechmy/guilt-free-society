@@ -15,34 +15,43 @@ array_push($arr[$categoryIndex]['list'], ['name' => $ingredient->name, 'kcal' =>
         @foreach ($ingredientCategories as $categoryIndex => $category)
         <div class="py-4 relative">
             <span class="text-xl md:text-4xl lg:text-6xl font-semibold">{{ $category->name }}</span>
-            <div class="absolute top-1/2 left-0 transform -translate-y-1/2 bg-white rounded-full p-2 cursor-pointer z-10 shadow-lg" id="left-arrow">
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="w-6 h-6 text-black">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
-                </svg>
-            </div>
-            <div class="absolute top-1/2 right-0 transform -translate-y-1/2 bg-white rounded-full p-2 cursor-pointer z-10 shadow-lg" id="right-arrow">
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="w-6 h-6 text-black">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
-                </svg>
-            </div>
-            <div class="flex mt-4 mx-3 px-4 overflow-x-auto overflow-y-hidden w-full no-scrollbar">
+            <div class="flex mt-4 overflow-x-auto overflow-y-hidden w-full no-scrollbar">
                 @foreach ($category->ingredients as $ingredientIndex => $ingredient)
-                <div class="flex flex-col items-center min-w-24 md:min-w-44 lg:min-w-56 xl:min-w-64 md:ml-12  mr-20 md:mr-8 lg:mr-10 xl:mr-12">
-                    <img class="rounded-full border-4 lg:border-8 border-black aspect-square w-full" src="{{ url($ingredient->photo->getUrl()) }}" />
+                <div class="flex flex-col items-center min-w-24 md:min-w-44 lg:min-w-56 xl:min-w-64 ml-8 md:ml-8 mr-3 md:mr-8 lg:mr-10 xl:mr-8 select-none">
+                    <img class="rounded-full border-4 lg:border-8 border-black aspect-square w-full pointer-events-none select-none" src="{{ url($ingredient->photo->getUrl()) }}"/>
                     <span class="text-base md:text-xl lg:text-3xl whitespace-nowrap mt-3 truncate max-w-32 md:max-w-56 lg:max-w-72 xl:max-w-80">{{ $ingredient->name }}</span>
                     <span class="text-base md:text-xl lg:text-3xl">({{ $ingredient->calories }} kcal)</span>
                 </div>
-                <div class="wheel-outline sm:mt-20 mt-6 mr-4 transform duration-300 scale-0 hidden">
+                <div class="wheel-outline mt-6 sm:mt-16 md:mt-16 lg:mt-20 md:mr-4 transform duration-300 scale-0 hidden">
                     <div id="acw-{{ $categoryIndex . '-' . $ingredientIndex }}" class="counter w-8 md:w-10 lg:w-12 h-11 md:h-14 lg:h-20">0</div>
                 </div>
                 @endforeach
+            </div>
+            <div class="absolute top-1/2 -left-1 md:-left-5 transform -translate-y-1/2 bg-white rounded-full p-2 cursor-pointer shadow-lg left-arrow" id="left-arrow">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="w-3 h-3 md:w-6 md:h-6 text-black">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+                </svg>
+            </div>
+            <div class="absolute top-1/2 -right-1 md:-right-5 transform -translate-y-1/2 bg-white rounded-full p-2 cursor-pointer shadow-lg right-arrow" id="right-arrow">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="w-3 h-3 md:w-6 md:h-6 text-black">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                </svg>
             </div>
         </div>
         @endforeach
     </div>
 </div>
-<div class="z-20 fixed right-0 bottom-0 md:right-5 md:bottom-4 flex flex-col items-center cursor-move">
-    <div id="nut-table" class="right-0 bottom-0 transform transition-transform duration-300 origin-bottom scale-0 absolute">
+{{-- <div class="z-20 fixed right-0 bottom-0 md:right-5 md:bottom-16 flex flex-col items-center cursor-move">
+    <!-- nutriention table -->
+    <div class="ml-auto transform transition-transform duration-300 origin-bottom cursor-pointer" id="click-me" onclick="toggleCal(this)">
+        <span class="font-bold text-xs md:text-sm lg:text-base text-white bg-black px-2 py-1">Click me</span>
+        <img class="mx-auto max-h-10 md:max-h-14 lg:max-h-20 mt-2" id="cal-img" src="https://cdn-icons-png.freepik.com/512/5223/5223103.png" />
+    </div>
+</div> --}}
+
+<div id="floating-button" class = "group fixed bottom-0 md:bottom-0 right-0 md:right-4 p-2 flex items-end justify-end">
+    <!-- nutriention table -->
+    <div id="nut-table" class="right-0 bottom-0 transform transition-transform duration-300 origin-bottom scale-0 absolute cursor-move">
         <table class="table-auto bg-white shadow-md rounded-lg overflow-hidden pr-3">
             <thead class="bg-black">
                 <tr>
@@ -94,9 +103,8 @@ array_push($arr[$categoryIndex]['list'], ['name' => $ingredient->name, 'kcal' =>
             </tbody>
         </table>
     </div>
-    <div class="ml-auto transform transition-transform duration-300 origin-bottom cursor-pointer" id="click-me" onclick="toggleCal(this)">
-        <span class="font-bold text-xs md:text-sm lg:text-base text-white bg-black px-2 py-1">Click me</span>
-        <img class="mx-auto max-h-10 md:max-h-14 lg:max-h-20 mt-2" id="cal-img" src="https://cdn-icons-png.freepik.com/512/5223/5223103.png" />
+    <div id="click-me" class="bg-black rounded-full w-16 h-16 m-4 flex items-center justify-center cursor-pointer shadow-xl animate-bounce" onclick="toggleCal(this)">
+        <i class="fab fa-nutritionix text-white text-4xl"></i>
     </div>
 </div>
 <script type="text/javascript">
@@ -181,6 +189,25 @@ array_push($arr[$categoryIndex]['list'], ['name' => $ingredient->name, 'kcal' =>
             isMouseDown = false;
         });
     });
+
+    document.querySelectorAll('.left-arrow').forEach(arrow => {
+        arrow.addEventListener('click', function() {
+            this.parentElement.querySelector('.overflow-x-auto').scrollBy({
+                left: -200,
+                behavior: 'smooth'
+            });
+        });
+    });
+
+    document.querySelectorAll('.right-arrow').forEach(arrow => {
+        arrow.addEventListener('click', function() {
+            this.parentElement.querySelector('.overflow-x-auto').scrollBy({
+                left: 200,
+                behavior: 'smooth'
+            });
+        });
+    });
+
 </script>
 <script>
     function dragElement(elmnt) {
@@ -232,7 +259,7 @@ array_push($arr[$categoryIndex]['list'], ['name' => $ingredient->name, 'kcal' =>
 
         function elementDragTouch(e) {
             e = e || window.event;
-            e.preventDefault();
+            // e.preventDefault();
 
             pos1 = pos3 - e.touches[0].clientX;
             pos2 = pos4 - e.touches[0].clientY;
@@ -255,18 +282,19 @@ array_push($arr[$categoryIndex]['list'], ['name' => $ingredient->name, 'kcal' =>
     dragElement(document.getElementById("nut-table"));
 </script>
 <script>
-    document.getElementById('left-arrow').addEventListener('click', function() {
-        document.querySelector('.overflow-x-auto').scrollBy({
-            left: -200,
-            behavior: 'smooth'
-        });
-    });
+    // To make sure calculator icon display above the footer
+    document.addEventListener('scroll', function() {
+      const footer = document.querySelector('footer');
+      const floatingButton = document.getElementById('floating-button');
+      const footerRect = footer.getBoundingClientRect();
+      const buttonRect = floatingButton.getBoundingClientRect();
 
-    document.getElementById('right-arrow').addEventListener('click', function() {
-        document.querySelector('.overflow-x-auto').scrollBy({
-            left: 200,
-            behavior: 'smooth'
-        });
+      // Check if the button overlaps with the footer
+      if (footerRect.top <= window.innerHeight && footerRect.bottom >= window.innerHeight) {
+        floatingButton.style.bottom = `${footerRect.height + 6}px`;
+      } else {
+        floatingButton.style.bottom = '8px';
+      }
     });
 </script>
 @endsection
