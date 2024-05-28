@@ -70,8 +70,8 @@
     </main>
 
     <footer class="bg-black text-white">
-        <div class="max-w-screen-xl justify-around mx-auto py-2 gap-y-2 flex flex-col md:flex-row lg:flex-row">
-            <div class="flex flex-col lg:flex-row self-center items-center gap-3 py-2">
+        <div class="max-w-screen-xl justify-around mx-auto py-4 gap-y-2 flex flex-col md:flex-row lg:flex-row">
+            <div class="flex flex-col lg:flex-row self-center items-center gap-3">
                 <a href="tel:+1234567890"> <!-- Add phone number -->
                     <i class="fab fa-whatsapp fa-lg"></i>
                     016-451 3003
@@ -81,8 +81,8 @@
                     guiltfreesocietykk@gmail.com
                 </a>
             </div>
-            <div class="self-center py-2">Copyright © {{ \Carbon\Carbon::now()->format('Y') }} Guilt Free Society</div>
-            <div class="flex flex-col lg:flex-row self-center items-center gap-3 py-2">
+            <div class="self-center">Copyright © {{ \Carbon\Carbon::now()->format('Y') }} Guilt Free Society</div>
+            <div class="flex flex-col lg:flex-row self-center items-center gap-3">
                 <div class="hidden md:block">Find us at:</div>
                 <div class="flex self-center items-center gap-3">
                     <a href="https://www.facebook.com/people/Guilt-Free-Society-KK/100063456371858/" target="_blank">
