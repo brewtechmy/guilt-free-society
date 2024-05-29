@@ -147,19 +147,9 @@ array_push($arr[$categoryIndex]['list'], ['name' => $menu->name, 'kcal' => $menu
         @foreach ($menuCategories as $categoryIndex => $category)
         <div class="py-4 relative">
             <span class="text-xl md:text-4xl lg:text-6xl font-semibold">{{ $category->name }}</span>
-            <div class="absolute top-1/2 left-0 transform -translate-y-1/2 bg-white rounded-full p-2 cursor-pointer z-10 shadow-lg" id="left-arrow">
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="w-6 h-6 text-black">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
-                </svg>
-            </div>
-            <div class="absolute top-1/2 right-0 transform -translate-y-1/2 bg-white rounded-full p-2 cursor-pointer z-10 shadow-lg" id="right-arrow">
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="w-6 h-6 text-black">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
-                </svg>
-            </div>
-            <div class="flex mt-4 py-3 px-4 overflow-x-auto overflow-y-hidden w-full no-scrollbar">
+            <div class="flex mt-4 py-3 overflow-x-auto overflow-y-hidden w-full no-scrollbar">
                 @foreach ($category->products as $menuIndex => $menu)
-                <div class="flex flex-col items-center min-w-24 md:min-w-44 lg:min-w-56 xl:min-w-64 md:ml-12 mr-20 md:mr-8 lg:mr-10 xl:mr-12 cursor-pointer text-ellipsis select-none">
+                <div class="flex flex-col items-center min-w-24 max-w-24 md:min-w-44 md:max-w-44 lg:min-w-56 lg:max-w-56 xl:min-w-64 xl:max-w-64 ml-8 md:ml-8 mr-3 md:mr-8 lg:mr-10 xl:mr-12 cursor-pointer text-ellipsis select-none">
                     <div data-description="{{ $categoryIndex . '-' . $menuIndex }}" onclick="showDetails(this)">
                         <img class="rounded-full border-4 lg:border-8 border-black aspect-square w-full hover:scale-105 pointer-events-none select-none" src="{{ $menu->photo->getUrl() }}" />
                     </div>
@@ -168,6 +158,16 @@ array_push($arr[$categoryIndex]['list'], ['name' => $menu->name, 'kcal' => $menu
                     <span class="text-base md:text-xl lg:text-3xl">RM {{ $menu->price }}</span>
                 </div>
                 @endforeach
+            </div>
+            <div class="absolute top-1/2 -left-1 md:-left-5 transform -translate-y-1/2 bg-white rounded-full p-2 cursor-pointer shadow-lg left-arrow" id="left-arrow">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="w-3 h-3 md:w-6 md:h-6 text-black">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+                </svg>
+            </div>
+            <div class="absolute top-1/2 -right-1 md:-right-5 transform -translate-y-1/2 bg-white rounded-full p-2 cursor-pointer shadow-lg right-arrow" id="right-arrow">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="w-3 h-3 md:w-6 md:h-6 text-black">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                </svg>
             </div>
         </div>
         @endforeach
@@ -246,17 +246,21 @@ array_push($arr[$categoryIndex]['list'], ['name' => $menu->name, 'kcal' => $menu
     });
 </script>
 <script>
-    document.getElementById('left-arrow').addEventListener('click', function() {
-        document.querySelector('.overflow-x-auto').scrollBy({
-            left: -200,
-            behavior: 'smooth'
+    document.querySelectorAll('.left-arrow').forEach(arrow => {
+        arrow.addEventListener('click', function() {
+            this.parentElement.querySelector('.overflow-x-auto').scrollBy({
+                left: -200,
+                behavior: 'smooth'
+            });
         });
     });
 
-    document.getElementById('right-arrow').addEventListener('click', function() {
-        document.querySelector('.overflow-x-auto').scrollBy({
-            left: 200,
-            behavior: 'smooth'
+    document.querySelectorAll('.right-arrow').forEach(arrow => {
+        arrow.addEventListener('click', function() {
+            this.parentElement.querySelector('.overflow-x-auto').scrollBy({
+                left: 200,
+                behavior: 'smooth'
+            });
         });
     });
 </script>

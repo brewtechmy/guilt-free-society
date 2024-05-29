@@ -17,8 +17,8 @@ array_push($arr[$categoryIndex]['list'], ['name' => $ingredient->name, 'kcal' =>
             <span class="text-xl md:text-4xl lg:text-6xl font-semibold">{{ $category->name }}</span>
             <div class="flex mt-4 overflow-x-auto overflow-y-hidden w-full no-scrollbar">
                 @foreach ($category->ingredients as $ingredientIndex => $ingredient)
-                <div class="flex flex-col items-center min-w-24 md:min-w-44 lg:min-w-56 xl:min-w-64 ml-8 md:ml-8 mr-3 md:mr-8 lg:mr-10 xl:mr-8 select-none">
-                    <img class="rounded-full border-4 lg:border-8 border-black aspect-square w-full pointer-events-none select-none" src="{{ url($ingredient->photo->getUrl()) }}"/>
+                <div class="flex flex-col items-center min-w-24 max-w-24 md:min-w-44 md:max-w-44 lg:min-w-56 lg:max-w-56 xl:min-w-64 xl:max-w-64 ml-8 md:ml-8 mr-3 md:mr-8 lg:mr-10 xl:mr-12 text-ellipsis select-none">
+                    <img class="rounded-full border-4 lg:border-8 border-black aspect-square w-full pointer-events-none select-none" src="{{ url($ingredient->photo->getUrl()) }}" />
                     <span class="text-base md:text-xl lg:text-3xl whitespace-nowrap mt-3 truncate max-w-32 md:max-w-56 lg:max-w-72 xl:max-w-80">{{ $ingredient->name }}</span>
                     <span class="text-base md:text-xl lg:text-3xl">({{ $ingredient->calories }} kcal)</span>
                 </div>
@@ -49,9 +49,9 @@ array_push($arr[$categoryIndex]['list'], ['name' => $ingredient->name, 'kcal' =>
     </div>
 </div> --}}
 
-<div id="floating-button" class = "group fixed bottom-0 md:bottom-0 right-0 md:right-4 p-2 flex items-end justify-end">
+<div id="floating-button" class="group fixed bottom-0 md:bottom-0 right-0 md:right-4 p-2 flex items-end justify-end">
     <!-- nutriention table -->
-    <div id="nut-table" class="right-0 bottom-0 transform transition-transform duration-300 origin-bottom scale-0 absolute cursor-move">
+    <div id="nut-table" class="right-0 bottom-0 transform transition-transform duration-300 origin-bottom hidden absolute cursor-move">
         <table class="table-auto bg-white shadow-md rounded-lg overflow-hidden pr-3">
             <thead class="bg-black">
                 <tr>
@@ -129,13 +129,13 @@ array_push($arr[$categoryIndex]['list'], ['name' => $ingredient->name, 'kcal' =>
         e.classList.toggle('scale-0');
         setTimeout(() => {
             e.classList.toggle('hidden');
-            document.getElementById('nut-table').classList.toggle("scale-0")
+            document.getElementById('nut-table').classList.toggle("hidden")
         }, 300);
     }
 
     function toggleCalR() {
         const wheelList = document.querySelectorAll("[class^='wheel-outline']");
-        document.getElementById('nut-table').classList.toggle('scale-0');
+        document.getElementById('nut-table').classList.toggle('hidden');
         setTimeout(() => {
             document.getElementById('click-me').classList.toggle("hidden")
         }, 300);
@@ -207,94 +207,80 @@ array_push($arr[$categoryIndex]['list'], ['name' => $ingredient->name, 'kcal' =>
             });
         });
     });
-
-</script>
-<script>
-    function dragElement(elmnt) {
-        var pos1 = 0,
-            pos2 = 0,
-            pos3 = 0,
-            pos4 = 0;
-
-        if (document.getElementById(elmnt.id + "header")) {
-            document.getElementById(elmnt.id + "header").onmousedown = dragMouseDown;
-            document.getElementById(elmnt.id + "header").ontouchstart = dragTouchStart;
-        } else {
-            elmnt.onmousedown = dragMouseDown;
-            elmnt.ontouchstart = dragTouchStart;
-        }
-
-        function dragMouseDown(e) {
-            e = e || window.event;
-            e.preventDefault();
-
-            pos3 = e.clientX;
-            pos4 = e.clientY;
-            document.onmouseup = closeDragElement;
-            document.onmousemove = elementDrag;
-        }
-
-        function dragTouchStart(e) {
-            e = e || window.event;
-            e.preventDefault();
-
-            pos3 = e.touches[0].clientX;
-            pos4 = e.touches[0].clientY;
-            document.ontouchend = closeDragElement;
-            document.ontouchmove = elementDragTouch;
-        }
-
-        function elementDrag(e) {
-            e = e || window.event;
-            e.preventDefault();
-
-            pos1 = pos3 - e.clientX;
-            pos2 = pos4 - e.clientY;
-            pos3 = e.clientX;
-            pos4 = e.clientY;
-
-            elmnt.style.top = (elmnt.offsetTop - pos2) + "px";
-            elmnt.style.left = (elmnt.offsetLeft - pos1) + "px";
-        }
-
-        function elementDragTouch(e) {
-            e = e || window.event;
-            // e.preventDefault();
-
-            pos1 = pos3 - e.touches[0].clientX;
-            pos2 = pos4 - e.touches[0].clientY;
-            pos3 = e.touches[0].clientX;
-            pos4 = e.touches[0].clientY;
-
-            elmnt.style.top = (elmnt.offsetTop - pos2) + "px";
-            elmnt.style.left = (elmnt.offsetLeft - pos1) + "px";
-        }
-
-        function closeDragElement() {
-            document.onmouseup = null;
-            document.onmousemove = null;
-            document.ontouchend = null;
-            document.ontouchmove = null;
-        }
-    }
-
-    // Call the function with your element
-    dragElement(document.getElementById("nut-table"));
 </script>
 <script>
     // To make sure calculator icon display above the footer
     document.addEventListener('scroll', function() {
-      const footer = document.querySelector('footer');
-      const floatingButton = document.getElementById('floating-button');
-      const footerRect = footer.getBoundingClientRect();
-      const buttonRect = floatingButton.getBoundingClientRect();
+        const footer = document.querySelector('footer');
+        const floatingButton = document.getElementById('floating-button');
+        const footerRect = footer.getBoundingClientRect();
+        const buttonRect = floatingButton.getBoundingClientRect();
 
-      // Check if the button overlaps with the footer
-      if (footerRect.top <= window.innerHeight && footerRect.bottom >= window.innerHeight) {
-        floatingButton.style.bottom = `${footerRect.height + 6}px`;
-      } else {
-        floatingButton.style.bottom = '8px';
-      }
+        // Check if the button overlaps with the footer
+        if (footerRect.top <= window.innerHeight && footerRect.bottom >= window.innerHeight) {
+            floatingButton.style.bottom = `${footerRect.height + 6}px`;
+        } else {
+            floatingButton.style.bottom = '8px';
+        }
+    });
+</script>
+<script src="{{ asset('js/draggable.js') }}"></script>
+<script src="{{ asset('js/inertia.js') }}"></script>
+<script src="{{ asset('js/gsap.js') }}"></script>
+<script>
+    // const page = document.getElementById('page'),
+    wrapper = document.getElementById('wrapper'),
+        modal = document.getElementById('nut-table'),
+        //   reset = document.getElementById('reset'),
+        initialX = -50,
+        initialY = -50;
+
+    const resetModalPosition = () => {
+        TweenLite.to(
+            modal,
+            0.6, {
+                ease: Power3.easeOut,
+                x: 0,
+                y: 0,
+                xPercent: initialX,
+                yPercent: initialY,
+            }
+        );
+        //   reset.disabled = true;
+    }
+
+    Draggable.create(
+        modal, {
+            type: 'x,y',
+            bounds: wrapper,
+            edgeResistance: 0.85,
+            inertia: true,
+            throwResistance: 3000,
+            // onPressInit: function() {
+            //   page.classList.add('bg-violet-900');
+            // },
+            // onRelease: function() {
+            //   page.classList.remove('bg-violet-900');
+            // },
+            onDrag: function() {
+                const x = gsap.getProperty(this, 'x'),
+                    y = gsap.getProperty(this, 'y');
+
+                //   if (x === 0 & y === 0) {
+                //     reset.disabled = true;
+                //   } else {
+                //     reset.disabled = false;
+                //   }
+            },
+        }
+    );
+
+    // reset.addEventListener('click', () => {
+    //   resetModalPosition();
+    // });
+
+    window.addEventListener('resize', () => {
+        resetModalPosition();
     });
 </script>
 @endsection

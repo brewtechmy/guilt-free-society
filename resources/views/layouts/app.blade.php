@@ -18,7 +18,9 @@
 </head>
 
 <body class="header-fixed sidebar-fixed aside-menu-fixed aside-menu-hidden login-page">
+<div id="wrapper" class="w-full h-full">
     @yield('content')
+</div>
     @yield('scripts')
 </body>
 
