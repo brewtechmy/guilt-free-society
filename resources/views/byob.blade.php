@@ -6,7 +6,7 @@ $arr = [];
 foreach ($ingredientCategories as $categoryIndex => $category) {
 array_push($arr, ['title' => $category->name, 'list' => []]);
 foreach ($category->ingredients as $ingredientIndex => $ingredient) {
-array_push($arr[$categoryIndex]['list'], ['name' => $ingredient->name, 'kcal' => $ingredient->calories, 'protein' => $ingredient->protein, 'fat' => $ingredient->fat, 'carbs' => $ingredient->carbohydrate]);
+array_push($arr[$categoryIndex]['list'], ['name' => $ingredient->name, 'kcal' => $ingredient->calories, 'protein' => $ingredient->protein / 100 * $ingredient->quantity, 'fat' => $ingredient->fat / 100 * $ingredient->quantity, 'carbs' => $ingredient->carbohydrate / 100 * $ingredient->quantity]);
 }
 }
 @endphp
@@ -20,7 +20,7 @@ array_push($arr[$categoryIndex]['list'], ['name' => $ingredient->name, 'kcal' =>
                 <div class="flex flex-col items-center min-w-24 max-w-24 md:min-w-44 md:max-w-44 lg:min-w-56 lg:max-w-56 xl:min-w-64 xl:max-w-64 ml-8 md:ml-8 mr-3 md:mr-8 lg:mr-10 xl:mr-12 text-ellipsis select-none">
                     <img class="rounded-full border-4 lg:border-8 border-black aspect-square w-full pointer-events-none select-none" src="{{ url($ingredient->photo->getUrl()) }}" />
                     <span class="text-base md:text-xl lg:text-3xl whitespace-nowrap mt-3 truncate max-w-32 md:max-w-56 lg:max-w-72 xl:max-w-80">{{ $ingredient->name }}</span>
-                    <span class="text-base md:text-xl lg:text-3xl">({{ $ingredient->calories }} kcal)</span>
+                    <span class="text-base md:text-xl lg:text-3xl">({{ $ingredient->calories / 100 * $ingredient->quantity }} kcal)</span>
                 </div>
                 <div class="wheel-outline mt-6 sm:mt-16 md:mt-16 lg:mt-20 md:mr-4 transform duration-300 scale-0 hidden">
                     <div id="acw-{{ $categoryIndex . '-' . $ingredientIndex }}" class="counter w-8 md:w-10 lg:w-12 h-11 md:h-14 lg:h-20">0</div>
