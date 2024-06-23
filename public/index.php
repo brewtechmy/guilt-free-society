@@ -42,7 +42,7 @@ require __DIR__.'/../vendor/autoload.php';
 |
 */
 
-ini_set('memory_limit', '256M');
+ini_set('memory_limit', '512M');
 
 /*
 |--------------------------------------------------------------------------
