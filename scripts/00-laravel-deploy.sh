@@ -11,7 +11,8 @@ php artisan config:cache
 echo "Caching routes..."
 php artisan route:cache
 
-sudo chown -R www-data storage
+sudo chown :www-data app storage bootstrap -R
+sudo chmod 775 app storage bootstrap -R
 
 # echo "Running migrations..."
 # php artisan migrate --force
