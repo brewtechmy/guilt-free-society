@@ -4,7 +4,9 @@ namespace App\Providers;
 
 use App\Models\Setting;
 use App\Models\Advertisement;
+use Illuminate\Support\Facades\URL;
 use Illuminate\Support\Facades\Cache;
+use Illuminate\Support\Facades\Schema;
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
@@ -22,16 +24,24 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
+        if (app()->environment('production')) {
+            URL::forceScheme('https');
+        }
+            
         view()->composer('layouts.menu', function ($view) {
             $view->with('advertisements', Advertisement::with(['media'])->orderBy('position')->get());
         });
 
         $formula = Cache::remember('formula', 3600, function () {
-            $setting = Setting::where('key', 'calories_formula')->first();
+            if (Schema::hasTable('settings')) {
+                $setting = Setting::where('key', 'calories_formula')->first();
 
-            return !empty($setting)
-                ? '$calories = ' . $setting->value . ';'
-                : '$calories = (4 * $protein) + (4 * $carbohydrate) + (9 * $fat);';
+                return !empty($setting)
+                    ? '$calories = ' . $setting->value . ';'
+                    : '$calories = (4 * $protein) + (4 * $carbohydrate) + (9 * $fat);';
+            } else {
+                return '$calories = (4 * $protein) + (4 * $carbohydrate) + (9 * $fat);';
+            }
         });
 
         if ($formula != null) {
