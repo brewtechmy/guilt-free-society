@@ -127,7 +127,7 @@ Route::group(['prefix' => 'profile', 'as' => 'profile.', 'namespace' => 'Auth', 
 });
 
 Route::get('/welcome', 'LandingPageController')->name('landing-page');
-Route::get('/byob', 'MenuController@index')->name('byob');
+Route::get('/build-your-own-bowl', 'MenuController@index')->name('byob');
 Route::get('/story', 'StoryController')->name('story');
 Route::get('/menu', 'MenuController@menu')->name('menu');
 Route::get('/service', 'ServiceController')->name('service');
