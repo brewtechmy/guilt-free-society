@@ -225,7 +225,6 @@ array_push($arr[$categoryIndex]['list'], ['name' => $ingredient->name, 'kcal' =>
     });
 </script>
 <script src="{{ asset('js/draggable.js') }}"></script>
-<script src="{{ asset('js/inertia.js') }}"></script>
 <script src="{{ asset('js/gsap.js') }}"></script>
 <script>
     // const page = document.getElementById('page'),
@@ -254,7 +253,7 @@ array_push($arr[$categoryIndex]['list'], ['name' => $ingredient->name, 'kcal' =>
             type: 'x,y',
             bounds: wrapper,
             edgeResistance: 0.85,
-            inertia: true,
+            inertia: false,
             throwResistance: 3000,
             // onPressInit: function() {
             //   page.classList.add('bg-violet-900');
