@@ -65,7 +65,7 @@ array_push($arr[$categoryIndex]['list'], ['name' => $ingredient->name, 'kcal' =>
                     <th class="px-4 py-2 flex justify-between items-center">
                         Calories (kcal)
                         <span class="ml-5">
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke-width="3" stroke="currentColor" class="w-6 h-6 cursor-pointer ml-3 text-gray-500 hover:text-gray-700" onclick="toggleCalR()">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke-width="3" stroke="currentColor" id="down-btn" class="w-6 h-6 cursor-pointer ml-3 text-gray-500 hover:text-gray-700">
                                 <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
                             </svg>
                         </span>
@@ -95,7 +95,7 @@ array_push($arr[$categoryIndex]['list'], ['name' => $ingredient->name, 'kcal' =>
                     <td id="total-quantity" class="px-4 py-2">0</td>
                     <td class="px-4 py-2 flex justify-between items-center">
                         <span id="total-cal">0</span>
-                        <button class="btn bg-[#027148] hover:bg-green-500 text-white font-bold py-2 px-4 rounded m-2" onclick="reset()">
+                        <button id="reset-btn" class="btn bg-[#027148] hover:bg-green-500 text-white font-bold py-2 px-4 rounded m-2">
                             Reset
                         </button>
                     </td>
@@ -103,7 +103,7 @@ array_push($arr[$categoryIndex]['list'], ['name' => $ingredient->name, 'kcal' =>
             </tbody>
         </table>
     </div>
-    <div id="click-me" class="bg-black rounded-full w-16 h-16 m-4 flex items-center justify-center cursor-pointer shadow-xl animate-bounce" onclick="toggleCal(this)">
+    <div id="click-me" class="bg-black rounded-full w-16 h-16 m-4 flex items-center justify-center cursor-pointer shadow-xl animate-bounce">
         <i class="fab fa-nutritionix text-white text-4xl"></i>
     </div>
 </div>
@@ -205,6 +205,14 @@ array_push($arr[$categoryIndex]['list'], ['name' => $ingredient->name, 'kcal' =>
                 left: 200,
                 behavior: 'smooth'
             });
+        });
+    });
+
+    document.addEventListener('DOMContentLoaded', (event) => {
+        document.getElementById('reset-btn').addEventListener('click', reset);
+        document.getElementById('down-btn').addEventListener('click', toggleCalR);
+        document.getElementById('click-me').addEventListener('click', function() {
+            toggleCal(this);
         });
     });
 </script>
