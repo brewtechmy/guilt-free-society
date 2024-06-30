@@ -18,7 +18,10 @@ array_push($arr[$categoryIndex]['list'], ['name' => $ingredient->name, 'kcal' =>
             <div class="flex mt-4 overflow-x-auto overflow-y-hidden w-full no-scrollbar">
                 @foreach ($category->ingredients as $ingredientIndex => $ingredient)
                 <div class="flex flex-col items-center min-w-24 max-w-24 md:min-w-44 md:max-w-44 lg:min-w-56 lg:max-w-56 xl:min-w-64 xl:max-w-64 ml-8 md:ml-8 mr-3 md:mr-8 lg:mr-10 xl:mr-12 text-ellipsis select-none">
-                    <img class="rounded-full border-4 lg:border-8 border-black aspect-square w-full pointer-events-none select-none" src="{{ url($ingredient->photo->getUrl()) }}" />
+                    {{-- <img class="rounded-full border-4 border-black aspect-square w-full pointer-events-none select-none" src="{{ url($ingredient->photo->getUrl()) }}" style=""/> --}}
+                    <div class="inline-block bg-black rounded-full p-1 lg:p-3">
+                        <img class="rounded-full border-black aspect-square w-full pointer-events-none select-none" src="{{ url($ingredient->photo->getUrl()) }}" />
+                    </div>
                     <span class="text-base md:text-xl lg:text-3xl whitespace-nowrap mt-3 truncate max-w-32 md:max-w-56 lg:max-w-72 xl:max-w-80">{{ $ingredient->name }}</span>
                     <span class="text-base md:text-xl lg:text-3xl">({{ $ingredient->calories / 100 * $ingredient->quantity }} kcal)</span>
                 </div>

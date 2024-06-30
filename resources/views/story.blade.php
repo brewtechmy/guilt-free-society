@@ -5,8 +5,11 @@
         <div class="">
             <div class="text-6xl font-semibold text-center md:text-left">Our Values</div>
             <div class="flex flex-col py-4 gap-3">
-                <img class="rounded-full border-8 border-black aspect-square object-cover max-w-[55vw] mx-auto sm:max-w-72"
-                src="{{ $images['our_values_image']->getUrl() }}"/>
+                {{-- <img class="rounded-full border-8 border-black aspect-square object-cover max-w-[55vw] mx-auto sm:max-w-72"
+                src="{{ $images['our_values_image']->getUrl() }}"/> --}}
+                <div class="inline-block bg-black rounded-full p-2 w-52 lg:w-72 mx-auto">
+                    <img class="rounded-full border-black aspect-square object-cover w-full" src="{{ $images['our_values_image']->getUrl() }}"/>
+                </div>
                 <span class="text-2xl text-justify">
                     {!! $texts['our_values_text']['value'] !!}
                 </span>
