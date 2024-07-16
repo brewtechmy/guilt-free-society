@@ -28,5 +28,8 @@ RUN npm install
 
 # Build Vite assets
 RUN npm run build
+
+RUN chown -R www-data:www-data /var/www/html/storage
+RUN chmod -R 775 /var/www/html/storage
  
 CMD ["/start.sh"]

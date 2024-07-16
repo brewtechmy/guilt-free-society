@@ -17,6 +17,9 @@ php artisan view:cache
 sudo chown -R www-data:www-data storage bootstrap/cache
 sudo chmod -R 775 storage bootstrap/cache
 
+sudo chown -R www-data:www-data /var/www/html/storage
+sudo chmod -R 775 /var/www/html/storage
+
 sudo systemctl restart nginx
 
 # echo "Running migrations..."
