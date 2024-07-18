@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Artisan;
 
 Route::redirect('/', '/welcome');
 Route::get('/home', function () {
@@ -113,7 +114,7 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.', 'namespace' => 'Admin', 'mi
 
     // Setting
     Route::resource('settings', 'SettingController');
-    Route::put('settings', 'SettingController@update')->name('settings.update');
+    // Route::put('settings', 'SettingController@update')->name('settings.update');
 
 });
 Route::group(['prefix' => 'profile', 'as' => 'profile.', 'namespace' => 'Auth', 'middleware' => ['auth']], function () {
@@ -133,3 +134,12 @@ Route::get('/menu', 'MenuController@menu')->name('menu');
 Route::get('/service', 'ServiceController')->name('service');
 Route::get('/join-us', 'JoinUsController')->name('join-us');
 Route::get('/contact-us', 'ContactController')->name('contact-us');
+
+Route::get('/clearCache', function () {
+
+    Artisan::call('optimize');
+    Artisan::call('cache:clear');
+    Artisan::call('config:clear');
+
+    return response(200);
+});
