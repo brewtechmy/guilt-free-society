@@ -114,7 +114,7 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.', 'namespace' => 'Admin', 'mi
 
     // Setting
     Route::resource('settings', 'SettingController');
-    // Route::put('settings', 'SettingController@update')->name('settings.update');
+    Route::put('settings', 'SettingController@update')->name('settings.update');
 
 });
 Route::group(['prefix' => 'profile', 'as' => 'profile.', 'namespace' => 'Auth', 'middleware' => ['auth']], function () {
@@ -137,7 +137,7 @@ Route::get('/contact-us', 'ContactController')->name('contact-us');
 
 Route::get('/clearCache', function () {
 
-    Artisan::call('optimize');
+    Artisan::call('optimize:clear');
     Artisan::call('cache:clear');
     Artisan::call('config:clear');
 
